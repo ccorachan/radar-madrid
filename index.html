@@ -2,159 +2,894 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Radar Musical Madrid – 22/06/2026 a 02/07/2026</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎵 Radar Musical Madrid – 25 Jun 2026 · Próximos 10 días</title>
 <style>
-  body { background:#0d0d0d; color:#eee; font-family: Arial, Helvetica, sans-serif; margin:0; padding:24px; }
-  h1 { color:#f5c842; font-size:28px; margin-bottom:4px; }
-  .subtitle { color:#bbb; margin-bottom:20px; font-size:14px; }
-  .legend { display:flex; gap:18px; flex-wrap:wrap; margin-bottom:16px; font-size:13px; }
-  .legend span { display:inline-flex; align-items:center; gap:6px; }
-  .swatch { width:14px; height:14px; border-radius:3px; display:inline-block; border:1px solid #333; }
-  table { width:100%; border-collapse:collapse; font-size:13px; margin-bottom:30px; }
-  th { background:#1a1a1a; color:#f5c842; text-align:left; padding:8px 6px; border-bottom:2px solid #f5c842; position:sticky; top:0; }
-  td { padding:7px 6px; border-bottom:1px solid #222; vertical-align:top; }
-  tr.gratis { background:#09180a; }
-  tr.neutro { background:#111; }
-  tr.alto { background:#160808; }
-  .ig { color:#f5c842; font-size:11px; display:block; }
-  a { color:#7fd1ff; text-decoration:none; }
-  a:hover { text-decoration:underline; }
-  .warn { color:#ff8c66; font-size:11px; }
-  h2 { color:#f5c842; border-bottom:1px solid #333; padding-bottom:6px; margin-top:36px; }
-  .joya { background:#161205; border:1px solid #f5c842; border-radius:8px; padding:12px 16px; margin-bottom:12px; }
-  .joya b { color:#f5c842; }
-  footer { color:#888; font-size:12px; margin-top:40px; border-top:1px solid #333; padding-top:14px; line-height:1.6; }
-  .ig-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:8px; font-size:12px; color:#ccc; margin-bottom:20px;}
-  .ig-grid div { background:#141414; padding:8px; border-radius:6px; border:1px solid #222; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0d0d0d;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  header {
+    background: linear-gradient(135deg, #1a0d00 0%, #0d0d0d 60%);
+    border-bottom: 2px solid #f5c842;
+    padding: 28px 20px 18px;
+    text-align: center;
+  }
+  header h1 {
+    color: #f5c842;
+    font-size: 2em;
+    letter-spacing: 2px;
+    text-shadow: 0 0 18px #f5c84266;
+  }
+  header .subtitle {
+    color: #aaa;
+    margin-top: 6px;
+    font-size: 0.95em;
+  }
+  header .rango {
+    color: #f5c842;
+    font-weight: bold;
+  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 20px 16px; }
+
+  /* --- LEYENDA --- */
+  .legend {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+    background: #161616;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    padding: 12px 16px;
+    align-items: center;
+  }
+  .legend span { display: flex; align-items: center; gap: 6px; font-size: 0.85em; }
+  .dot { width: 14px; height: 14px; border-radius: 3px; display: inline-block; }
+  .dot-green { background: #09180a; border: 1px solid #1e4a1e; }
+  .dot-neutral { background: #1c1c1c; border: 1px solid #333; }
+  .dot-red { background: #160808; border: 1px solid #4a1010; }
+
+  /* --- TABLA --- */
+  .table-wrap { overflow-x: auto; border-radius: 8px; border: 1px solid #222; margin-bottom: 30px; }
+  table { width: 100%; border-collapse: collapse; min-width: 900px; }
+  thead tr { background: #1a1a1a; border-bottom: 2px solid #f5c842; }
+  thead th {
+    padding: 10px 10px;
+    text-align: left;
+    color: #f5c842;
+    font-size: 0.85em;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+  tbody tr { border-bottom: 1px solid #1e1e1e; transition: background 0.15s; }
+  tbody tr:hover { filter: brightness(1.3); }
+  td { padding: 9px 10px; vertical-align: middle; }
+  .row-free { background-color: #09180a; }
+  .row-mid  { background-color: #111; }
+  .row-high { background-color: #160808; }
+  .stars { font-size: 0.9em; white-space: nowrap; }
+  .fecha { white-space: nowrap; font-weight: 600; color: #ddd; font-size: 0.88em; }
+  .hora  { white-space: nowrap; color: #aaa; font-size: 0.85em; }
+  .artista { font-weight: 700; color: #f5e2a0; font-size: 0.95em; }
+  .recinto { color: #bbb; font-size: 0.82em; margin-top: 2px; }
+  .municipio { color: #888; font-size: 0.78em; }
+  .precio { white-space: nowrap; font-size: 0.85em; }
+  .precio-free { color: #5cdb5c; font-weight: 700; }
+  .precio-mid { color: #e0e0e0; }
+  .precio-high { color: #f07070; font-weight: 700; }
+  .genero {
+    display: inline-block;
+    background: #1e1e30;
+    color: #99aaff;
+    border-radius: 12px;
+    padding: 2px 8px;
+    font-size: 0.78em;
+    white-space: nowrap;
+  }
+  .ig-badge {
+    display: inline-block;
+    background: #2a0d1e;
+    color: #ff77a9;
+    border-radius: 10px;
+    padding: 1px 6px;
+    font-size: 0.75em;
+    margin-left: 4px;
+    white-space: nowrap;
+  }
+  .comprar-link {
+    color: #f5c842;
+    text-decoration: none;
+    font-size: 0.85em;
+    white-space: nowrap;
+    border: 1px solid #f5c84244;
+    border-radius: 4px;
+    padding: 3px 7px;
+    display: inline-block;
+    transition: background 0.15s;
+  }
+  .comprar-link:hover { background: #f5c84222; }
+  .no-link { color: #555; font-size: 0.8em; }
+
+  /* --- JOYAS --- */
+  .joyas { margin: 30px 0 24px; }
+  .joyas h2 { color: #f5c842; font-size: 1.25em; margin-bottom: 16px; border-bottom: 1px solid #333; padding-bottom: 8px; }
+  .joyas-grid { display: flex; gap: 16px; flex-wrap: wrap; }
+  .joya-card {
+    background: linear-gradient(135deg, #1a1200 0%, #131300 100%);
+    border: 1px solid #f5c84255;
+    border-radius: 10px;
+    padding: 16px 18px;
+    flex: 1;
+    min-width: 260px;
+    max-width: 380px;
+  }
+  .joya-card .joya-num { color: #f5c842; font-size: 1.5em; font-weight: 900; margin-bottom: 4px; }
+  .joya-card .joya-artista { color: #fff; font-size: 1.05em; font-weight: 700; margin-bottom: 4px; }
+  .joya-card .joya-detalle { color: #aaa; font-size: 0.85em; }
+  .joya-card .joya-genero { color: #f5c842; font-size: 0.8em; font-weight: 600; margin-top: 6px; }
+
+  /* --- INSTAGRAM --- */
+  .ig-section { margin: 24px 0; }
+  .ig-section h2 { color: #f5c842; font-size: 1.2em; margin-bottom: 12px; border-bottom: 1px solid #333; padding-bottom: 8px; }
+  .ig-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+  .ig-account {
+    background: #121212;
+    border: 1px solid #282828;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 0.82em;
+    min-width: 180px;
+  }
+  .ig-handle { color: #ff77a9; font-weight: 700; }
+  .ig-status { color: #888; margin-top: 2px; }
+  .ig-status.ok { color: #5cdb5c; }
+
+  /* --- FOOTER --- */
+  footer {
+    border-top: 1px solid #222;
+    margin-top: 30px;
+    padding: 18px 16px;
+    color: #666;
+    font-size: 0.8em;
+    text-align: center;
+  }
+  footer a { color: #f5c842; text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  .fuentes { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 10px; }
+  .fuente-pill {
+    background: #161616;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 2px 10px;
+    font-size: 0.75em;
+    color: #999;
+  }
+
+  .section-header { color: #f5c842; font-size: 1.1em; margin: 20px 0 8px; font-weight: 700; letter-spacing: 1px; }
+
+  @media (max-width: 700px) {
+    header h1 { font-size: 1.3em; }
+    .joya-card { min-width: 100%; }
+    .ig-account { min-width: 100%; }
+  }
 </style>
 </head>
 <body>
 
-<h1>🎵 Radar Musical Madrid</h1>
-<div class="subtitle">Próximos 10 días: <b>22 de junio – 2 de julio de 2026</b> · Comunidad de Madrid</div>
+<header>
+  <h1>🎵 RADAR MUSICAL MADRID</h1>
+  <div class="subtitle">
+    <span class="rango">25 jun – 5 jul 2026</span> &nbsp;·&nbsp; Comunidad de Madrid &nbsp;·&nbsp; Generado automáticamente
+  </div>
+</header>
 
-<div class="legend">
-  <span><span class="swatch" style="background:#09180a;border-color:#1a4d1f"></span> Gratis</span>
-  <span><span class="swatch" style="background:#111;border-color:#444"></span> Hasta 50 €</span>
-  <span><span class="swatch" style="background:#160808;border-color:#5a1f1f"></span> Más de 50 €</span>
-  <span>⭐⭐⭐ Flamenco / Jazz / Blues / Soul / Folk / Funk / Cantautor / Rock clásico</span>
-  <span>⭐⭐ Pop calidad / Indie / World / Tributos / Sinfónico</span>
-  <span>⭐ Electrónica / Urbano</span>
-</div>
+<div class="container">
 
-<table>
-<thead>
-<tr><th>⭐</th><th>Fecha</th><th>Hora</th><th>Artista / Evento</th><th>Recinto · Municipio</th><th>Precio</th><th>Género</th><th>🔗 Comprar</th></tr>
-</thead>
-<tbody>
+  <!-- JOYAS -->
+  <div class="joyas">
+    <h2>✨ Joyas de la semana</h2>
+    <div class="joyas-grid">
+      <div class="joya-card">
+        <div class="joya-num">★★★</div>
+        <div class="joya-artista">Tomatito</div>
+        <div class="joya-detalle">Sábado 27 jun · 19:30 · Teatro Albéniz (Villanos del Flamenco)</div>
+        <div class="joya-genero">Flamenco Guitarra · Madrid</div>
+      </div>
+      <div class="joya-card">
+        <div class="joya-num">★★★</div>
+        <div class="joya-artista">Van Morrison</div>
+        <div class="joya-detalle">Martes 30 jun · Noches del Botánico · Real Jardín Botánico UCM</div>
+        <div class="joya-genero">Rock / Soul · Madrid</div>
+      </div>
+      <div class="joya-card">
+        <div class="joya-num">★★★</div>
+        <div class="joya-artista">Centenario Miles Davis: New Sketches of Spain</div>
+        <div class="joya-detalle">Viernes 3 jul · 19:30 · Teatro Albéniz · Chano Domínguez + Antonio Serrano</div>
+        <div class="joya-genero">Jazz / Flamenco · Madrid</div>
+      </div>
+    </div>
+  </div>
 
-<tr class="neutro"><td>⭐⭐⭐</td><td>Lun 22 jun</td><td>20:00 / 22:00</td><td>Javier Elorrieta Quinteto</td><td>Café Central Ateneo · Madrid</td><td>Ver enlace</td><td>Jazz</td><td><a href="https://cafecentralmadrid.com/reservas/?event=javier-elorrieta-quinteto-6985af7a" target="_blank">Entradas</a></td></tr>
+  <!-- LEYENDA -->
+  <div class="legend">
+    <strong style="color:#aaa; font-size:0.85em;">LEYENDA DE PRECIO:</strong>
+    <span><span class="dot dot-green"></span>Entrada gratuita</span>
+    <span><span class="dot dot-neutral"></span>Hasta €50 (o precio no verificado)</span>
+    <span><span class="dot dot-red"></span>Más de €50</span>
+    <span style="margin-left:12px;"><span style="background:#2a0d1e;color:#ff77a9;border-radius:10px;padding:1px 6px;font-size:0.8em;">📱 @cuenta</span> Fuente Instagram</span>
+  </div>
 
-<tr class="neutro"><td>⭐</td><td>Lun 22 jun</td><td>21:00</td><td>The Casualties (USA) + Figure 8 Knot</td><td>Gruta 77 · Madrid (Carabanchel)</td><td>15-20€</td><td>Punk</td><td><a href="https://gruta77.com/programacion-eventos-gruta77-madrid/" target="_blank">Programación</a></td></tr>
+  <!-- TABLA PRINCIPAL -->
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>⭐</th>
+          <th>Fecha</th>
+          <th>Hora</th>
+          <th>Artista / Evento</th>
+          <th>Recinto · Municipio</th>
+          <th>Precio</th>
+          <th>Género</th>
+          <th>🔗 Comprar</th>
+        </tr>
+      </thead>
+      <tbody>
 
-<tr class="neutro"><td>⭐⭐⭐</td><td>Mié 24 jun</td><td>20:00 / 22:00</td><td>Miguel Rodríguez Trio</td><td>Café Central Ateneo · Madrid</td><td>Ver enlace</td><td>Jazz</td><td><a href="https://cafecentralmadrid.com/reservas/?event=miguel-rodriguez-trio-5d029932" target="_blank">Entradas</a></td></tr>
+        <!-- 25 Jun -->
+        <tr class="row-mid">
+          <td class="stars">⭐⭐⭐</td>
+          <td class="fecha">25 Jun Jue</td>
+          <td class="hora">20:00 &amp; 22:00</td>
+          <td><div class="artista">Miguel Rodríguez Trio</div></td>
+          <td><div class="recinto">Café Central Ateneo</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">Ver enlace</td>
+          <td><span class="genero">Jazz</span></td>
+          <td><a class="comprar-link" href="https://cafecentralmadrid.com/reservas/?event=miguel-rodriguez-trio-5d029932" target="_blank">Entradas</a></td>
+        </tr>
+        <tr class="row-mid">
+          <td class="stars">⭐⭐⭐</td>
+          <td class="fecha">25 Jun Jue</td>
+          <td class="hora">Noche</td>
+          <td><div class="artista">Álvaro Traverso – Fiesta Flamenca</div><div style="color:#888;font-size:0.8em">Flamenco, rumba, pop, clásicos de siempre</div></td>
+          <td><div class="recinto">Sala Galileo Galilei</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">Ver enlace</td>
+          <td><span class="genero">Flamenco / Rumba</span></td>
+          <td><a class="comprar-link" href="https://salagalileo.es/programacion/fiesta-flameco-clasicos-de-siempre-con-alvaro-traverso/" target="_blank">Info</a></td>
+        </tr>
+        <tr class="row-mid">
+          <td class="stars">⭐⭐</td>
+          <td class="fecha">25 Jun Jue</td>
+          <td class="hora">Noche</td>
+          <td><div class="artista">GRÖSSRAMA + AUTOMATIC LOVERS</div></td>
+          <td><div class="recinto">Wurlitzer Ballroom</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">Ver enlace</td>
+          <td><span class="genero">Rock Underground</span></td>
+          <td><a class="comprar-link" href="https://www.wurlitzerballroom.com/?mec-events=grossramaautomatic-lovers" target="_blank">Info</a></td>
+        </tr>
 
-<tr class="neutro"><td>⭐⭐⭐</td><td>Mié 24 jun</td><td>23:00</td><td>Tributo a Camarón</td><td>Café Berlín · Madrid</td><td>Desde 20€</td><td>Flamenco (tributo)</td><td><a href="https://cafeberlinentradas.com/events/tributo-a-camaron-madrid-cafe-berlin" target="_blank">Entradas</a> <span class="ig">📱 @cafeberlinmadrid</span></td></tr>
+        <!-- 26 Jun -->
+        <tr class="row-mid">
+          <td class="stars">⭐⭐⭐</td>
+          <td class="fecha">26 Jun Vie</td>
+          <td class="hora">20:00 &amp; 22:00</td>
+          <td><div class="artista">Adrian Costa Blues Band</div></td>
+          <td><div class="recinto">Café Central Ateneo</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">Ver enlace</td>
+          <td><span class="genero">Blues</span></td>
+          <td><a class="comprar-link" href="https://cafecentralmadrid.com/reservas/?event=adrian-costa-blues-band-728e88fd" target="_blank">Entradas</a></td>
+        </tr>
+        <tr class="row-mid">
+          <td class="stars">⭐⭐⭐</td>
+          <td class="fecha">26 Jun Vie</td>
+          <td class="hora">19:30</td>
+          <td>
+            <div class="artista">Alter Ego: Alfonso Losa + Paula Comitre</div>
+            <div style="color:#888;font-size:0.8em">Villanos del Flamenco</div>
+            <span class="ig-badge">📱 @villanosdelflamenco</span>
+          </td>
+          <td><div class="recinto">Teatro Albéniz</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">Ver enlace</td>
+          <td><span class="genero">Flamenco Baile</span></td>
+          <td><a class="comprar-link" href="https://villanosdelflamenco.es" target="_blank">Entradas</a></td>
+        </tr>
+        <tr class="row-mid">
+          <td class="stars">⭐⭐⭐</td>
+          <td class="fecha">26 Jun Vie</td>
+          <td class="hora">22:00</td>
+          <td>
+            <div class="artista">Reverendo Brown</div>
+            <span class="ig-badge">📱 @clamoreslive</span>
+          </td>
+          <td><div class="recinto">Sala Clamores</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">12€</td>
+          <td><span class="genero">Soul</span></td>
+          <td><a class="comprar-link" href="https://salaclamores.es/eventos/reverendo-brown-soul-concierto-clamores-viernes-26-junio-2026" target="_blank">Entradas</a></td>
+        </tr>
+        <tr class="row-mid">
+          <td class="stars">⭐⭐</td>
+          <td class="fecha">26 Jun Vie</td>
+          <td class="hora">Noche</td>
+          <td><div class="artista">BEAT: Adrian Belew · Steve Vai · Tony Levin · Danny Carey</div></td>
+          <td><div class="recinto">Noches del Botánico (Real Jardín Botánico UCM)</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">Ver enlace</td>
+          <td><span class="genero">Rock Progresivo</span></td>
+          <td><a class="comprar-link" href="https://en.nochesdelbotanico.com/conciertos/beat-adrian-belew-steve-vai-tony-levin-danny-carey" target="_blank">Entradas</a></td>
+        </tr>
+        <tr class="row-free">
+          <td class="stars">⭐⭐⭐</td>
+          <td class="fecha">26 Jun Vie</td>
+          <td class="hora">20:30</td>
+          <td><div class="artista">Big Band Galapagar – Inauguración GalapaJazz XXI</div></td>
+          <td><div class="recinto">Centro Cultural La Pocilla</div><div class="municipio">Galapagar</div></td>
+          <td class="precio precio-free">GRATIS</td>
+          <td><span class="genero">Jazz Big Band</span></td>
+          <td><a class="comprar-link" href="https://galapajazz.es" target="_blank">Info</a></td>
+        </tr>
+        <tr class="row-free">
+          <td class="stars">⭐</td>
+          <td class="fecha">26 Jun Vie</td>
+          <td class="hora">20:30</td>
+          <td><div class="artista">Monotong</div><div style="color:#888;font-size:0.8em">Verano en la Quinta · Ciclo gratuito</div></td>
+          <td><div class="recinto">Jardín Quinta de Cervantes</div><div class="municipio">Alcalá de Henares</div></td>
+          <td class="precio precio-free">GRATIS</td>
+          <td><span class="genero">Rock</span></td>
+          <td><a class="comprar-link" href="https://culturalcala.es" target="_blank">Info</a></td>
+        </tr>
+        <tr class="row-mid">
+          <td class="stars">⭐</td>
+          <td class="fecha">26 Jun Vie</td>
+          <td class="hora">23:55</td>
+          <td><div class="artista">unamoto + afilador + 100 millones de años</div></td>
+          <td><div class="recinto">Wurlitzer Ballroom</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">Ver enlace</td>
+          <td><span class="genero">Rock Indie</span></td>
+          <td><a class="comprar-link" href="https://www.wurlitzerballroom.com/?mec-events=unamoto-afilador-100-millones-de-anos" target="_blank">Info</a></td>
+        </tr>
 
-<tr class="neutro"><td>⭐⭐</td><td>Mié 24 jun</td><td>20:30</td><td>MAQUINA</td><td>Café Berlín · Madrid</td><td>Desde 20€</td><td>Pop/Rock</td><td><a href="https://mutick.com/e/maquina-pt-en-madrid-2026" target="_blank">Entradas</a></td></tr>
+        <!-- 27 Jun -->
+        <tr class="row-mid">
+          <td class="stars">⭐⭐⭐</td>
+          <td class="fecha">27 Jun Sáb</td>
+          <td class="hora">19:30</td>
+          <td>
+            <div class="artista">Tomatito</div>
+            <div style="color:#888;font-size:0.8em">Villanos del Flamenco – Guitarra flamenca</div>
+            <span class="ig-badge">📱 @villanosdelflamenco</span>
+          </td>
+          <td><div class="recinto">Teatro Albéniz</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">Ver enlace</td>
+          <td><span class="genero">Flamenco Guitarra</span></td>
+          <td><a class="comprar-link" href="https://villanosdelflamenco.es" target="_blank">Entradas</a></td>
+        </tr>
+        <tr class="row-mid">
+          <td class="stars">⭐⭐⭐</td>
+          <td class="fecha">27 Jun Sáb</td>
+          <td class="hora">20:00 &amp; 22:00</td>
+          <td><div class="artista">Adrian Costa Blues Band</div></td>
+          <td><div class="recinto">Café Central Ateneo</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">Ver enlace</td>
+          <td><span class="genero">Blues</span></td>
+          <td><a class="comprar-link" href="https://cafecentralmadrid.com/reservas/?event=adrian-costa-blues-band-728e88fd" target="_blank">Entradas</a></td>
+        </tr>
+        <tr class="row-mid">
+          <td class="stars">⭐⭐</td>
+          <td class="fecha">27 Jun Sáb</td>
+          <td class="hora">Noche</td>
+          <td><div class="artista">Antoñito Molina</div></td>
+          <td><div class="recinto">Noches del Botánico · Real Jardín Botánico UCM</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">Ver enlace</td>
+          <td><span class="genero">Copla / Flamenco</span></td>
+          <td><a class="comprar-link" href="https://en.nochesdelbotanico.com/conciertos/antonito-molina" target="_blank">Entradas</a></td>
+        </tr>
+        <tr class="row-high">
+          <td class="stars">⭐⭐</td>
+          <td class="fecha">27 Jun Sáb</td>
+          <td class="hora">17:30 (+22h)</td>
+          <td><div class="artista">Lenny Kravitz + Manuel Carrasco + Ana Mena</div><div style="color:#888;font-size:0.8em">Iberdrola Music Festival · 125 aniversario</div></td>
+          <td><div class="recinto">Iberdrola Music</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-high">&gt;€50</td>
+          <td><span class="genero">Rock / Pop</span></td>
+          <td><a class="comprar-link" href="https://www.livenation.es/event/iberdrola-music-festival-madrid-tickets-edp1640692" target="_blank">Entradas</a></td>
+        </tr>
+        <tr class="row-high">
+          <td class="stars">⭐⭐</td>
+          <td class="fecha">27 Jun Sáb</td>
+          <td class="hora">20:00</td>
+          <td><div class="artista">BTS – World Tour 'ARIRANG' (Noche 2)</div></td>
+          <td><div class="recinto">Estadio Riyadh Air Metropolitano</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-high">€79.50+</td>
+          <td><span class="genero">K-Pop</span></td>
+          <td><a class="comprar-link" href="https://www.ticketmaster.es/artist/bts-entradas" target="_blank">Entradas</a></td>
+        </tr>
+        <tr class="row-mid">
+          <td class="stars">⭐⭐</td>
+          <td class="fecha">27 Jun Sáb</td>
+          <td class="hora">22:00</td>
+          <td><div class="artista">No More Bullshit</div></td>
+          <td><div class="recinto">Sala Clamores</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">20€</td>
+          <td><span class="genero">Rock'n'Roll</span></td>
+          <td><a class="comprar-link" href="https://salaclamores.es/eventos/no-more-bullshit-rocknroll-domingo-30-mayo-2026-clamores-live-concierto-madrid" target="_blank">Entradas</a></td>
+        </tr>
+        <tr class="row-free">
+          <td class="stars">⭐⭐</td>
+          <td class="fecha">27 Jun Sáb</td>
+          <td class="hora">—</td>
+          <td><div class="artista">Fervera Social Club</div><div style="color:#888;font-size:0.8em">Verano en la Quinta · Ciclo gratuito</div></td>
+          <td><div class="recinto">Jardín Quinta de Cervantes</div><div class="municipio">Alcalá de Henares</div></td>
+          <td class="precio precio-free">GRATIS</td>
+          <td><span class="genero">Pop / Folk</span></td>
+          <td><a class="comprar-link" href="https://culturalcala.es" target="_blank">Info</a></td>
+        </tr>
+        <tr class="row-mid">
+          <td class="stars">⭐</td>
+          <td class="fecha">27 Jun Sáb</td>
+          <td class="hora">Noche</td>
+          <td><div class="artista">TRAVO + UNGUS PROJECT</div></td>
+          <td><div class="recinto">Wurlitzer Ballroom</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">Ver enlace</td>
+          <td><span class="genero">Indie / Alt</span></td>
+          <td><a class="comprar-link" href="https://www.wurlitzerballroom.com/?mec-events=travo-ungus-project" target="_blank">Info</a></td>
+        </tr>
 
-<tr class="neutro"><td>⭐⭐⭐</td><td>Jue 25 jun</td><td>20:00 / 22:00</td><td>Miguel Rodríguez Trio (2ª noche)</td><td>Café Central Ateneo · Madrid</td><td>Ver enlace</td><td>Jazz</td><td><a href="https://cafecentralmadrid.com/reservas/?event=miguel-rodriguez-trio-5d029932" target="_blank">Entradas</a></td></tr>
+        <!-- 28 Jun -->
+        <tr class="row-mid">
+          <td class="stars">⭐⭐⭐</td>
+          <td class="fecha">28 Jun Dom</td>
+          <td class="hora">20:00 &amp; 22:00</td>
+          <td><div class="artista">Marina Albero / Luis Gallo Quartet</div></td>
+          <td><div class="recinto">Café Central Ateneo</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">Ver enlace</td>
+          <td><span class="genero">Jazz</span></td>
+          <td><a class="comprar-link" href="https://cafecentralmadrid.com/reservas/?event=marina-albero-luis-gallo-quartet-aa9d4942" target="_blank">Entradas</a></td>
+        </tr>
+        <tr class="row-mid">
+          <td class="stars">⭐⭐</td>
+          <td class="fecha">28 Jun Dom</td>
+          <td class="hora">—</td>
+          <td><div class="artista">Culture Wars</div></td>
+          <td><div class="recinto">Sala Villanos</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">Ver enlace</td>
+          <td><span class="genero">Rock Indie</span></td>
+          <td><a class="comprar-link" href="https://www.songkick.com/concerts/43122601-culture-wars-at-sala-villanos" target="_blank">Entradas</a></td>
+        </tr>
+        <tr class="row-mid">
+          <td class="stars">⭐</td>
+          <td class="fecha">28 Jun Dom</td>
+          <td class="hora">17:00</td>
+          <td><div class="artista">Folamour + DJ Tennis + Roger Sanchez (Jackies Open Air)</div></td>
+          <td><div class="recinto">Parque Enrique Tierno Galván</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">€27.50–44€</td>
+          <td><span class="genero">House / Electrónica</span></td>
+          <td><a class="comprar-link" href="https://dice.fm/artist/folamour-8bl5?lng=es" target="_blank">Entradas</a></td>
+        </tr>
 
-<tr class="neutro"><td>⭐⭐⭐</td><td>Jue 25 jun</td><td>23:00</td><td>SHRIZZ & THE KIDDZ – tributo a Funkadelic</td><td>Café Berlín · Madrid</td><td>Desde 15€</td><td>Funk</td><td><a href="https://cafeberlinentradas.com/events/shrizz-the-kiddz-a-tribute-to-funkadelic" target="_blank">Entradas</a> <span class="ig">📱 @cafeberlinmadrid</span></td></tr>
+        <!-- 29 Jun -->
+        <tr class="row-mid">
+          <td class="stars">⭐⭐⭐</td>
+          <td class="fecha">29 Jun Lun</td>
+          <td class="hora">20:00 &amp; 22:00</td>
+          <td><div class="artista">Álvaro del Valle Quartet</div></td>
+          <td><div class="recinto">Café Central Ateneo</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">Ver enlace</td>
+          <td><span class="genero">Jazz</span></td>
+          <td><a class="comprar-link" href="https://cafecentralmadrid.com/reservas/?event=alvaro-del-valle-quartet-222502eb" target="_blank">Entradas</a></td>
+        </tr>
+        <tr class="row-mid">
+          <td class="stars">⭐⭐⭐</td>
+          <td class="fecha">29 Jun Lun</td>
+          <td class="hora">Noche</td>
+          <td><div class="artista">Niña Pastori + La Tania</div></td>
+          <td><div class="recinto">Noches del Botánico · Real Jardín Botánico UCM</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">Ver enlace</td>
+          <td><span class="genero">Flamenco / Copla</span></td>
+          <td><a class="comprar-link" href="https://en.nochesdelbotanico.com/conciertos/nina-pastori-la-tania" target="_blank">Entradas</a></td>
+        </tr>
 
-<tr class="neutro"><td>⭐⭐</td><td>Jue 25 jun</td><td>20:30</td><td>Lita Pezo & Milena Wharton</td><td>Café Berlín · Madrid</td><td>Desde 35€</td><td>World / Folk</td><td><a href="https://calientetickets.com/events/lita-pezo-milena-warthon" target="_blank">Entradas</a></td></tr>
+        <!-- 30 Jun -->
+        <tr class="row-mid">
+          <td class="stars">⭐⭐⭐</td>
+          <td class="fecha">30 Jun Mar</td>
+          <td class="hora">20:00 &amp; 22:00</td>
+          <td><div class="artista">Álvaro del Valle Quartet</div></td>
+          <td><div class="recinto">Café Central Ateneo</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">Ver enlace</td>
+          <td><span class="genero">Jazz</span></td>
+          <td><a class="comprar-link" href="https://cafecentralmadrid.com/reservas/?event=alvaro-del-valle-quartet-222502eb" target="_blank">Entradas</a></td>
+        </tr>
+        <tr class="row-high">
+          <td class="stars">⭐⭐⭐</td>
+          <td class="fecha">30 Jun Mar</td>
+          <td class="hora">Noche</td>
+          <td><div class="artista">Van Morrison</div></td>
+          <td><div class="recinto">Noches del Botánico · Real Jardín Botánico UCM</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-high">&gt;€50</td>
+          <td><span class="genero">Rock / Soul / Folk</span></td>
+          <td><a class="comprar-link" href="https://en.nochesdelbotanico.com/conciertos/van-morrison-3" target="_blank">Entradas</a></td>
+        </tr>
+        <tr class="row-mid">
+          <td class="stars">⭐⭐</td>
+          <td class="fecha">30 Jun Mar</td>
+          <td class="hora">Noche</td>
+          <td><div class="artista">Sara Sordo + Bedate</div></td>
+          <td><div class="recinto">Wurlitzer Ballroom</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">Ver enlace</td>
+          <td><span class="genero">Singer-Songwriter</span></td>
+          <td><a class="comprar-link" href="https://www.wurlitzerballroom.com/?mec-events=sara-sordo" target="_blank">Info</a></td>
+        </tr>
 
-<tr class="neutro"><td>⭐</td><td>Jue 25 jun</td><td>21:00</td><td>Ravagers (USA) + Rojo Omega</td><td>Gruta 77 · Madrid (Carabanchel)</td><td>12-15€</td><td>Punk</td><td><a href="https://gruta77.com/programacion-eventos-gruta77-madrid/" target="_blank">Programación</a></td></tr>
+        <!-- 1 Jul -->
+        <tr class="row-mid">
+          <td class="stars">⭐⭐⭐</td>
+          <td class="fecha">1 Jul Mié</td>
+          <td class="hora">20:00 &amp; 22:00</td>
+          <td><div class="artista">Daniel Juárez Quartet</div></td>
+          <td><div class="recinto">Café Central Ateneo</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">Ver enlace</td>
+          <td><span class="genero">Jazz</span></td>
+          <td><a class="comprar-link" href="https://cafecentralmadrid.com/reservas/?event=daniel-juarez-quartet-2c5cd051" target="_blank">Entradas</a></td>
+        </tr>
+        <tr class="row-high">
+          <td class="stars">⭐⭐⭐</td>
+          <td class="fecha">1 Jul Mié</td>
+          <td class="hora">Noche</td>
+          <td><div class="artista">Van Morrison (2ª noche)</div></td>
+          <td><div class="recinto">Noches del Botánico · Real Jardín Botánico UCM</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-high">&gt;€50</td>
+          <td><span class="genero">Rock / Soul / Folk</span></td>
+          <td><a class="comprar-link" href="https://en.nochesdelbotanico.com/conciertos/van-morrison-4" target="_blank">Entradas</a></td>
+        </tr>
+        <tr class="row-mid">
+          <td class="stars">⭐⭐</td>
+          <td class="fecha">1 Jul Mié</td>
+          <td class="hora">—</td>
+          <td><div class="artista">Calle Vapor – 20 Aniversario</div><div style="color:#888;font-size:0.8em">Son cubano, cumbia, boleros, ritmos caribeños</div></td>
+          <td><div class="recinto">Sala Galileo Galilei</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">Ver enlace</td>
+          <td><span class="genero">Son Cubano / Cumbia</span></td>
+          <td><a class="comprar-link" href="https://salagalileo.es/programacion/calle-vapor/" target="_blank">Info</a></td>
+        </tr>
+        <tr class="row-high">
+          <td class="stars">⭐</td>
+          <td class="fecha">1 Jul Mié</td>
+          <td class="hora">—</td>
+          <td><div class="artista">Limp Bizkit</div></td>
+          <td><div class="recinto">Movistar Arena</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-high">&gt;€50</td>
+          <td><span class="genero">Nu Metal / Rock</span></td>
+          <td><a class="comprar-link" href="https://www.songkick.com/concerts/43125641-limp-bizkit-at-movistar-arena" target="_blank">Entradas</a></td>
+        </tr>
+        <tr class="row-mid">
+          <td class="stars">⭐⭐</td>
+          <td class="fecha">1 Jul Mié</td>
+          <td class="hora">—</td>
+          <td><div class="artista">Pennywise + End It</div></td>
+          <td><div class="recinto">La Riviera</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">Ver enlace</td>
+          <td><span class="genero">Punk Rock</span></td>
+          <td><a class="comprar-link" href="https://www.songkick.com/concerts/42937943-pennywise-at-la-riviera" target="_blank">Entradas</a></td>
+        </tr>
+        <tr class="row-mid">
+          <td class="stars">⭐</td>
+          <td class="fecha">1 Jul Mié</td>
+          <td class="hora">—</td>
+          <td><div class="artista">Stacy Antonel + Elena Amores</div></td>
+          <td><div class="recinto">Wurlitzer Ballroom</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">Ver enlace</td>
+          <td><span class="genero">Pop / Indie</span></td>
+          <td><a class="comprar-link" href="https://www.wurlitzerballroom.com/?mec-events=stacy-antonel-elena-amores" target="_blank">Info</a></td>
+        </tr>
 
-<tr class="neutro"><td>⭐⭐⭐</td><td>Vie 26 jun</td><td>20:30</td><td>Pascuala Ilabaca & Luciano Laterra Dúo</td><td>Café Berlín · Madrid</td><td>Desde 15€</td><td>Folk / World</td><td><a href="https://www.passline.com/eventos/pascuala-ilabaca-luciano-laterra-duo-en-madrid" target="_blank">Entradas</a></td></tr>
+        <!-- 2 Jul -->
+        <tr class="row-mid">
+          <td class="stars">⭐⭐⭐</td>
+          <td class="fecha">2 Jul Jue</td>
+          <td class="hora">19:30</td>
+          <td>
+            <div class="artista">Jesús Carmona: Baile de Bestias</div>
+            <div style="color:#888;font-size:0.8em">Villanos del Flamenco</div>
+            <span class="ig-badge">📱 @villanosdelflamenco</span>
+          </td>
+          <td><div class="recinto">Teatro Albéniz</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">Ver enlace</td>
+          <td><span class="genero">Flamenco Baile</span></td>
+          <td><a class="comprar-link" href="https://villanosdelflamenco.es" target="_blank">Entradas</a></td>
+        </tr>
+        <tr class="row-mid">
+          <td class="stars">⭐⭐⭐</td>
+          <td class="fecha">2 Jul Jue</td>
+          <td class="hora">20:00 &amp; 22:00</td>
+          <td><div class="artista">Daniel Juárez Quartet</div></td>
+          <td><div class="recinto">Café Central Ateneo</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">Ver enlace</td>
+          <td><span class="genero">Jazz</span></td>
+          <td><a class="comprar-link" href="https://cafecentralmadrid.com/reservas/?event=daniel-juarez-quartet-2c5cd051" target="_blank">Entradas</a></td>
+        </tr>
+        <tr class="row-mid">
+          <td class="stars">⭐⭐</td>
+          <td class="fecha">2 Jul Jue</td>
+          <td class="hora">Noche</td>
+          <td><div class="artista">Jeff Goldblum + Take Me to the River</div></td>
+          <td><div class="recinto">Noches del Botánico · Real Jardín Botánico UCM</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">Ver enlace</td>
+          <td><span class="genero">Jazz / Blues</span></td>
+          <td><a class="comprar-link" href="https://en.nochesdelbotanico.com/conciertos/jeff-goldblum-take-me-to-the-river" target="_blank">Entradas</a></td>
+        </tr>
+        <tr class="row-mid">
+          <td class="stars">⭐⭐</td>
+          <td class="fecha">2 Jul Jue</td>
+          <td class="hora">—</td>
+          <td><div class="artista">Emel Mathlouthi</div><div style="color:#888;font-size:0.8em">Cantautora tunecina, world music</div></td>
+          <td><div class="recinto">Café Berlín</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">Ver enlace</td>
+          <td><span class="genero">World Music / Folk</span></td>
+          <td><a class="comprar-link" href="https://www.songkick.com/concerts/43011528-emel-at-cafe-berlin-old-location" target="_blank">Entradas</a></td>
+        </tr>
+        <tr class="row-mid">
+          <td class="stars">⭐</td>
+          <td class="fecha">2 Jul Jue</td>
+          <td class="hora">—</td>
+          <td><div class="artista">Rolando Bruno (MAZO)</div></td>
+          <td><div class="recinto">Wurlitzer Ballroom</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">Ver enlace</td>
+          <td><span class="genero">Rock / Singer-Songwriter</span></td>
+          <td><a class="comprar-link" href="https://www.wurlitzerballroom.com/?mec-events=mazo-rolando-bruno" target="_blank">Info</a></td>
+        </tr>
 
-<tr class="neutro"><td>⭐⭐⭐</td><td>Vie 26 jun</td><td>19:30</td><td><b>Alfonso Losa & Paula Comitre – "Alter Ego"</b></td><td>Teatro Albéniz (Villanos del Flamenco) · Madrid</td><td>Ver enlace</td><td>Flamenco / Danza</td><td><a href="https://www.guiaflama.com/festivales-flamenco/villanos-del-flamenco-madrid/" target="_blank">Info / entradas</a></td></tr>
+        <!-- 3 Jul -->
+        <tr class="row-mid">
+          <td class="stars">⭐⭐⭐</td>
+          <td class="fecha">3 Jul Vie</td>
+          <td class="hora">19:30</td>
+          <td>
+            <div class="artista">Centenario Miles Davis: New Sketches of Spain</div>
+            <div style="color:#888;font-size:0.8em">Chano Domínguez + Antonio Serrano + El Negrón Trio · Villanos del Flamenco</div>
+            <span class="ig-badge">📱 @villanosdelflamenco</span>
+          </td>
+          <td><div class="recinto">Teatro Albéniz</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">Ver enlace</td>
+          <td><span class="genero">Jazz / Flamenco</span></td>
+          <td><a class="comprar-link" href="https://villanosdelflamenco.es" target="_blank">Entradas</a></td>
+        </tr>
+        <tr class="row-mid">
+          <td class="stars">⭐⭐⭐</td>
+          <td class="fecha">3 Jul Vie</td>
+          <td class="hora">20:00 &amp; 22:00</td>
+          <td><div class="artista">Mariano Díaz Quartet</div></td>
+          <td><div class="recinto">Café Central Ateneo</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">Ver enlace</td>
+          <td><span class="genero">Jazz</span></td>
+          <td><a class="comprar-link" href="https://cafecentralmadrid.com/reservas/?event=mariano-diaz-quartet-05c30f10" target="_blank">Entradas</a></td>
+        </tr>
+        <tr class="row-mid">
+          <td class="stars">⭐⭐⭐</td>
+          <td class="fecha">3 Jul Vie</td>
+          <td class="hora">Ver web</td>
+          <td><div class="artista">Vicente Amigo + Sir Charles +3 (GalapaJazz XXI)</div></td>
+          <td><div class="recinto">Teatro Jacinto Benavente</div><div class="municipio">Galapagar</div></td>
+          <td class="precio precio-mid">15€</td>
+          <td><span class="geneto">Flamenco Guitarra / Jazz</span></td>
+          <td><a class="comprar-link" href="https://galapajazz.es" target="_blank">Entradas</a></td>
+        </tr>
+        <tr class="row-mid">
+          <td class="stars">⭐⭐</td>
+          <td class="fecha">3 Jul Vie</td>
+          <td class="hora">Noche</td>
+          <td><div class="artista">Jean-Michel Jarre</div></td>
+          <td><div class="recinto">Noches del Botánico · Real Jardín Botánico UCM</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">Ver enlace</td>
+          <td><span class="genero">Electrónica / Experimental</span></td>
+          <td><a class="comprar-link" href="https://en.nochesdelbotanico.com/conciertos/jean-michel-jarre-2" target="_blank">Entradas</a></td>
+        </tr>
+        <tr class="row-mid">
+          <td class="stars">⭐⭐</td>
+          <td class="fecha">3 Jul Vie</td>
+          <td class="hora">—</td>
+          <td><div class="artista">Film Symphony Orchestra (FSO)</div></td>
+          <td><div class="recinto">Auditorio Nacional de Música</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">Ver enlace</td>
+          <td><span class="genero">Clásica / Bandas Sonoras</span></td>
+          <td><a class="comprar-link" href="https://www.songkick.com/concerts/42726208-film-symphony-orchestra-fso-at-auditorio-nacional-de-musica-de-madrid" target="_blank">Entradas</a></td>
+        </tr>
+        <tr class="row-mid">
+          <td class="stars">⭐⭐</td>
+          <td class="fecha">3 Jul Vie</td>
+          <td class="hora">22:00</td>
+          <td><div class="artista">Misa Ricotera (Rock Argentino)</div></td>
+          <td><div class="recinto">Sala Clamores</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">Dsd 10€</td>
+          <td><span class="genero">Rock</span></td>
+          <td><a class="comprar-link" href="https://salaclamores.es/eventos/misa-ricotera-rock-argentino-viernes-3-julio-clamores-madrid" target="_blank">Entradas</a></td>
+        </tr>
+        <tr class="row-free">
+          <td class="stars">⭐⭐</td>
+          <td class="fecha">3 Jul Vie</td>
+          <td class="hora">21:00</td>
+          <td><div class="artista">Alex &amp; The Groovies</div><div style="color:#888;font-size:0.8em">Verano en la Quinta · Ciclo gratuito</div></td>
+          <td><div class="recinto">Jardín Quinta de Cervantes</div><div class="municipio">Alcalá de Henares</div></td>
+          <td class="precio precio-free">GRATIS</td>
+          <td><span class="genero">Soul / Funk</span></td>
+          <td><a class="comprar-link" href="https://culturalcala.es" target="_blank">Info</a></td>
+        </tr>
+        <tr class="row-mid">
+          <td class="stars">⭐</td>
+          <td class="fecha">3 Jul Vie</td>
+          <td class="hora">Noche</td>
+          <td><div class="artista">BOCA NARIZ + DUNKEWALD</div></td>
+          <td><div class="recinto">Wurlitzer Ballroom</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">Ver enlace</td>
+          <td><span class="genero">Rock / Indie</span></td>
+          <td><a class="comprar-link" href="https://www.wurlitzerballroom.com/?mec-events=boca-nariz-dunkewald" target="_blank">Info</a></td>
+        </tr>
 
-<tr class="neutro"><td>⭐⭐⭐</td><td>Vie 26 jun</td><td>22:00</td><td>Reverendo Brown (Soul)</td><td>Sala Clamores · Madrid</td><td>12€ + G.G.</td><td>Soul</td><td><a href="https://salaclamores.es/eventos/reverendo-brown-soul-concierto-clamores-viernes-26-junio-2026" target="_blank">Entradas</a> <span class="ig">📱 @clamoreslive</span></td></tr>
+        <!-- 4 Jul (bonus) -->
+        <tr class="row-mid">
+          <td class="stars">⭐⭐⭐</td>
+          <td class="fecha">4 Jul Sáb</td>
+          <td class="hora">Noche</td>
+          <td><div class="artista">Snarky Puppy + Nate Smith</div></td>
+          <td><div class="recinto">Noches del Botánico · Real Jardín Botánico UCM</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">Ver enlace</td>
+          <td><span class="genero">Jazz / Funk / Soul</span></td>
+          <td><a class="comprar-link" href="https://en.nochesdelbotanico.com/conciertos/snarky-puppy-nate-smith" target="_blank">Entradas</a></td>
+        </tr>
+        <tr class="row-mid">
+          <td class="stars">⭐⭐⭐</td>
+          <td class="fecha">4 Jul Sáb</td>
+          <td class="hora">Ver web</td>
+          <td><div class="artista">Michel Camilo (GalapaJazz XXI)</div></td>
+          <td><div class="recinto">Teatro Jacinto Benavente</div><div class="municipio">Galapagar</div></td>
+          <td class="precio precio-mid">15€</td>
+          <td><span class="genero">Jazz Piano</span></td>
+          <td><a class="comprar-link" href="https://galapajazz.es" target="_blank">Entradas</a></td>
+        </tr>
+        <tr class="row-mid">
+          <td class="stars">⭐⭐⭐</td>
+          <td class="fecha">4 Jul Sáb</td>
+          <td class="hora">20:00 &amp; 22:00</td>
+          <td><div class="artista">Mariano Díaz Quartet</div></td>
+          <td><div class="recinto">Café Central Ateneo</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">Ver enlace</td>
+          <td><span class="genero">Jazz</span></td>
+          <td><a class="comprar-link" href="https://cafecentralmadrid.com/reservas/?event=mariano-diaz-quartet-05c30f10" target="_blank">Entradas</a></td>
+        </tr>
 
-<tr class="gratis"><td>⭐⭐⭐</td><td>Vie 26 jun</td><td>20:30</td><td>Fervera Social Club – "Verano en la Quinta"</td><td>Quinta de Cervantes · Alcalá de Henares</td><td>Gratis</td><td>Soul / Funk / Pop-Rock</td><td><a href="https://www.ayto-alcaladehenares.es/el-ayuntamiento-de-alcala-presenta-el-ciclo-de-conciertos-verano-en-la-quinta-para-los-meses-de-junio-y-julio-de-2026/" target="_blank">Programa</a></td></tr>
+        <!-- 5 Jul (bonus) -->
+        <tr class="row-mid">
+          <td class="stars">⭐⭐</td>
+          <td class="fecha">5 Jul Dom</td>
+          <td class="hora">Noche</td>
+          <td><div class="artista">Garbage</div></td>
+          <td><div class="recinto">Noches del Botánico · Real Jardín Botánico UCM</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">Ver enlace</td>
+          <td><span class="genero">Rock Alternativo</span></td>
+          <td><a class="comprar-link" href="https://en.nochesdelbotanico.com/conciertos/garbage" target="_blank">Entradas</a></td>
+        </tr>
+        <tr class="row-mid">
+          <td class="stars">⭐⭐⭐</td>
+          <td class="fecha">5 Jul Dom</td>
+          <td class="hora">20:00 &amp; 22:00</td>
+          <td><div class="artista">Gabriel Szternsztejn Cuarteto</div><div style="color:#888;font-size:0.8em">Tango, música latinoamericana, jazz contemporáneo</div></td>
+          <td><div class="recinto">Café Central Ateneo</div><div class="municipio">Madrid</div></td>
+          <td class="precio precio-mid">Ver enlace</td>
+          <td><span class="genero">Jazz / Tango</span></td>
+          <td><a class="comprar-link" href="https://cafecentralmadrid.com/reservas/?event=gabriel-szternsztejn-cuarteto-25ad481e" target="_blank">Entradas</a></td>
+        </tr>
 
-<tr class="neutro"><td>⭐⭐</td><td>Vie 26 jun</td><td>22:30</td><td>Oscar Dudamel y su Orquesta</td><td>Café Berlín · Madrid</td><td>Desde 18€</td><td>Orquesta Latina</td><td><a href="https://cafeberlinentradas.com/events/oscar-dudamel-y-su-orquesta-madrid-cafe-berlin" target="_blank">Entradas</a></td></tr>
+      </tbody>
+    </table>
+  </div>
 
-<tr class="neutro"><td>⭐⭐</td><td>Vie 26 jun</td><td>23:55</td><td>Baile Europa: Back to Clamores</td><td>Sala Clamores · Madrid</td><td>Desde 10€ + G.G.</td><td>Afrobeat / World</td><td><a href="https://salaclamores.es/eventos/baile-europa-back-to-clamores-afrobeat-funk-carioca-mandelao-viernes-26-junio-2026" target="_blank">Entradas</a></td></tr>
+  <!-- INSTAGRAM SECTION -->
+  <div class="ig-section">
+    <h2>📱 Cuentas de Instagram revisadas</h2>
+    <div class="ig-grid">
+      <div class="ig-account">
+        <div class="ig-handle">@cafecentralmadrid</div>
+        <div class="ig-status ok">✓ Programación verificada – Jazz diario</div>
+      </div>
+      <div class="ig-account">
+        <div class="ig-handle">@clamoreslive</div>
+        <div class="ig-status ok">✓ Agenda confirmada – Soul, Rock, Cubano</div>
+      </div>
+      <div class="ig-account">
+        <div class="ig-handle">@salagalileo</div>
+        <div class="ig-status ok">✓ Agenda confirmada – Flamenco, Tributos</div>
+      </div>
+      <div class="ig-account">
+        <div class="ig-handle">@villanosdelflamenco</div>
+        <div class="ig-status ok">✓ Festival activo – Tomatito, Jesús Carmona</div>
+      </div>
+      <div class="ig-account">
+        <div class="ig-handle">@nochesbotanico</div>
+        <div class="ig-status ok">✓ Programa confirmado – 10º aniversario</div>
+      </div>
+      <div class="ig-account">
+        <div class="ig-handle">@wurlitzerballroom</div>
+        <div class="ig-status ok">✓ Agenda confirmada – Rock underground</div>
+      </div>
+      <div class="ig-account">
+        <div class="ig-handle">@tomatito6cuerdas</div>
+        <div class="ig-status ok">✓ Concierto confirmado 27 Jun · Teatro Albéniz</div>
+      </div>
+      <div class="ig-account">
+        <div class="ig-handle">@bigmamaballroom</div>
+        <div class="ig-status" style="color:#f0a050">⚠️ Sin actividad indexada en el período</div>
+      </div>
+      <div class="ig-account">
+        <div class="ig-handle">@moeclubmadrid</div>
+        <div class="ig-status" style="color:#888">Sin eventos detectados en rango</div>
+      </div>
+      <div class="ig-account">
+        <div class="ig-handle">@tempoaudiophileclub</div>
+        <div class="ig-status" style="color:#888">Sin actividad indexada</div>
+      </div>
+      <div class="ig-account">
+        <div class="ig-handle">@gruta_77</div>
+        <div class="ig-status" style="color:#888">Sin eventos detectados en rango</div>
+      </div>
+      <div class="ig-account">
+        <div class="ig-handle">@salaelsol</div>
+        <div class="ig-status ok">✓ Red Moon Yard confirmado 3 Jul (Songkick)</div>
+      </div>
+      <div class="ig-account">
+        <div class="ig-handle">@elsotano_madrid</div>
+        <div class="ig-status" style="color:#888">Sin actividad indexada</div>
+      </div>
+      <div class="ig-account">
+        <div class="ig-handle">@sirocosala</div>
+        <div class="ig-status" style="color:#888">Sin eventos detectados en rango</div>
+      </div>
+      <div class="ig-account">
+        <div class="ig-handle">@mobydickclub</div>
+        <div class="ig-status" style="color:#888">Sin actividad indexada</div>
+      </div>
+      <div class="ig-account">
+        <div class="ig-handle">@honkytonk_bar</div>
+        <div class="ig-status" style="color:#888">Sin actividad indexada</div>
+      </div>
+    </div>
+  </div>
 
-<tr class="gratis"><td>⭐⭐</td><td>Vie 26 jun</td><td>21:30</td><td>OSPAL & Coro Góspel One Soul – concierto de cine</td><td>Auditorio El Torreón · Pozuelo de Alarcón</td><td>Gratis</td><td>Sinfónico / Bandas sonoras</td><td><a href="https://cultura.pozuelodealarcon.org/cultura-y-ocio/ciclos-y-exposiciones/veranos-de-pozuelo-2026" target="_blank">Programa</a></td></tr>
+  <!-- MUNICIPIOS DESTACADOS -->
+  <div style="margin: 24px 0;">
+    <h2 style="color:#f5c842; font-size:1.2em; margin-bottom:12px; border-bottom:1px solid #333; padding-bottom:8px;">🏘️ Eventos fuera de Madrid capital</h2>
+    <div style="color:#bbb; font-size:0.9em; line-height:1.8;">
+      <strong style="color:#f5c842;">Rivas Vaciamadrid</strong> · Linkin Park (23 &amp; 24 Jun) – Auditorio Miguel Ríos<br>
+      <strong style="color:#f5c842;">Galapagar</strong> · GalapaJazz XXI: Big Band Galapagar (26 Jun, gratis), Vicente Amigo (3 Jul, 15€), Michel Camilo (4 Jul, 15€) – Centro Cultural La Pocilla / Teatro Jacinto Benavente<br>
+      <strong style="color:#f5c842;">Alcalá de Henares</strong> · Verano en la Quinta: Monotong (26 Jun), Fervera Social Club (27 Jun), Alex &amp; The Groovies (3 Jul) – Jardín Quinta de Cervantes (todos gratuitos)<br>
+    </div>
+  </div>
 
-<tr class="neutro"><td>⭐</td><td>Vie 26 jun</td><td>21:30</td><td>Genderlexx + Lavandera Boyera</td><td>Gruta 77 · Madrid (Carabanchel)</td><td>10-13€</td><td>Punk</td><td><a href="https://gruta77.com/programacion-eventos-gruta77-madrid/" target="_blank">Programación</a></td></tr>
-
-<tr class="neutro"><td>⭐⭐⭐</td><td>Vie 26-Sáb 27 jun</td><td>20:00 / 22:00</td><td>Adrián Costa Blues Band</td><td>Café Central Ateneo · Madrid</td><td>Ver enlace</td><td>Blues</td><td><a href="https://cafecentralmadrid.com/reservas/?event=adrian-costa-blues-band-728e88fd" target="_blank">Entradas</a></td></tr>
-
-<tr class="neutro"><td>⭐⭐⭐</td><td><b>Sáb 27 jun</b></td><td>19:30</td><td><b>Tomatito</b></td><td>Teatro Albéniz (Villanos del Flamenco) · Madrid</td><td>Ver enlace</td><td>Flamenco (guitarra)</td><td><a href="https://www.guiaflama.com/festivales-flamenco/villanos-del-flamenco-madrid/" target="_blank">Info / entradas</a></td></tr>
-
-<tr class="neutro"><td>⭐⭐⭐</td><td><b>Sáb 27 jun</b></td><td>20:30</td><td><b>«Homenaje a Bebo»: Cucurucho Valdés & Javier Colina, con Inor Sotolongo</b></td><td>Café Berlín · Madrid</td><td>Desde 15€</td><td>Jazz / Latin</td><td><a href="https://cafeberlinentradas.com/events/homenaje-a-bebo-cucurucho-valdes-javier-colina-con-inor-sotolongo-madrid" target="_blank">Entradas</a> <span class="ig">📱 @cafeberlinmadrid</span></td></tr>
-
-<tr class="neutro"><td>⭐⭐⭐</td><td>Sáb 27 jun</td><td>20:30</td><td>Fervera Social Club / Monotong – "Verano en la Quinta" <span class="warn">⚠️ verificar artista exacto del día</span></td><td>Quinta de Cervantes · Alcalá de Henares</td><td>Gratis</td><td>Rock / Pop / Funk</td><td><a href="https://www.ayto-alcaladehenares.es/el-ayuntamiento-de-alcala-presenta-el-ciclo-de-conciertos-verano-en-la-quinta-para-los-meses-de-junio-y-julio-de-2026/" target="_blank">Programa</a></td></tr>
-
-<tr class="neutro"><td>⭐⭐⭐ <span class="warn">⚠️</span></td><td>Sáb 27 jun</td><td>22:00</td><td>No More Bullshit (Rock'n'roll) <span class="warn">⚠️ verificar fecha</span></td><td>Sala Clamores · Madrid</td><td>20€ + G.G.</td><td>Rock clásico</td><td><a href="https://salaclamores.es/eventos/no-more-bullshit-rocknroll-domingo-30-mayo-2026-clamores-live-concierto-madrid" target="_blank">Entradas</a></td></tr>
-
-<tr class="gratis"><td>⭐⭐</td><td>Sáb 27 jun</td><td>21:30</td><td>Orquesta La Misión – Fiestas de San Fortunato</td><td>Recinto Ferial La Fortuna · Leganés</td><td>Gratis</td><td>Verbena Pop/Rock</td><td><a href="https://www.madrid24horas.com/articulo/mas-alla-del-centro/leganes-celebrara-fiestas-san-juan-san-fortunato-mas-80-actividades-barrios/20260615150052105819.html" target="_blank">Programa</a></td></tr>
-
-<tr class="neutro"><td>⭐⭐</td><td>Sáb 27 jun</td><td>23:00</td><td>LA TREMENDA</td><td>Café Berlín · Madrid</td><td>Desde 10€</td><td>Latin / Tropical</td><td><a href="https://cafeberlinentradas.com/events/la-tremenda-madrid" target="_blank">Entradas</a></td></tr>
-
-<tr class="neutro"><td>⭐⭐</td><td>Sáb 27 jun</td><td>21:30</td><td>Radio Clash (tributo a The Clash)</td><td>Gruta 77 · Madrid (Carabanchel)</td><td>7-10€</td><td>Rock clásico (tributo)</td><td><a href="https://gruta77.com/programacion-eventos-gruta77-madrid/" target="_blank">Programación</a></td></tr>
-
-<tr class="neutro"><td>⭐⭐</td><td>Sáb 27 jun</td><td>12:30</td><td>Cuban Brunch – 2ª Temporada</td><td>Sala Clamores · Madrid</td><td>Desde 10€ + G.G.</td><td>Ritmos cubanos</td><td><a href="https://salaclamores.es/eventos/cuban-brunch-2a-temporada-ritmos-cubanos-sabado-27-junio-clamores-live-concierto-atempo" target="_blank">Entradas</a></td></tr>
-
-<tr class="neutro"><td>⭐⭐⭐</td><td>Dom 28 jun</td><td>20:00 / 22:00</td><td>Marina Albero & Luis Gallo Quartet</td><td>Café Central Ateneo · Madrid</td><td>Ver enlace</td><td>Jazz</td><td><a href="https://cafecentralmadrid.com/reservas/?event=marina-albero-luis-gallo-quartet-aa9d4942" target="_blank">Entradas</a></td></tr>
-
-<tr class="neutro"><td>⭐⭐⭐</td><td>Dom 28 jun</td><td>18:30 / 20:30</td><td>The Jazz Room: tributo a Frank Sinatra y Louis Armstrong</td><td>Café Berlín · Madrid</td><td>Desde 25€</td><td>Jazz (tributo)</td><td><a href="https://feverup.com/m/562311" target="_blank">Entradas</a></td></tr>
-
-<tr class="gratis"><td>⭐⭐</td><td>Dom 28 jun</td><td>21:30</td><td>OSPAL – "Una noche de película"</td><td>Auditorio El Torreón · Pozuelo de Alarcón</td><td>Gratis</td><td>Sinfónico / Bandas sonoras</td><td><a href="https://cultura.pozuelodealarcon.org/cultura-y-ocio/ciclos-y-exposiciones/veranos-de-pozuelo-2026" target="_blank">Programa</a></td></tr>
-
-<tr class="neutro"><td>⭐⭐⭐</td><td>Lun 29-Mar 30 jun</td><td>20:00 / 22:00</td><td>Álvaro del Valle Quartet</td><td>Café Central Ateneo · Madrid</td><td>Ver enlace</td><td>Jazz</td><td><a href="https://cafecentralmadrid.com/reservas/?event=alvaro-del-valle-quartet-222502eb" target="_blank">Entradas</a></td></tr>
-
-<tr class="neutro"><td>⭐</td><td>Mar 30 jun</td><td>21:30</td><td>Zig Zags (USA) + Stainless Madness</td><td>Gruta 77 · Madrid (Carabanchel)</td><td>18-23€</td><td>Punk / Garage</td><td><a href="https://gruta77.com/programacion-eventos-gruta77-madrid/" target="_blank">Programación</a></td></tr>
-
-<tr class="gratis"><td>⭐⭐ <span class="warn">⚠️</span></td><td>Mié 1 jul</td><td>Por confirmar</td><td>MADO 2026 – Apertura del Orgullo (drag show + DJ sets, 4 escenarios)</td><td>Plaza de Pedro Zerolo y otros · Madrid</td><td>Gratis</td><td>Pop / Variado</td><td><a href="https://madridorgullo.com/tipo-evento/escenarios/" target="_blank">Programación MADO</a></td></tr>
-
-<tr class="neutro"><td>⭐⭐⭐</td><td>Mié 1-Jue 2 jul</td><td>20:00 / 22:00</td><td>Daniel Juárez Quartet</td><td>Café Central Ateneo · Madrid</td><td>Ver enlace</td><td>Jazz</td><td><a href="https://cafecentralmadrid.com/reservas/?event=daniel-juarez-quartet-2c5cd051" target="_blank">Entradas</a></td></tr>
-
-<tr class="neutro"><td>⭐⭐⭐</td><td>Jue 2 jul</td><td>20:00</td><td>Emel</td><td>Café Berlín · Madrid</td><td>Desde 22,50€</td><td>Cantautor / World</td><td><a href="https://houstonpartymusic.com/tour-dates/1436/" target="_blank">Entradas</a></td></tr>
-
-<tr class="neutro"><td>⭐⭐⭐</td><td>Jue 2 jul</td><td>22:30</td><td>Flamenco (noche flamenca)</td><td>Café Berlín · Madrid</td><td>Desde 18€</td><td>Flamenco</td><td><a href="https://cafeberlinentradas.com/events/flamenco-madrid-cafe-berlin" target="_blank">Entradas</a> <span class="ig">📱 @cafeberlinmadrid</span></td></tr>
-
-<tr class="gratis"><td>⭐⭐ <span class="warn">⚠️</span></td><td>1-5 jul</td><td>Por confirmar</td><td>MADO 2026 – Conciertos gratuitos: Mon Laferte, Kany García, Monsieur Periné, Flans, Cris Lora</td><td>Plaza de España / Puerta del Sol · Madrid</td><td>Gratis</td><td>Pop / Latino</td><td><a href="https://www.madrid24horas.com/articulo/que-hacer/mado-2026-desvela-primeros-conciertos-gratuitos-mon-laferte-kany-garcia-monsieur-perine/20260603100405105486.html" target="_blank">Detalle</a></td></tr>
-
-<tr class="gratis"><td>⭐</td><td>Jue 2 jul</td><td>20:00</td><td>Akelarre LGTBIQA+ (Drag y Techno)</td><td>Sala Clamores · Madrid</td><td>Gratis</td><td>Electrónica</td><td><a href="https://salaclamores.es/eventos/akelarre-lgtbiqa-drag-y-techno-jueves-2-julio-2026" target="_blank">Entradas</a></td></tr>
-
-</tbody>
-</table>
-
-<h2>💎 Joyas de la semana</h2>
-
-<div class="joya"><b>Tomatito</b> — Sábado 27 de junio, 19:30h, Teatro Albéniz (ciclo Villanos del Flamenco). Referente absoluto de la guitarra flamenca, en uno de los pocos ciclos de vanguardia flamenca de Madrid este verano. <a href="https://www.guiaflama.com/festivales-flamenco/villanos-del-flamenco-madrid/" target="_blank">Más info</a></div>
-
-<div class="joya"><b>«Homenaje a Bebo»: Cucurucho Valdés & Javier Colina, con Inor Sotolongo</b> — Sábado 27 de junio, 20:30h, Café Berlín. Tributo al legado de Bebo Valdés con dos de los músicos cubano-españoles más respetados del jazz latino actual. <a href="https://cafeberlinentradas.com/events/homenaje-a-bebo-cucurucho-valdes-javier-colina-con-inor-sotolongo-madrid" target="_blank">Más info</a></div>
-
-<div class="joya"><b>Alfonso Losa & Paula Comitre — "Alter Ego"</b> — Viernes 26 de junio, 19:30h, Teatro Albéniz (ciclo Villanos del Flamenco). Pieza de baile flamenco aclamada en el último Festival de Jerez. <a href="https://www.guiaflama.com/festivales-flamenco/villanos-del-flamenco-madrid/" target="_blank">Más info</a></div>
-
-<h2>📱 Cuentas de Instagram revisadas</h2>
-<div class="ig-grid">
-<div><b>@cafeberlinmadrid</b> — Programación de junio/julio confirmada vía web oficial; sin acceso a posts individuales indexados.</div>
-<div><b>@clamoreslive</b> — Programación de junio/julio confirmada vía calendario oficial.</div>
-<div><b>@cafecentralmadrid</b> — Programación nocturna de jazz confirmada vía web oficial.</div>
-<div><b>@salagalileo</b> — Revisada; sin conciertos confirmados con fecha dentro del rango 22 jun–2 jul.</div>
-<div><b>@mobydickclub</b> — Revisada; programación de junio termina el 26 jun sin fechas claras dentro de rango.</div>
-<div><b>@gruta_77</b> — Programación confirmada vía web oficial (cierra sala en diciembre 2026).</div>
-<div><b>@villanosdelflamenco</b> · <b>@deflamenco</b> · <b>@guiaflama</b> — Confirmaron ciclo "Villanos del Flamenco" con Tomatito y Alfonso Losa/Paula Comitre.</div>
-<div><b>@tomatito6cuerdas</b> — Sin posts indexados; fecha confirmada vía deflamenco.com y guiaflama.com.</div>
-<div><b>@sala_duende_es</b> — Sin actividad indexada relacionada con Madrid en el rango buscado (solo resultados de Sala Duende Estepona, Málaga).</div>
-<div><b>@bigmamaballroom · @moeclubmadrid · @tempoaudiophileclub · @sirocosala · @salaelsol · @elsotano_madrid · @wurlitzerballroom · @vestabyfulanita · @salabarco · @barcosoundhouse · @madridenvivo_</b> — Revisadas vía web/búsqueda; sin conciertos con fecha confirmada dentro del rango 22 jun–2 jul (o programación de junio finaliza antes del 22).</div>
-</div>
-<p style="color:#999;font-size:12px;">Nota: la búsqueda no tuvo acceso directo a navegación de Instagram (login/JS), por lo que el contenido de cuentas se cruzó con webs oficiales y plataformas de venta de entradas que estas mismas salas promocionan en su Instagram. Los eventos marcados con 📱 corresponden a salas cuya única vía de promoción detallada es su cuenta de Instagram además de su web.</p>
+</div><!-- /container -->
 
 <footer>
-<b>Fuentes consultadas:</b> Ticketmaster, Café Central Ateneo, Café Berlín, Sala Clamores, Gruta 77, Teatro Albéniz / Villanos del Flamenco (deflamenco.com, guiaflama.com, ExpoFlamenco), Ayuntamiento de Alcalá de Henares, Portal de Cultura de Pozuelo de Alarcón, Madrid24horas (Leganés / MADO), Madrid Orgullo (madridorgullo.com), esMadrid, Noches del Botánico, Veranos de la Villa.<br>
-<b>Cobertura fuera de Madrid capital:</b> Alcalá de Henares, Pozuelo de Alarcón, Leganés.<br>
-<b>Limitaciones:</b> No se encontraron conciertos confirmados con fecha exacta dentro del rango en El Escorial, Las Rozas, Majadahonda, Villanueva del Pardillo, Villanueva de la Cañada o Torrelodones para este periodo concreto (sí hay programación en fechas adyacentes, fuera de rango). Precios marcados "Ver enlace" no pudieron verificarse en la fuente.<br>
-Generado: 22/06/2026 09:41 (hora de Madrid).<br>
-Ver online: <a href="https://ccorachan.github.io/radar-madrid">https://ccorachan.github.io/radar-madrid</a>
+  <div class="fuentes">
+    <span class="fuente-pill">nochesdelbotanico.com</span>
+    <span class="fuente-pill">villanosdelflamenco.es</span>
+    <span class="fuente-pill">cafecentralmadrid.com</span>
+    <span class="fuente-pill">salaclamores.es</span>
+    <span class="fuente-pill">salagalileo.es</span>
+    <span class="fuente-pill">wurlitzerballroom.com</span>
+    <span class="fuente-pill">songkick.com</span>
+    <span class="fuente-pill">galapajazz.es</span>
+    <span class="fuente-pill">deflamenco.com</span>
+    <span class="fuente-pill">culturalcala.es</span>
+    <span class="fuente-pill">ticketmaster.es</span>
+    <span class="fuente-pill">livenation.es</span>
+    <span class="fuente-pill">madridinforma.eldiario.es</span>
+  </div>
+  <div>
+    Generado el <strong>25 de junio de 2026</strong> · Rango: <strong>25 Jun – 5 Jul 2026</strong><br>
+    Ver online: <a href="https://ccorachan.github.io/radar-madrid" target="_blank">https://ccorachan.github.io/radar-madrid</a>
+  </div>
 </footer>
 
 </body>
