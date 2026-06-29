@@ -3,548 +3,190 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🎵 Radar Musical Madrid – 28 Jun / 8 Jul 2026</title>
+<title>🎵 Radar Musical Madrid · 29 jun – 9 jul 2026</title>
 <style>
-  :root { --gold:#f5c842; --bg:#0d0d0d; --card:#161616; --border:#2a2a2a; --text:#e8e8e8; --muted:#888; --green-row:#09180a; --neutral-row:#111111; --red-row:#160808; }
-  * { box-sizing:border-box; margin:0; padding:0; }
-  body { background:var(--bg); color:var(--text); font-family:'Segoe UI',Arial,sans-serif; font-size:14px; line-height:1.5; }
-  header { background:linear-gradient(135deg,#0d0d0d 0%,#1a1200 100%); border-bottom:2px solid var(--gold); padding:28px 20px 20px; text-align:center; }
-  header h1 { color:var(--gold); font-size:2rem; font-weight:900; letter-spacing:1px; text-shadow:0 0 20px rgba(245,200,66,0.4); }
-  header p { color:#ccc; margin-top:6px; font-size:.9rem; }
-  .range { color:var(--gold); font-weight:bold; }
-  .container { max-width:1400px; margin:0 auto; padding:20px; }
-  .leyenda { display:flex; flex-wrap:wrap; gap:12px; margin:20px 0 16px; padding:14px 18px; background:var(--card); border:1px solid var(--border); border-radius:8px; font-size:13px; }
-  .leyenda-item { display:flex; align-items:center; gap:8px; }
-  .leyenda-dot { width:14px; height:14px; border-radius:3px; flex-shrink:0; }
-  .dot-green { background:#1a4a1c; border:1px solid #2d7a30; }
-  .dot-neutral { background:#2a2a2a; border:1px solid #444; }
-  .dot-red { background:#4a0f0f; border:1px solid #7a1f1f; }
-  .leyenda-stars { font-size:12px; color:#bbb; margin-left:16px; }
-  .joyas { margin:20px 0; padding:18px 20px; background:linear-gradient(135deg,#1a1200 0%,#0d0d0d 100%); border:1px solid var(--gold); border-radius:10px; }
-  .joyas h2 { color:var(--gold); font-size:1.1rem; margin-bottom:14px; }
-  .joyas-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px; }
-  .joya-card { background:#1a1400; border:1px solid #3a2e00; border-radius:8px; padding:14px; }
-  .joya-card .joya-date { color:var(--gold); font-size:11px; font-weight:bold; text-transform:uppercase; letter-spacing:1px; }
-  .joya-card .joya-title { font-size:1rem; font-weight:700; color:#fff; margin:4px 0 2px; }
-  .joya-card .joya-desc { color:#aaa; font-size:12px; }
-  .table-wrap { overflow-x:auto; margin-top:20px; border-radius:8px; border:1px solid var(--border); }
-  table { width:100%; border-collapse:collapse; }
-  thead th { background:#1a1200; color:var(--gold); padding:11px 10px; text-align:left; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; border-bottom:2px solid var(--gold); white-space:nowrap; }
-  tbody tr { border-bottom:1px solid #1e1e1e; transition:filter .15s; }
-  tbody tr:hover { filter:brightness(1.25); }
-  tbody tr.free { background:var(--green-row); }
-  tbody tr.mid { background:var(--neutral-row); }
-  tbody tr.premium { background:var(--red-row); }
-  td { padding:9px 10px; vertical-align:middle; }
-  td.stars { font-size:11px; white-space:nowrap; }
-  td.fecha { white-space:nowrap; font-weight:600; color:#ddd; font-size:12px; }
-  td.hora { color:#aaa; font-size:12px; white-space:nowrap; }
-  td.artista { font-weight:700; color:#fff; max-width:260px; }
-  td.recinto { color:#bbb; font-size:12px; max-width:220px; }
-  td.precio { white-space:nowrap; font-size:12px; color:#ccc; }
-  td.genero { font-size:11px; color:#999; max-width:130px; }
-  td.comprar a { display:inline-block; background:#2a2000; color:var(--gold); border:1px solid #3a3000; border-radius:4px; padding:3px 8px; font-size:11px; text-decoration:none; white-space:nowrap; }
-  td.comprar a:hover { background:#3a2e00; }
-  .badge-ig { display:inline-block; background:#2a0a3a; color:#c79cff; border:1px solid #4a1a6a; border-radius:4px; padding:1px 5px; font-size:10px; margin-left:4px; white-space:nowrap; }
-  .badge-free { display:inline-block; background:#0a2a0c; color:#4dff57; border:1px solid #1a4a1c; border-radius:4px; padding:1px 6px; font-size:11px; font-weight:bold; }
-  .fuera { color:#6fd0ff; }
-  .day-separator td { background:#181200 !important; color:var(--gold); font-size:11px; font-weight:bold; text-transform:uppercase; letter-spacing:1.5px; padding:6px 10px; border-top:1px solid #2a2000; }
-  .instagram-section { margin:28px 0; padding:18px 20px; background:var(--card); border:1px solid var(--border); border-radius:10px; }
-  .instagram-section h2 { color:var(--gold); font-size:1rem; margin-bottom:14px; }
-  .ig-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:10px; }
-  .ig-item { padding:10px 12px; border-radius:6px; font-size:12px; }
-  .ig-found { background:#0a200a; border:1px solid #1a4a1c; }
-  .ig-not { background:#1a1a1a; border:1px solid #2a2a2a; color:#666; }
-  .ig-item .ig-handle { color:#c79cff; font-weight:bold; margin-bottom:3px; }
-  .ig-item .ig-info { color:#aaa; font-size:11px; }
-  .ig-not .ig-info { color:#555; }
-  footer { margin-top:30px; padding:20px; border-top:1px solid var(--border); text-align:center; color:var(--muted); font-size:12px; }
-  footer a { color:var(--gold); text-decoration:none; }
-  .footer-sources { margin-top:8px; font-size:11px; color:#444; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0d0d0d; color: #e0e0e0; font-family: 'Segoe UI', Arial, sans-serif; font-size: 14px; padding: 20px; }
+  h1 { color: #f5c842; font-size: 1.9em; text-align: center; margin-bottom: 4px; text-shadow: 0 0 20px rgba(245,200,66,0.4); }
+  .subtitle { text-align: center; color: #aaa; margin-bottom: 18px; font-size: 0.95em; }
+  .web-link { text-align: center; margin-bottom: 18px; }
+  .web-link a { color: #f5c842; text-decoration: none; font-size: 0.9em; }
+  .joyas { background: #1a1600; border: 1px solid #f5c842; border-radius: 8px; padding: 16px 20px; margin-bottom: 22px; }
+  .joyas h2 { color: #f5c842; font-size: 1.1em; margin-bottom: 10px; }
+  .joya { margin-bottom: 8px; line-height: 1.5; }
+  .joya strong { color: #fff; }
+  .joya .tag { display: inline-block; background: #2a1f00; border: 1px solid #f5c842; color: #f5c842; font-size: 0.75em; padding: 1px 6px; border-radius: 4px; margin-right: 4px; }
+  .leyenda { display: flex; gap: 18px; margin-bottom: 14px; flex-wrap: wrap; }
+  .leyenda-item { display: flex; align-items: center; gap: 6px; font-size: 0.85em; }
+  .dot { width: 14px; height: 14px; border-radius: 3px; display: inline-block; }
+  .dot-gratis { background: #09180a; border: 1px solid #2d7c30; }
+  .dot-normal { background: #111; border: 1px solid #444; }
+  .dot-caro   { background: #160808; border: 1px solid #7c2020; }
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; min-width: 700px; }
+  thead th { background: #1a1a1a; color: #f5c842; padding: 9px 10px; text-align: left; font-size: 0.85em; border-bottom: 2px solid #333; white-space: nowrap; }
+  tbody tr { border-bottom: 1px solid #1f1f1f; }
+  tbody tr:hover { filter: brightness(1.2); }
+  td { padding: 7px 9px; vertical-align: middle; font-size: 0.88em; line-height: 1.4; }
+  .row-gratis { background: #09180a; }
+  .row-normal { background: #111; }
+  .row-caro   { background: #160808; }
+  .badge-ig { display: inline-block; background: #2a0e3f; border: 1px solid #8b5cf6; color: #c4b5fd; font-size: 0.7em; padding: 1px 5px; border-radius: 3px; margin-left: 3px; white-space: nowrap; }
+  .badge-muni { display: inline-block; background: #0f2b2b; border: 1px solid #34a8a8; color: #67e8e8; font-size: 0.7em; padding: 1px 5px; border-radius: 3px; margin-left: 3px; }
+  .badge-gratis-text { color: #4ade80; font-weight: bold; font-size: 0.85em; }
+  a.btn { background: #f5c842; color: #000; padding: 3px 8px; border-radius: 4px; text-decoration: none; font-size: 0.8em; font-weight: bold; white-space: nowrap; }
+  a.btn:hover { background: #ffd966; }
+  .artista-col { color: #fff; font-weight: 600; }
+  .recinto-col { color: #ccc; }
+  .fecha-col { white-space: nowrap; color: #bbb; }
+  .hora-col { white-space: nowrap; color: #999; }
+  .genero-col { color: #aaa; font-size: 0.82em; }
+  .ig-section { background: #120920; border: 1px solid #8b5cf6; border-radius: 8px; padding: 16px 20px; margin-top: 24px; }
+  .ig-section h2 { color: #c4b5fd; font-size: 1.05em; margin-bottom: 12px; }
+  .ig-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
+  .ig-item { background: #1a0f2b; border-radius: 6px; padding: 8px 10px; font-size: 0.82em; }
+  .ig-item .handle { color: #c4b5fd; font-weight: bold; }
+  .ig-item .result { color: #aaa; margin-top: 2px; }
+  .ig-item .result.found { color: #4ade80; }
+  .footer { margin-top: 28px; border-top: 1px solid #222; padding-top: 14px; font-size: 0.8em; color: #666; }
+  .footer a { color: #f5c842; text-decoration: none; }
+  .section-title { color: #f5c842; font-size: 1.15em; margin: 22px 0 10px; border-bottom: 1px solid #333; padding-bottom: 5px; }
 </style>
 </head>
 <body>
-
-<header>
-  <h1>🎵 Radar Musical Madrid</h1>
-  <p>Comunidad de Madrid &nbsp;·&nbsp; <span class="range">28 de junio – 8 de julio de 2026</span></p>
-  <p style="margin-top:4px;font-size:.8rem;color:#777;">Generado automáticamente el 28/06/2026 &nbsp;·&nbsp; <a href="https://ccorachan.github.io/radar-madrid" style="color:var(--gold)">ccorachan.github.io/radar-madrid</a></p>
-</header>
-
-<div class="container">
-
-  <div class="joyas">
-    <h2>⭐ Joyas de la semana</h2>
-    <div class="joyas-grid">
-      <div class="joya-card">
-        <div class="joya-date">🌸 29 Jun · Flamenco · Noches del Botánico</div>
-        <div class="joya-title">Niña Pastori + La Tania</div>
-        <div class="joya-desc">Dos leyendas del flamenco en el jardín más bonito de Madrid. Desde €49.50.</div>
-      </div>
-      <div class="joya-card">
-        <div class="joya-date">🎷 3 Jul · Flamenco+Soul · GRATIS · Tres Cantos</div>
-        <div class="joya-title">Pitingo – "Pitingo y Punto"</div>
-        <div class="joya-desc">Flamenco, soul y gospel. Entrada libre en el Parque del Lago. Joya gratuita fuera de la capital.</div>
-      </div>
-      <div class="joya-card">
-        <div class="joya-date">🎸 4 Jul · Jazz/World Music · Noches del Botánico</div>
-        <div class="joya-title">Snarky Puppy</div>
-        <div class="joya-desc">La banda de jazz-funk más influyente del siglo XXI. Un espectáculo colectivo imprescindible.</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="leyenda">
-    <strong style="color:var(--gold);margin-right:6px;">Leyenda:</strong>
-    <div class="leyenda-item"><div class="leyenda-dot dot-green"></div> Entrada gratuita</div>
-    <div class="leyenda-item"><div class="leyenda-dot dot-neutral"></div> Hasta €50 / precio por confirmar</div>
-    <div class="leyenda-item"><div class="leyenda-dot dot-red"></div> Más de €50</div>
-    <span class="leyenda-stars">⭐⭐⭐ = Jazz/Flamenco/Blues/Soul/Folk/Cantautor &nbsp;|&nbsp; ⭐⭐ = Pop/Indie/Tributo/World &nbsp;|&nbsp; ⭐ = Electrónica/Urbano</span>
-  </div>
-
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>Prio</th><th>Fecha</th><th>Hora</th><th>Artista / Evento</th><th>Recinto · Municipio</th><th>Precio</th><th>Género</th><th>🔗 Entradas</th>
-        </tr>
-      </thead>
-      <tbody>
-
-        <!-- ══════ 28 JUN ══════ -->
-        <tr class="day-separator"><td colspan="8">📅 Domingo 28 de junio</td></tr>
-
-        <tr class="mid">
-          <td class="stars">⭐⭐⭐</td><td class="fecha">28 Jun</td><td class="hora">20h / 22h</td>
-          <td class="artista">Marina Albero / Luis Gallo Quartet <span class="badge-ig">📱 @cafecentralmadrid</span></td>
-          <td class="recinto">Café Central Ateneo · Madrid</td>
-          <td class="precio">Ver enlace</td><td class="genero">Jazz</td>
-          <td class="comprar"><a href="https://cafecentralmadrid.com/programacion/" target="_blank">🎟 Info</a></td>
-        </tr>
-
-        <tr class="free">
-          <td class="stars">⭐⭐</td><td class="fecha">28 Jun</td><td class="hora">Tarde</td>
-          <td class="artista">Veranos de Pozuelo: "Una noche de película"<br><small style="color:#8a8;font-size:11px;">OSPAL La Lira + Coro Gospel One Soul</small></td>
-          <td class="recinto">La Lira de Pozuelo · <span class="fuera">Pozuelo de Alarcón</span></td>
-          <td class="precio"><span class="badge-free">GRATIS</span></td><td class="genero">Música de Cine / Sinfónica</td>
-          <td class="comprar"><a href="https://infopozuelo.com/agenda/musica-los-veranos-de-pozuelo-concierto-una-noche-de-pelicula-28-de-junio-pozuelo_72424/" target="_blank">🎟 Info</a></td>
-        </tr>
-
-        <tr class="free">
-          <td class="stars">⭐⭐</td><td class="fecha">28 Jun</td><td class="hora">22:00h</td>
-          <td class="artista">Mecano Sinfónico</td>
-          <td class="recinto">Explanada Palacio del Infante · <span class="fuera">Boadilla del Monte</span><br><small style="color:#888;">Veladas del Palacio 2026</small></td>
-          <td class="precio"><span class="badge-free">GRATIS</span></td><td class="genero">Pop / Tributo Sinfónico</td>
-          <td class="comprar"><a href="https://entradasboadilla.es/#eventos" target="_blank">🎟 Reserva</a></td>
-        </tr>
-
-        <tr class="mid">
-          <td class="stars">⭐⭐</td><td class="fecha">28 Jun</td><td class="hora">20:40h</td>
-          <td class="artista">Jackies</td>
-          <td class="recinto">La Carbonería del Galván · Madrid<br><small style="color:#666;">Parque Tierno Galván</small></td>
-          <td class="precio">Ver enlace</td><td class="genero">Pop Rock</td>
-          <td class="comprar"><a href="https://conciertospormadrid.com/festivales/la-carboneria-del-galvan-madrid/" target="_blank">🎟 Info</a></td>
-        </tr>
-
-        <!-- ══════ 29 JUN ══════ -->
-        <tr class="day-separator"><td colspan="8">📅 Lunes 29 de junio</td></tr>
-
-        <tr class="premium">
-          <td class="stars">⭐⭐⭐</td><td class="fecha">29 Jun</td><td class="hora">20:30h</td>
-          <td class="artista">Niña Pastori + La Tania</td>
-          <td class="recinto">Noches del Botánico (Jard. Botánico UCM) · Madrid</td>
-          <td class="precio">Desde €49.50</td><td class="genero">Flamenco · Copla</td>
-          <td class="comprar"><a href="https://www.laganzua.net/conciertos/nina-pastori-la-tania-madrid" target="_blank">🎟 Entradas</a></td>
-        </tr>
-
-        <tr class="mid">
-          <td class="stars">⭐⭐⭐</td><td class="fecha">29 Jun</td><td class="hora">TBC</td>
-          <td class="artista">Curtis Harding</td>
-          <td class="recinto">Lula Club · Madrid</td>
-          <td class="precio">Ver enlace</td><td class="genero">Soul · R&amp;B · Funk</td>
-          <td class="comprar"><a href="https://www.laganzua.net/conciertos/curtis-harding-madrid-1015457" target="_blank">🎟 Entradas</a></td>
-        </tr>
-
-        <tr class="mid">
-          <td class="stars">⭐⭐⭐</td><td class="fecha">29–30 Jun</td><td class="hora">20h / 22h</td>
-          <td class="artista">Álvaro del Valle Quartet <span class="badge-ig">📱 @cafecentralmadrid</span></td>
-          <td class="recinto">Café Central Ateneo · Madrid</td>
-          <td class="precio">Ver enlace</td><td class="genero">Jazz</td>
-          <td class="comprar"><a href="https://cafecentralmadrid.com/programacion/" target="_blank">🎟 Info</a></td>
-        </tr>
-
-        <!-- ══════ 30 JUN ══════ -->
-        <tr class="day-separator"><td colspan="8">📅 Martes 30 de junio</td></tr>
-
-        <tr class="mid">
-          <td class="stars">⭐⭐⭐</td><td class="fecha">30 Jun</td><td class="hora">TBC</td>
-          <td class="artista">Van Morrison <small style="color:#888;">(1ª fecha)</small></td>
-          <td class="recinto">Noches del Botánico (Jard. Botánico UCM) · Madrid</td>
-          <td class="precio">Desde €35</td><td class="genero">Soul · Folk · R&amp;B</td>
-          <td class="comprar"><a href="https://www.laganzua.net/conciertos/van-morrison-madrid-1015060" target="_blank">🎟 Entradas</a></td>
-        </tr>
-
-        <tr class="mid">
-          <td class="stars">⭐⭐</td><td class="fecha">30 Jun</td><td class="hora">20:40h</td>
-          <td class="artista">Ke Personajes</td>
-          <td class="recinto">La Carbonería del Galván · Madrid</td>
-          <td class="precio">Ver enlace</td><td class="genero">Pop / Música Actual</td>
-          <td class="comprar"><a href="https://conciertospormadrid.com/festivales/la-carboneria-del-galvan-madrid/" target="_blank">🎟 Info</a></td>
-        </tr>
-
-        <!-- ══════ 1 JUL ══════ -->
-        <tr class="day-separator"><td colspan="8">📅 Miércoles 1 de julio</td></tr>
-
-        <tr class="mid">
-          <td class="stars">⭐⭐⭐</td><td class="fecha">1 Jul</td><td class="hora">TBC</td>
-          <td class="artista">Van Morrison <small style="color:#888;">(2ª fecha)</small></td>
-          <td class="recinto">Noches del Botánico (Jard. Botánico UCM) · Madrid</td>
-          <td class="precio">Desde €35</td><td class="genero">Soul · Folk · R&amp;B</td>
-          <td class="comprar"><a href="https://www.laganzua.net/conciertos/van-morrison-segunda-fecha-madrid-1015061" target="_blank">🎟 Entradas</a></td>
-        </tr>
-
-        <tr class="mid">
-          <td class="stars">⭐⭐⭐</td><td class="fecha">1–2 Jul</td><td class="hora">20h / 22h</td>
-          <td class="artista">Daniel Juárez Quartet <span class="badge-ig">📱 @cafecentralmadrid</span></td>
-          <td class="recinto">Café Central Ateneo · Madrid</td>
-          <td class="precio">Ver enlace</td><td class="genero">Jazz</td>
-          <td class="comprar"><a href="https://cafecentralmadrid.com/programacion/" target="_blank">🎟 Info</a></td>
-        </tr>
-
-        <tr class="mid">
-          <td class="stars">⭐⭐</td><td class="fecha">1 Jul</td><td class="hora">TBC</td>
-          <td class="artista">Calle Vapor <span class="badge-ig">📱 @salagalileo</span></td>
-          <td class="recinto">Sala Galileo Galilei · Madrid</td>
-          <td class="precio">Ver enlace</td><td class="genero">Afrolatina · Son Cubano</td>
-          <td class="comprar"><a href="https://www.laganzua.net/conciertos/calle-vapor-madrid-1016288" target="_blank">🎟 Entradas</a></td>
-        </tr>
-
-        <tr class="mid">
-          <td class="stars">⭐⭐</td><td class="fecha">1 Jul</td><td class="hora">20:40h</td>
-          <td class="artista">GIGANTES – Zapata &amp; Amigos</td>
-          <td class="recinto">La Carbonería del Galván · Madrid</td>
-          <td class="precio">Ver enlace</td><td class="genero">Rock · Cantautor</td>
-          <td class="comprar"><a href="https://conciertospormadrid.com/festivales/la-carboneria-del-galvan-madrid/" target="_blank">🎟 Info</a></td>
-        </tr>
-
-        <tr class="mid">
-          <td class="stars">⭐⭐</td><td class="fecha">1 Jul</td><td class="hora">TBC</td>
-          <td class="artista">Shame</td>
-          <td class="recinto">Sala But · Madrid</td>
-          <td class="precio">Ver enlace</td><td class="genero">Post-Punk</td>
-          <td class="comprar"><a href="https://www.laganzua.net/conciertos/shame-madrid-1015404" target="_blank">🎟 Entradas</a></td>
-        </tr>
-
-        <tr class="mid">
-          <td class="stars">⭐</td><td class="fecha">1 Jul</td><td class="hora">TBC</td>
-          <td class="artista">Limp Bizkit</td>
-          <td class="recinto">Movistar Arena · Madrid</td>
-          <td class="precio">Ver enlace</td><td class="genero">Nu Metal</td>
-          <td class="comprar"><a href="https://www.laganzua.net/conciertos/limp-bizkit-madrid-1015236" target="_blank">🎟 Entradas</a></td>
-        </tr>
-
-        <!-- ══════ 2 JUL ══════ -->
-        <tr class="day-separator"><td colspan="8">📅 Jueves 2 de julio</td></tr>
-
-        <tr class="mid">
-          <td class="stars">⭐⭐⭐</td><td class="fecha">2 Jul</td><td class="hora">TBC</td>
-          <td class="artista">Jeff Goldblum + Take Me To The River</td>
-          <td class="recinto">Noches del Botánico (Jard. Botánico UCM) · Madrid</td>
-          <td class="precio">Ver enlace</td><td class="genero">Jazz · Soul</td>
-          <td class="comprar"><a href="https://www.laganzua.net/conciertos/jeff-goldblum-take-me-to-the-river-madrid-1015062" target="_blank">🎟 Entradas</a></td>
-        </tr>
-
-        <tr class="mid">
-          <td class="stars">⭐⭐⭐</td><td class="fecha">2 Jul</td><td class="hora">TBC</td>
-          <td class="artista">Villanos del Flamenco: Jesús Carmona<br><small style="color:#888;font-size:11px;">"Baile de Bestias"</small></td>
-          <td class="recinto">Teatro Albéniz · Madrid</td>
-          <td class="precio">Ver enlace</td><td class="genero">Flamenco · Danza</td>
-          <td class="comprar"><a href="https://www.villanosdelflamenco.es/" target="_blank">🎟 Info</a></td>
-        </tr>
-
-        <tr class="mid">
-          <td class="stars">⭐⭐⭐</td><td class="fecha">2 Jul</td><td class="hora">20:40h</td>
-          <td class="artista">Gipsy Kings + Kiko Veneno</td>
-          <td class="recinto">La Carbonería del Galván · Madrid</td>
-          <td class="precio">Desde €44</td><td class="genero">Rumba · Flamenco Pop</td>
-          <td class="comprar"><a href="https://www.laganzua.net/conciertos/gipsy-kings-kiko-veneno-madrid-1016172" target="_blank">🎟 Entradas</a></td>
-        </tr>
-
-        <tr class="free">
-          <td class="stars">⭐⭐⭐</td><td class="fecha">2 Jul</td><td class="hora">22:00h</td>
-          <td class="artista">Jaime Urrutia</td>
-          <td class="recinto">Explanada Palacio del Infante · <span class="fuera">Boadilla del Monte</span><br><small style="color:#888;">Veladas del Palacio 2026</small></td>
-          <td class="precio"><span class="badge-free">GRATIS</span></td><td class="genero">Cantautor · Pop Rock (La Movida)</td>
-          <td class="comprar"><a href="https://entradasboadilla.es/#eventos" target="_blank">🎟 Reserva</a></td>
-        </tr>
-
-        <tr class="mid">
-          <td class="stars">⭐⭐⭐</td><td class="fecha">2–3 Jul</td><td class="hora">20h / 22h</td>
-          <td class="artista">Mariano Díaz Quartet <span class="badge-ig">📱 @cafecentralmadrid</span></td>
-          <td class="recinto">Café Central Ateneo · Madrid</td>
-          <td class="precio">Ver enlace</td><td class="genero">Jazz</td>
-          <td class="comprar"><a href="https://cafecentralmadrid.com/programacion/" target="_blank">🎟 Info</a></td>
-        </tr>
-
-        <tr class="mid">
-          <td class="stars">⭐⭐</td><td class="fecha">2 Jul</td><td class="hora">21:00h</td>
-          <td class="artista">Emel</td>
-          <td class="recinto">Café Berlín · Madrid</td>
-          <td class="precio">Ver enlace</td><td class="genero">Indie Pop · Trip-Hop</td>
-          <td class="comprar"><a href="https://www.laganzua.net/conciertos/emel-madrid-1014797" target="_blank">🎟 Entradas</a></td>
-        </tr>
-
-        <!-- ══════ 3 JUL ══════ -->
-        <tr class="day-separator"><td colspan="8">📅 Viernes 3 de julio</td></tr>
-
-        <tr class="mid">
-          <td class="stars">⭐⭐⭐</td><td class="fecha">3 Jul</td><td class="hora">20:40h</td>
-          <td class="artista">Marwán + Albert Pla</td>
-          <td class="recinto">La Carbonería del Galván · Madrid</td>
-          <td class="precio">Ver enlace</td><td class="genero">Cantautor · Indie Folk</td>
-          <td class="comprar"><a href="https://www.laganzua.net/conciertos/marwan-albert-pla-madrid-1016173" target="_blank">🎟 Entradas</a></td>
-        </tr>
-
-        <tr class="mid">
-          <td class="stars">⭐⭐⭐</td><td class="fecha">3 Jul</td><td class="hora">TBC</td>
-          <td class="artista">Villanos del Flamenco: Chano Domínguez + Antonio Serrano<br><small style="color:#888;font-size:11px;">"Centenario Miles Davis: New Sketches of Spain"</small></td>
-          <td class="recinto">Teatro Albéniz · Madrid</td>
-          <td class="precio">Ver enlace</td><td class="genero">Jazz-Flamenco</td>
-          <td class="comprar"><a href="https://www.villanosdelflamenco.es/" target="_blank">🎟 Info</a></td>
-        </tr>
-
-        <tr class="free">
-          <td class="stars">⭐⭐⭐</td><td class="fecha">3 Jul</td><td class="hora">22:00h</td>
-          <td class="artista">Pitingo – "Pitingo y Punto"</td>
-          <td class="recinto">Parque Central del Lago · <span class="fuera">Tres Cantos</span></td>
-          <td class="precio"><span class="badge-free">GRATIS</span></td><td class="genero">Flamenco · Soul · Latino</td>
-          <td class="comprar"><a href="https://www.cronicanorte.es/conciertos-gratuitos-en-tres-cantos-pitingo-y-cafe-quijano-lideran-las-veladas-en-el-lago-2026/252859" target="_blank">🎟 Info</a></td>
-        </tr>
-
-        <tr class="mid">
-          <td class="stars">⭐⭐⭐</td><td class="fecha">3 Jul</td><td class="hora">20:00h</td>
-          <td class="artista">Lluís Coloma Trio<br><small style="color:#888;font-size:11px;">Blues · Boogie Woogie · Jazz</small></td>
-          <td class="recinto">Dehesa de Navalcarbón · <span class="fuera">Las Rozas</span></td>
-          <td class="precio">€10–20</td><td class="genero">Blues · Boogie Woogie · Jazz</td>
-          <td class="comprar"><a href="https://infolasrozas.com/agenda/musica-concierto-de-lluis-coloma-trio-boogie-woogie-blues-jazz-3-de-julio-las-rozas_94740/" target="_blank">🎟 Info</a></td>
-        </tr>
-
-        <tr class="free">
-          <td class="stars">⭐⭐⭐</td><td class="fecha">3 Jul</td><td class="hora">22:00h</td>
-          <td class="artista">Juan Peña "El Mani"</td>
-          <td class="recinto">Explanada Palacio del Infante · <span class="fuera">Boadilla del Monte</span><br><small style="color:#888;">Veladas del Palacio 2026</small></td>
-          <td class="precio"><span class="badge-free">GRATIS</span></td><td class="genero">Flamenco · Rumba</td>
-          <td class="comprar"><a href="https://entradasboadilla.es/#eventos" target="_blank">🎟 Reserva</a></td>
-        </tr>
-
-        <tr class="free">
-          <td class="stars">⭐⭐⭐</td><td class="fecha">3 Jul</td><td class="hora">22:00h</td>
-          <td class="artista">Bob Sands Big Band + Quique Gómez<br><small style="color:#888;font-size:11px;">Homenaje al jazz</small></td>
-          <td class="recinto">Parque Felipe VI (Monte del Pilar) · <span class="fuera">Majadahonda</span><br><small style="color:#888;">Las Noches del Monte del Pilar</small></td>
-          <td class="precio"><span class="badge-free">GRATIS</span></td><td class="genero">Jazz · Big Band</td>
-          <td class="comprar"><a href="https://cultura.majadahonda.org/espectaculos-culturales" target="_blank">🎟 Info</a></td>
-        </tr>
-
-        <tr class="mid">
-          <td class="stars">⭐⭐</td><td class="fecha">3 Jul</td><td class="hora">22:00h</td>
-          <td class="artista">Misa Ricotera <small style="color:#888;">(Rock Argentino)</small> <span class="badge-ig">📱 @clamoreslive</span></td>
-          <td class="recinto">Sala Clamores · Madrid</td>
-          <td class="precio">Desde €10</td><td class="genero">Rock Argentino</td>
-          <td class="comprar"><a href="https://salaclamores.es/eventos/misa-ricotera-rock-argentino-viernes-3-julio-clamores-madrid" target="_blank">🎟 Entradas</a></td>
-        </tr>
-
-        <tr class="mid">
-          <td class="stars">⭐⭐</td><td class="fecha">3–5 Jul</td><td class="hora">18:00h</td>
-          <td class="artista">Festival Río Babel 2026<br><small style="color:#888;font-size:11px;">Amaia · La M.O.D.A. · Chambao · The Offspring · Katy Perry · Bomba Estéreo…</small></td>
-          <td class="recinto">Auditorio Miguel Ríos · <span class="fuera">Rivas Vaciamadrid</span></td>
-          <td class="precio">Ver enlace</td><td class="genero">Indie · Folk · Pop Rock</td>
-          <td class="comprar"><a href="https://festivalriobabel.com/2026/carteles/" target="_blank">🎟 Info</a></td>
-        </tr>
-
-        <tr class="mid">
-          <td class="stars">⭐</td><td class="fecha">3 Jul</td><td class="hora">TBC</td>
-          <td class="artista">Jean Michel Jarré <small style="color:#888;">(2ª fecha)</small></td>
-          <td class="recinto">Noches del Botánico (Jard. Botánico UCM) · Madrid</td>
-          <td class="precio">Ver enlace</td><td class="genero">Electrónica</td>
-          <td class="comprar"><a href="https://www.laganzua.net/conciertos/jean-michel-jarre-segunda-fecha-madrid-madrid-1015174" target="_blank">🎟 Entradas</a></td>
-        </tr>
-
-        <!-- ══════ 4 JUL ══════ -->
-        <tr class="day-separator"><td colspan="8">📅 Sábado 4 de julio</td></tr>
-
-        <tr class="mid">
-          <td class="stars">⭐⭐⭐</td><td class="fecha">4 Jul</td><td class="hora">TBC</td>
-          <td class="artista">Snarky Puppy</td>
-          <td class="recinto">Noches del Botánico (Jard. Botánico UCM) · Madrid</td>
-          <td class="precio">Ver enlace</td><td class="genero">Jazz · World Music · Funk</td>
-          <td class="comprar"><a href="https://www.laganzua.net/conciertos/snarky-puppy-madrid-1015063" target="_blank">🎟 Entradas</a></td>
-        </tr>
-
-        <tr class="mid">
-          <td class="stars">⭐⭐⭐</td><td class="fecha">4 Jul</td><td class="hora">TBC</td>
-          <td class="artista">Villanos del Flamenco: "Paco de Lucía: Music for Big Band"<br><small style="color:#888;font-size:11px;">Dir. Alex Conde</small></td>
-          <td class="recinto">Teatro Albéniz · Madrid</td>
-          <td class="precio">Ver enlace</td><td class="genero">Flamenco · Jazz Orquestal</td>
-          <td class="comprar"><a href="https://www.villanosdelflamenco.es/" target="_blank">🎟 Info</a></td>
-        </tr>
-
-        <tr class="mid">
-          <td class="stars">⭐⭐⭐</td><td class="fecha">4–5 Jul</td><td class="hora">20h / 22h</td>
-          <td class="artista">Gabriel Szternsztejn Cuarteto <span class="badge-ig">📱 @cafecentralmadrid</span></td>
-          <td class="recinto">Café Central Ateneo · Madrid</td>
-          <td class="precio">Ver enlace</td><td class="genero">Jazz</td>
-          <td class="comprar"><a href="https://cafecentralmadrid.com/programacion/" target="_blank">🎟 Info</a></td>
-        </tr>
-
-        <tr class="free">
-          <td class="stars">⭐⭐</td><td class="fecha">4 Jul</td><td class="hora">22:00h</td>
-          <td class="artista">Voy a Pasármelo G – Tributo a Hombres G</td>
-          <td class="recinto">Parque Central del Lago · <span class="fuera">Tres Cantos</span></td>
-          <td class="precio"><span class="badge-free">GRATIS</span></td><td class="genero">Pop Rock · Tributo</td>
-          <td class="comprar"><a href="https://www.cronicanorte.es/conciertos-gratuitos-en-tres-cantos-pitingo-y-cafe-quijano-lideran-las-veladas-en-el-lago-2026/252859" target="_blank">🎟 Info</a></td>
-        </tr>
-
-        <tr class="free">
-          <td class="stars">⭐⭐</td><td class="fecha">4 Jul</td><td class="hora">22:00h</td>
-          <td class="artista">Siempre Luis Miguel (tributo)</td>
-          <td class="recinto">Explanada Palacio del Infante · <span class="fuera">Boadilla del Monte</span><br><small style="color:#888;">Veladas del Palacio 2026</small></td>
-          <td class="precio"><span class="badge-free">GRATIS</span></td><td class="genero">Pop · Tributo</td>
-          <td class="comprar"><a href="https://entradasboadilla.es/#eventos" target="_blank">🎟 Reserva</a></td>
-        </tr>
-
-        <tr class="mid">
-          <td class="stars">⭐⭐</td><td class="fecha">4 Jul</td><td class="hora">TBC</td>
-          <td class="artista">Smokie</td>
-          <td class="recinto">Teatro Monumental · Madrid</td>
-          <td class="precio">Ver enlace</td><td class="genero">Country Rock · Pop</td>
-          <td class="comprar"><a href="https://www.laganzua.net/conciertos/smokie-madrid-1015876" target="_blank">🎟 Entradas</a></td>
-        </tr>
-
-        <!-- ══════ 5 JUL ══════ -->
-        <tr class="day-separator"><td colspan="8">📅 Domingo 5 de julio</td></tr>
-
-        <tr class="mid">
-          <td class="stars">⭐⭐</td><td class="fecha">5 Jul</td><td class="hora">TBC</td>
-          <td class="artista">Garbage</td>
-          <td class="recinto">Noches del Botánico (Jard. Botánico UCM) · Madrid</td>
-          <td class="precio">Ver enlace</td><td class="genero">Rock · Indie Rock</td>
-          <td class="comprar"><a href="https://www.laganzua.net/conciertos/garbage-madrid-1015048" target="_blank">🎟 Entradas</a></td>
-        </tr>
-
-        <tr class="mid">
-          <td class="stars">⭐⭐</td><td class="fecha">5 Jul</td><td class="hora">TBC</td>
-          <td class="artista">Kany García</td>
-          <td class="recinto">Movistar Arena · Madrid</td>
-          <td class="precio">Ver enlace</td><td class="genero">Pop · Música de Autor</td>
-          <td class="comprar"><a href="https://www.laganzua.net/conciertos/kany-garcia-madrid-1014275" target="_blank">🎟 Entradas</a></td>
-        </tr>
-
-        <tr class="free">
-          <td class="stars">⭐</td><td class="fecha">5 Jul</td><td class="hora">22:00h</td>
-          <td class="artista">DJ Symphonic</td>
-          <td class="recinto">Explanada Palacio del Infante · <span class="fuera">Boadilla del Monte</span><br><small style="color:#888;">Veladas del Palacio 2026</small></td>
-          <td class="precio"><span class="badge-free">GRATIS</span></td><td class="genero">Electrónica · Sinfónico</td>
-          <td class="comprar"><a href="https://entradasboadilla.es/#eventos" target="_blank">🎟 Reserva</a></td>
-        </tr>
-
-        <!-- ══════ 6 JUL ══════ -->
-        <tr class="day-separator"><td colspan="8">📅 Lunes 6 de julio</td></tr>
-
-        <tr class="mid">
-          <td class="stars">⭐⭐⭐</td><td class="fecha">6 Jul</td><td class="hora">21:00h</td>
-          <td class="artista">Fantastic Negrito <span class="badge-ig">📱 @salaelsol</span></td>
-          <td class="recinto">Sala El Sol · Madrid</td>
-          <td class="precio">~€21</td><td class="genero">Blues · Rhythm &amp; Blues · Soul</td>
-          <td class="comprar"><a href="https://www.laganzua.net/conciertos/fantastic-negrito-madrid-1015862" target="_blank">🎟 Entradas</a></td>
-        </tr>
-
-        <tr class="mid">
-          <td class="stars">⭐⭐⭐</td><td class="fecha">6 Jul</td><td class="hora">TBC</td>
-          <td class="artista">Kikimora + Chef Cheeza &amp; Látex Diamond <span class="badge-ig">📱 @clamoreslive</span></td>
-          <td class="recinto">Sala Clamores · Madrid</td>
-          <td class="precio">Ver enlace</td><td class="genero">Funk · Soul · R&amp;B</td>
-          <td class="comprar"><a href="https://www.laganzua.net/conciertos/kikimora-chef-cheeza-latex-diamond-madrid-1015536" target="_blank">🎟 Entradas</a></td>
-        </tr>
-
-        <tr class="mid">
-          <td class="stars">⭐⭐⭐</td><td class="fecha">6–7 Jul</td><td class="hora">20h / 22h</td>
-          <td class="artista">Playing Petrucciani <span class="badge-ig">📱 @cafecentralmadrid</span></td>
-          <td class="recinto">Café Central Ateneo · Madrid</td>
-          <td class="precio">Ver enlace</td><td class="genero">Jazz (Homenaje a Michel Petrucciani)</td>
-          <td class="comprar"><a href="https://cafecentralmadrid.com/programacion/" target="_blank">🎟 Info</a></td>
-        </tr>
-
-        <tr class="mid">
-          <td class="stars">⭐⭐</td><td class="fecha">6 Jul</td><td class="hora">TBC</td>
-          <td class="artista">Danny Elfman</td>
-          <td class="recinto">Noches del Botánico (Jard. Botánico UCM) · Madrid</td>
-          <td class="precio">Ver enlace</td><td class="genero">Bandas Sonoras · Clásica</td>
-          <td class="comprar"><a href="https://www.laganzua.net/conciertos/danny-elfman-madrid-1014367" target="_blank">🎟 Entradas</a></td>
-        </tr>
-
-        <!-- ══════ 7 JUL ══════ -->
-        <tr class="day-separator"><td colspan="8">📅 Martes 7 de julio</td></tr>
-
-        <tr class="mid">
-          <td class="stars">⭐⭐</td><td class="fecha">7 Jul</td><td class="hora">TBC</td>
-          <td class="artista">Danny Elfman <small style="color:#888;">(2ª fecha)</small></td>
-          <td class="recinto">Noches del Botánico (Jard. Botánico UCM) · Madrid</td>
-          <td class="precio">Ver enlace</td><td class="genero">Bandas Sonoras · Clásica</td>
-          <td class="comprar"><a href="https://www.laganzua.net/conciertos/danny-elfman-segunda-fecha-madrid-madrid-1015167" target="_blank">🎟 Entradas</a></td>
-        </tr>
-
-        <!-- ══════ 8 JUL ══════ -->
-        <tr class="day-separator"><td colspan="8">📅 Miércoles 8 de julio</td></tr>
-
-        <tr class="mid">
-          <td class="stars">⭐⭐⭐</td><td class="fecha">8–9 Jul</td><td class="hora">20h / 22h</td>
-          <td class="artista">Crazy Cabin Quintet <span class="badge-ig">📱 @cafecentralmadrid</span></td>
-          <td class="recinto">Café Central Ateneo · Madrid</td>
-          <td class="precio">Ver enlace</td><td class="genero">Jazz</td>
-          <td class="comprar"><a href="https://cafecentralmadrid.com/programacion/" target="_blank">🎟 Info</a></td>
-        </tr>
-
-        <tr class="mid">
-          <td class="stars">⭐⭐</td><td class="fecha">8 Jul</td><td class="hora">Tarde</td>
-          <td class="artista">Mad Cool Festival 2026 <small style="color:#888;">(inicio · 4 días)</small><br><small style="color:#888;font-size:11px;">Foo Fighters · Florence + The Machine · Twenty One Pilots · Billie Eilish…</small></td>
-          <td class="recinto">Recinto Iberdrola Music · Madrid</td>
-          <td class="precio">Ver enlace</td><td class="genero">Rock · Indie · Pop</td>
-          <td class="comprar"><a href="https://www.laganzua.net/conciertos/mad-cool-festival-2026-madrid-1013806" target="_blank">🎟 Info</a></td>
-        </tr>
-
-        <tr class="mid">
-          <td class="stars">⭐</td><td class="fecha">8 Jul</td><td class="hora">TBC</td>
-          <td class="artista">Tomora</td>
-          <td class="recinto">Noches del Botánico (Jard. Botánico UCM) · Madrid</td>
-          <td class="precio">Ver enlace</td><td class="genero">Electrónica</td>
-          <td class="comprar"><a href="https://www.laganzua.net/conciertos/tomora-madrid-1015064" target="_blank">🎟 Entradas</a></td>
-        </tr>
-
-      </tbody>
-    </table>
-  </div>
-
-  <div class="instagram-section">
-    <h2>📱 Cuentas de Instagram revisadas este ciclo</h2>
-    <div class="ig-grid">
-      <div class="ig-item ig-found"><div class="ig-handle">@cafecentralmadrid ✅</div><div class="ig-info">Programación jazz completa. 7 slots en ventana: Marina Albero, Álvaro del Valle, Daniel Juárez, Mariano Díaz, Gabriel Szternsztejn, Playing Petrucciani, Crazy Cabin Quintet.</div></div>
-      <div class="ig-item ig-found"><div class="ig-handle">@clamoreslive ✅</div><div class="ig-info">Misa Ricotera (3 Jul), Kikimora + Chef Cheeza (6 Jul).</div></div>
-      <div class="ig-item ig-found"><div class="ig-handle">@salagalileo ✅</div><div class="ig-info">Calle Vapor confirmado 1 Jul (Afrolatina / Son Cubano).</div></div>
-      <div class="ig-item ig-found"><div class="ig-handle">@salaelsol ✅</div><div class="ig-info">Fantastic Negrito confirmado 6 Jul (Blues/R&amp;B). ~€21.</div></div>
-      <div class="ig-item ig-found"><div class="ig-handle">@villanosdelflamenco ✅</div><div class="ig-info">Ciclo Teatro Albéniz Jun–Jul: Jesús Carmona, Chano Domínguez + A. Serrano, Alex Conde (Paco de Lucía Big Band).</div></div>
-      <div class="ig-item ig-not"><div class="ig-handle">@bigmamaballroom · @moeclubmadrid · @tempoaudiophileclub</div><div class="ig-info">Sin eventos indexados en esta ventana.</div></div>
-      <div class="ig-item ig-not"><div class="ig-handle">@gruta_77 · @wurlitzerballroom · @sala_duende_es</div><div class="ig-info">Sin eventos indexados en esta ventana.</div></div>
-      <div class="ig-item ig-not"><div class="ig-handle">@tomatito6cuerdas</div><div class="ig-info">Actúa en Conde Duque el 25 Jul – fuera de ventana.</div></div>
-    </div>
-  </div>
-
+<h1>🎵 Radar Musical · Comunidad de Madrid</h1>
+<p class="subtitle">Próximos 10 días · 29 jun – 9 jul 2026 · Generado el lunes 29 de junio de 2026</p>
+<p class="web-link">🌐 <a href="https://ccorachan.github.io/radar-madrid" target="_blank">https://ccorachan.github.io/radar-madrid</a></p>
+
+<div class="joyas">
+  <h2>💎 Joyas de la semana (Top 3 ⭐⭐⭐)</h2>
+  <div class="joya"><span class="tag">⭐⭐⭐</span> <strong>Van Morrison</strong> · <em>Mié 1 jul · 20:30 · Noches del Botánico</em> — El patriarca del soul y el folk en un jardín nocturno único. 2ª y última fecha. ~49.50€.</div>
+  <div class="joya"><span class="tag">⭐⭐⭐</span> <strong>Jeff Goldblum + Take Me to the River</strong> · <em>Jue 2 jul · 20:30 · Noches del Botánico</em> — Jazz y soul de Memphis con el carisma del actor-músico. Irrepetible. ~49.50€.</div>
+  <div class="joya"><span class="tag">⭐⭐⭐</span> <strong>Fantastic Negrito</strong> · <em>Lun 6 jul · Sala El Sol</em> — Blues, soul y rock del siglo XXI. 3× ganador del Grammy. La sala más histórica de Madrid para el bluesman de Oakland.</div>
 </div>
 
-<footer>
-  <p>🎵 <strong style="color:var(--gold)">Radar Musical Madrid</strong> · Próximos 10 días · Comunidad de Madrid</p>
-  <p style="margin-top:6px;">Generado automáticamente el <strong>28/06/2026</strong> · <a href="https://ccorachan.github.io/radar-madrid" target="_blank">ccorachan.github.io/radar-madrid</a></p>
-  <div class="footer-sources">Fuentes: laganzua.net · cafecentralmadrid.com · salaclamores.es · nochesdelbotanico.com · festivalriobabel.com · villanosdelflamenco.es · ayuntamientoboadilladelmonte.org · cultura.majadahonda.org · infopozuelo.com · infolasrozas.com · cronicanorte.es · conciertospormadrid.com · esmadrid.com · rebeltickets.es</div>
-</footer>
+<div class="leyenda">
+  <div class="leyenda-item"><div class="dot dot-gratis"></div> Gratis</div>
+  <div class="leyenda-item"><div class="dot dot-normal"></div> Hasta ~50€</div>
+  <div class="leyenda-item"><div class="dot dot-caro"></div> Más de 50€</div>
+  <div class="leyenda-item">📱 @cuenta = fuente Instagram</div>
+  <div class="leyenda-item"><span class="badge-muni">🗺 municipio</span> fuera de Madrid capital</div>
+</div>
 
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>⭐</th><th>Fecha</th><th>Hora</th><th>Artista / Evento</th><th>Recinto · Municipio</th><th>Precio</th><th>Género</th><th>🔗</th></tr>
+</thead>
+<tbody>
+<!-- 29 JUN -->
+<tr class="row-normal"><td>⭐⭐⭐</td><td class="fecha-col">Lun 29 jun</td><td class="hora-col">20:30</td><td class="artista-col">Niña Pastori + La Tania</td><td class="recinto-col">Noches del Botánico · Madrid</td><td>~49.50€</td><td class="genero-col">Flamenco / Copla</td><td><a class="btn" href="https://www.laganzua.net/conciertos/nina-pastori-la-tania-madrid-1015811" target="_blank">Ver</a></td></tr>
+<tr class="row-normal"><td>⭐⭐⭐</td><td class="fecha-col">Lun 29 jun</td><td class="hora-col">20h/22h</td><td class="artista-col">Álvaro del Valle Quartet <span class="badge-ig">📱 @cafecentralmadrid</span></td><td class="recinto-col">Café Central Ateneo · Madrid</td><td>Ver enlace</td><td class="genero-col">Jazz</td><td><a class="btn" href="https://cafecentralmadrid.com/programacion/" target="_blank">Ver</a></td></tr>
+<tr class="row-normal"><td>⭐⭐⭐</td><td class="fecha-col">Lun 29 jun</td><td class="hora-col">–</td><td class="artista-col">Curtis Harding</td><td class="recinto-col">Madrid</td><td>Ver enlace</td><td class="genero-col">Blues / Soul / R&amp;B</td><td><a class="btn" href="https://www.laganzua.net/conciertos/curtis-harding-madrid-1015457" target="_blank">Ver</a></td></tr>
+<!-- 30 JUN -->
+<tr class="row-normal"><td>⭐⭐⭐</td><td class="fecha-col">Mar 30 jun</td><td class="hora-col">20h/22h</td><td class="artista-col">Álvaro del Valle Quartet <span class="badge-ig">📱 @cafecentralmadrid</span></td><td class="recinto-col">Café Central Ateneo · Madrid</td><td>Ver enlace</td><td class="genero-col">Jazz</td><td><a class="btn" href="https://cafecentralmadrid.com/programacion/" target="_blank">Ver</a></td></tr>
+<tr class="row-normal"><td>⭐⭐</td><td class="fecha-col">Mar 30 jun</td><td class="hora-col">–</td><td class="artista-col">Cuarteto de Nos</td><td class="recinto-col">Madrid</td><td>Ver enlace</td><td class="genero-col">Rock Melódico / Pop Rock</td><td><a class="btn" href="https://www.laganzua.net/conciertos/cuarteto-de-nos-madrid-1014858" target="_blank">Ver</a></td></tr>
+<!-- 1 JUL -->
+<tr class="row-normal"><td>⭐⭐⭐</td><td class="fecha-col">Mié 1 jul</td><td class="hora-col">20:30</td><td class="artista-col">Van Morrison <small style="color:#999">(2ª fecha)</small></td><td class="recinto-col">Noches del Botánico · Madrid</td><td>~49.50€</td><td class="genero-col">Soul / Folk / R&amp;B</td><td><a class="btn" href="https://www.laganzua.net/conciertos/van-morrison-segunda-fecha-madrid-1015061" target="_blank">Ver</a></td></tr>
+<tr class="row-normal"><td>⭐⭐⭐</td><td class="fecha-col">Mié 1 jul</td><td class="hora-col">20h/22h</td><td class="artista-col">Daniel Juárez Quartet <span class="badge-ig">📱 @cafecentralmadrid</span></td><td class="recinto-col">Café Central Ateneo · Madrid</td><td>Ver enlace</td><td class="genero-col">Jazz</td><td><a class="btn" href="https://cafecentralmadrid.com/programacion/" target="_blank">Ver</a></td></tr>
+<tr class="row-normal"><td>⭐⭐</td><td class="fecha-col">Mié 1 jul</td><td class="hora-col">–</td><td class="artista-col">Calle Vapor <span class="badge-ig">📱 @salagalileo</span></td><td class="recinto-col">Sala Galileo Galilei · Madrid</td><td>Ver enlace</td><td class="genero-col">Son Cubano / Afrolatina</td><td><a class="btn" href="https://www.laganzua.net/conciertos/calle-vapor-madrid-1016288" target="_blank">Ver</a></td></tr>
+<tr class="row-normal"><td>⭐⭐</td><td class="fecha-col">Mié 1 jul</td><td class="hora-col">–</td><td class="artista-col">The Pains of Being Pure At Heart</td><td class="recinto-col">Lula Club · Madrid</td><td>Ver enlace</td><td class="genero-col">Indie Pop / Noise Pop</td><td><a class="btn" href="https://www.laganzua.net/conciertos/the-pains-of-being-pure-at-heart-madrid-1015040" target="_blank">Ver</a></td></tr>
+<tr class="row-caro"><td>⭐</td><td class="fecha-col">Mié 1 jul</td><td class="hora-col">–</td><td class="artista-col">Limp Bizkit</td><td class="recinto-col">Movistar Arena · Madrid</td><td>&gt;50€</td><td class="genero-col">Nu Metal / Hard Rock</td><td><a class="btn" href="https://www.laganzua.net/conciertos/limp-bizkit-madrid-1015236" target="_blank">Ver</a></td></tr>
+<tr class="row-gratis"><td>⭐</td><td class="fecha-col">Mié 1 jul</td><td class="hora-col">21:30</td><td class="artista-col">Violeta <small style="color:#999">(MADO Orgullo – Pl. Las Reinas)</small></td><td class="recinto-col">Pl. Las Reinas · Madrid</td><td><span class="badge-gratis-text">GRATIS</span></td><td class="genero-col">Pop</td><td><a class="btn" href="https://madridorgullo.com/" target="_blank">Ver</a></td></tr>
+<!-- 2 JUL -->
+<tr class="row-normal"><td>⭐⭐⭐</td><td class="fecha-col">Jue 2 jul</td><td class="hora-col">20:30</td><td class="artista-col">Jeff Goldblum + Take Me to the River</td><td class="recinto-col">Noches del Botánico · Madrid</td><td>~49.50€</td><td class="genero-col">Jazz / Soul</td><td><a class="btn" href="https://www.laganzua.net/conciertos/jeff-goldblum-take-me-to-the-river-madrid-1015062" target="_blank">Ver</a></td></tr>
+<tr class="row-normal"><td>⭐⭐⭐</td><td class="fecha-col">Jue 2 jul</td><td class="hora-col">19:30</td><td class="artista-col">Jesús Carmona: Baile de Bestias <span class="badge-ig">📱 @villanosdelflamenco</span></td><td class="recinto-col">Teatro Albéniz · Madrid</td><td>Ver enlace</td><td class="genero-col">Flamenco / Danza</td><td><a class="btn" href="https://expoflamenco.com/agenda/eventos/festival-villanos-del-flamenco-2026/" target="_blank">Ver</a></td></tr>
+<tr class="row-normal"><td>⭐⭐⭐</td><td class="fecha-col">Jue 2 jul</td><td class="hora-col">20h/22h</td><td class="artista-col">Daniel Juárez Quartet <span class="badge-ig">📱 @cafecentralmadrid</span></td><td class="recinto-col">Café Central Ateneo · Madrid</td><td>Ver enlace</td><td class="genero-col">Jazz</td><td><a class="btn" href="https://cafecentralmadrid.com/programacion/" target="_blank">Ver</a></td></tr>
+<tr class="row-normal"><td>⭐⭐⭐</td><td class="fecha-col">Jue 2 jul</td><td class="hora-col">–</td><td class="artista-col">Gipsy Kings + Kiko Veneno</td><td class="recinto-col">Parque E.T. Galván · Madrid</td><td>Ver enlace</td><td class="genero-col">Rumba / Folk</td><td><a class="btn" href="https://www.laganzua.net/conciertos/gipsy-kings-kiko-veneno-madrid-1016172" target="_blank">Ver</a></td></tr>
+<tr class="row-normal"><td>⭐⭐</td><td class="fecha-col">Jue 2 jul</td><td class="hora-col">–</td><td class="artista-col">Emel <span class="badge-ig">📱 @cafeberlinmadrid</span></td><td class="recinto-col">Café Berlín · Madrid</td><td>Ver enlace</td><td class="genero-col">Indie Pop / Electrónica</td><td><a class="btn" href="https://www.laganzua.net/conciertos/emel-madrid-1014797" target="_blank">Ver</a></td></tr>
+<tr class="row-gratis"><td>⭐⭐</td><td class="fecha-col">Jue 2 jul</td><td class="hora-col">21:40</td><td class="artista-col">Cris Lora <small style="color:#999">(MADO Orgullo)</small></td><td class="recinto-col">Pl. Las Reinas · Madrid</td><td><span class="badge-gratis-text">GRATIS</span></td><td class="genero-col">Pop</td><td><a class="btn" href="https://madridorgullo.com/" target="_blank">Ver</a></td></tr>
+<!-- 3 JUL -->
+<tr class="row-normal"><td>⭐⭐⭐</td><td class="fecha-col">Vie 3 jul</td><td class="hora-col">19:30</td><td class="artista-col">Miles Davis 100: Chano Domínguez + Antonio Serrano <span class="badge-ig">📱 @villanosdelflamenco</span></td><td class="recinto-col">Teatro Albéniz · Madrid</td><td>Ver enlace</td><td class="genero-col">Jazz / Flamenco</td><td><a class="btn" href="https://expoflamenco.com/agenda/eventos/festival-villanos-del-flamenco-2026/" target="_blank">Ver</a></td></tr>
+<tr class="row-normal"><td>⭐⭐⭐</td><td class="fecha-col">Vie 3 jul</td><td class="hora-col">20h/22h</td><td class="artista-col">Mariano Díaz Quartet <span class="badge-ig">📱 @cafecentralmadrid</span></td><td class="recinto-col">Café Central Ateneo · Madrid</td><td>Ver enlace</td><td class="genero-col">Jazz</td><td><a class="btn" href="https://cafecentralmadrid.com/programacion/" target="_blank">Ver</a></td></tr>
+<tr class="row-gratis"><td>⭐⭐⭐</td><td class="fecha-col">Vie 3 jul</td><td class="hora-col">22:00</td><td class="artista-col">Juan Peña <span class="badge-muni">🗺 municipio</span></td><td class="recinto-col">Veladas del Palacio · Boadilla del Monte</td><td><span class="badge-gratis-text">GRATIS*</span></td><td class="genero-col">Flamenco / Copla</td><td><a class="btn" href="https://infoboadilla.com/noticias/las-veladas-del-palacio-de-boadilla_79398/educacion-y-cultura-en-boadilla-del-monte" target="_blank">Ver</a></td></tr>
+<tr class="row-normal"><td>⭐⭐</td><td class="fecha-col">Vie 3 jul</td><td class="hora-col">18:00</td><td class="artista-col">Festival Río Babel – Día 1 <span class="badge-muni">🗺 municipio</span><br><small style="color:#aaa">Amaia · La M.O.D.A. · Chambao · La Pegatina · Bandalos Chinos</small></td><td class="recinto-col">Aud. Miguel Ríos · Rivas Vaciamadrid</td><td>Ver enlace</td><td class="genero-col">Pop / Indie / Folk</td><td><a class="btn" href="https://festivalriobabel.com/" target="_blank">Ver</a></td></tr>
+<tr class="row-normal"><td>⭐⭐</td><td class="fecha-col">Vie 3 jul</td><td class="hora-col">–</td><td class="artista-col">Marwán + Albert Pla</td><td class="recinto-col">Parque E.T. Galván · Madrid</td><td>Ver enlace</td><td class="genero-col">Cantautor / Singer-songwriter</td><td><a class="btn" href="https://www.laganzua.net/conciertos/marwan-albert-pla-madrid-1016173" target="_blank">Ver</a></td></tr>
+<tr class="row-gratis"><td>⭐⭐</td><td class="fecha-col">Vie 3 jul</td><td class="hora-col">21:40</td><td class="artista-col">Blanca Paloma <small style="color:#999">(MADO Orgullo)</small></td><td class="recinto-col">Pl. Las Reinas · Madrid</td><td><span class="badge-gratis-text">GRATIS</span></td><td class="genero-col">Pop Alternativo</td><td><a class="btn" href="https://madridorgullo.com/" target="_blank">Ver</a></td></tr>
+<tr class="row-normal"><td>⭐</td><td class="fecha-col">Vie 3 jul</td><td class="hora-col">–</td><td class="artista-col">Jean Michel Jarré <small style="color:#999">(2ª fecha)</small></td><td class="recinto-col">Noches del Botánico · Madrid</td><td>~39-55€</td><td class="genero-col">Electrónica / Techno</td><td><a class="btn" href="https://www.laganzua.net/conciertos/jean-michel-jarre-segunda-fecha-madrid-madrid-1015174" target="_blank">Ver</a></td></tr>
+<!-- 4 JUL -->
+<tr class="row-normal"><td>⭐⭐⭐</td><td class="fecha-col">Sáb 4 jul</td><td class="hora-col">19:30</td><td class="artista-col">Paco de Lucía: Music for Big Band (Alex Conde) <span class="badge-ig">📱 @villanosdelflamenco</span></td><td class="recinto-col">Teatro Albéniz · Madrid</td><td>Ver enlace</td><td class="genero-col">Flamenco / Jazz</td><td><a class="btn" href="https://expoflamenco.com/agenda/eventos/festival-villanos-del-flamenco-2026/" target="_blank">Ver</a></td></tr>
+<tr class="row-normal"><td>⭐⭐⭐</td><td class="fecha-col">Sáb 4 jul</td><td class="hora-col">20:30</td><td class="artista-col">Snarky Puppy</td><td class="recinto-col">Noches del Botánico · Madrid</td><td>~49.50€</td><td class="genero-col">Jazz / World Music</td><td><a class="btn" href="https://www.laganzua.net/conciertos/snarky-puppy-madrid-1015063" target="_blank">Ver</a></td></tr>
+<tr class="row-normal"><td>⭐⭐⭐</td><td class="fecha-col">Sáb 4 jul</td><td class="hora-col">20h/22h</td><td class="artista-col">Mariano Díaz Quartet <span class="badge-ig">📱 @cafecentralmadrid</span></td><td class="recinto-col">Café Central Ateneo · Madrid</td><td>Ver enlace</td><td class="genero-col">Jazz</td><td><a class="btn" href="https://cafecentralmadrid.com/programacion/" target="_blank">Ver</a></td></tr>
+<tr class="row-normal"><td>⭐⭐</td><td class="fecha-col">Sáb 4 jul</td><td class="hora-col">–</td><td class="artista-col">Smokie</td><td class="recinto-col">Teatro Monumental · Madrid</td><td>Ver enlace</td><td class="genero-col">Country Rock / Pop Rock</td><td><a class="btn" href="https://www.laganzua.net/conciertos/smokie-madrid-1015876" target="_blank">Ver</a></td></tr>
+<tr class="row-normal"><td>⭐⭐</td><td class="fecha-col">Sáb 4 jul</td><td class="hora-col">18:00</td><td class="artista-col">Festival Río Babel – Día 2 <span class="badge-muni">🗺 municipio</span><br><small style="color:#aaa">The Offspring · Molotov · y más</small></td><td class="recinto-col">Aud. Miguel Ríos · Rivas Vaciamadrid</td><td>Ver enlace</td><td class="genero-col">Rock / Metal / Alternativo</td><td><a class="btn" href="https://festivalriobabel.com/" target="_blank">Ver</a></td></tr>
+<tr class="row-gratis"><td>⭐⭐</td><td class="fecha-col">Sáb 4 jul</td><td class="hora-col">22:00</td><td class="artista-col">Siempre Luis Miguel (tributo) <span class="badge-muni">🗺 municipio</span></td><td class="recinto-col">Veladas del Palacio · Boadilla del Monte</td><td><span class="badge-gratis-text">GRATIS*</span></td><td class="genero-col">Tributo Pop Latino</td><td><a class="btn" href="https://infoboadilla.com/noticias/las-veladas-del-palacio-de-boadilla_79398/educacion-y-cultura-en-boadilla-del-monte" target="_blank">Ver</a></td></tr>
+<tr class="row-gratis"><td>⭐⭐</td><td class="fecha-col">Sáb 4 jul</td><td class="hora-col">23:30</td><td class="artista-col">Mon Laferte <small style="color:#999">(MADO Orgullo)</small></td><td class="recinto-col">Pl. de España · Madrid</td><td><span class="badge-gratis-text">GRATIS</span></td><td class="genero-col">Pop Latino / Cantautor</td><td><a class="btn" href="https://madridorgullo.com/" target="_blank">Ver</a></td></tr>
+<tr class="row-caro"><td>⭐</td><td class="fecha-col">Sáb 4 jul</td><td class="hora-col">–</td><td class="artista-col">Rels B</td><td class="recinto-col">Estadio Metropolitano · Madrid</td><td>&gt;50€</td><td class="genero-col">Hip Hop / R&amp;B</td><td><a class="btn" href="https://www.laganzua.net/conciertos/rels-b-madrid-1013109" target="_blank">Ver</a></td></tr>
+<!-- 5 JUL -->
+<tr class="row-normal"><td>⭐⭐⭐</td><td class="fecha-col">Dom 5 jul</td><td class="hora-col">20:30</td><td class="artista-col">Garbage</td><td class="recinto-col">Noches del Botánico · Madrid</td><td>~49.50€</td><td class="genero-col">Rock / Alt Rock / Grunge</td><td><a class="btn" href="https://www.laganzua.net/conciertos/garbage-madrid-1015048" target="_blank">Ver</a></td></tr>
+<tr class="row-normal"><td>⭐⭐⭐</td><td class="fecha-col">Dom 5 jul</td><td class="hora-col">20h/22h</td><td class="artista-col">Gabriel Szternsztejn Cuarteto <span class="badge-ig">📱 @cafecentralmadrid</span></td><td class="recinto-col">Café Central Ateneo · Madrid</td><td>Ver enlace</td><td class="genero-col">Jazz</td><td><a class="btn" href="https://cafecentralmadrid.com/programacion/" target="_blank">Ver</a></td></tr>
+<tr class="row-normal"><td>⭐⭐</td><td class="fecha-col">Dom 5 jul</td><td class="hora-col">18:00</td><td class="artista-col">Festival Río Babel – Día 3 <span class="badge-muni">🗺 municipio</span><br><small style="color:#aaa">Katy Perry · Bomba Estéreo · La Casa Azul · Yami Safdie</small></td><td class="recinto-col">Aud. Miguel Ríos · Rivas Vaciamadrid</td><td>Ver enlace</td><td class="genero-col">Pop / World Music</td><td><a class="btn" href="https://festivalriobabel.com/" target="_blank">Ver</a></td></tr>
+<tr class="row-gratis"><td>⭐⭐</td><td class="fecha-col">Dom 5 jul</td><td class="hora-col">22:40</td><td class="artista-col">Pasión Vega <small style="color:#999">(MADO clausura)</small></td><td class="recinto-col">Pl. de España · Madrid</td><td><span class="badge-gratis-text">GRATIS</span></td><td class="genero-col">Copla / Pop</td><td><a class="btn" href="https://madridorgullo.com/" target="_blank">Ver</a></td></tr>
+<!-- 6 JUL -->
+<tr class="row-normal"><td>⭐⭐⭐</td><td class="fecha-col">Lun 6 jul</td><td class="hora-col">–</td><td class="artista-col">Fantastic Negrito <span class="badge-ig">📱 @salaelsol</span></td><td class="recinto-col">Sala El Sol · Madrid</td><td>Ver enlace</td><td class="genero-col">Blues / R&amp;B / Soul</td><td><a class="btn" href="https://www.laganzua.net/conciertos/fantastic-negrito-madrid-1015862" target="_blank">Ver</a></td></tr>
+<tr class="row-normal"><td>⭐⭐⭐</td><td class="fecha-col">Lun 6 jul</td><td class="hora-col">20:30</td><td class="artista-col">Danny Elfman</td><td class="recinto-col">Noches del Botánico · Madrid</td><td>~49.50€</td><td class="genero-col">Bandas Sonoras / Orquestal</td><td><a class="btn" href="https://www.laganzua.net/conciertos/danny-elfman-madrid-1014367" target="_blank">Ver</a></td></tr>
+<tr class="row-normal"><td>⭐⭐⭐</td><td class="fecha-col">Lun 6 jul</td><td class="hora-col">20h/22h</td><td class="artista-col">Playing Petrucciani <span class="badge-ig">📱 @cafecentralmadrid</span></td><td class="recinto-col">Café Central Ateneo · Madrid</td><td>Ver enlace</td><td class="genero-col">Jazz</td><td><a class="btn" href="https://cafecentralmadrid.com/programacion/" target="_blank">Ver</a></td></tr>
+<tr class="row-normal"><td>⭐⭐</td><td class="fecha-col">Lun 6 jul</td><td class="hora-col">–</td><td class="artista-col">Kikimora + Chef Cheeza &amp; Látex Diamond <span class="badge-ig">📱 @clamoreslive</span></td><td class="recinto-col">Sala Clamores · Madrid</td><td>Ver enlace</td><td class="genero-col">Funk / Soul / R&amp;B</td><td><a class="btn" href="https://www.laganzua.net/conciertos/kikimora-chef-cheeza-latex-diamond-madrid-1015536" target="_blank">Ver</a></td></tr>
+<!-- 7 JUL -->
+<tr class="row-normal"><td>⭐⭐⭐</td><td class="fecha-col">Mar 7 jul</td><td class="hora-col">20:30</td><td class="artista-col">Danny Elfman <small style="color:#999">(2ª fecha)</small></td><td class="recinto-col">Noches del Botánico · Madrid</td><td>~49.50€</td><td class="genero-col">Bandas Sonoras / Orquestal</td><td><a class="btn" href="https://www.laganzua.net/conciertos/danny-elfman-segunda-fecha-madrid-madrid-1015167" target="_blank">Ver</a></td></tr>
+<tr class="row-normal"><td>⭐⭐⭐</td><td class="fecha-col">Mar 7 jul</td><td class="hora-col">20h/22h</td><td class="artista-col">Playing Petrucciani <span class="badge-ig">📱 @cafecentralmadrid</span></td><td class="recinto-col">Café Central Ateneo · Madrid</td><td>Ver enlace</td><td class="genero-col">Jazz</td><td><a class="btn" href="https://cafecentralmadrid.com/programacion/" target="_blank">Ver</a></td></tr>
+<tr class="row-gratis"><td>⭐⭐</td><td class="fecha-col">Mar 7 jul</td><td class="hora-col">20:30</td><td class="artista-col">LOS40 – Canción del Verano <small style="color:#999">(Veranos de la Villa · apertura)</small></td><td class="recinto-col">Matadero Madrid · Madrid</td><td><span class="badge-gratis-text">GRATIS</span></td><td class="genero-col">Pop / Fiesta Musical</td><td><a class="btn" href="https://www.veranosdelavilla.com/es/evento/los-40-y-la-cancion-del-verano-de-la-villa" target="_blank">Ver</a></td></tr>
+<!-- 8 JUL -->
+<tr class="row-normal"><td>⭐⭐⭐</td><td class="fecha-col">Mié 8 jul</td><td class="hora-col">20h/22h</td><td class="artista-col">Crazy Cabin Quintet <span class="badge-ig">📱 @cafecentralmadrid</span></td><td class="recinto-col">Café Central Ateneo · Madrid</td><td>Ver enlace</td><td class="genero-col">Jazz</td><td><a class="btn" href="https://cafecentralmadrid.com/programacion/" target="_blank">Ver</a></td></tr>
+<tr class="row-normal"><td>⭐⭐</td><td class="fecha-col">Mié 8 jul</td><td class="hora-col">22:00</td><td class="artista-col">Orquesta y Coro CM Madrid – Gala Zarzuela <small style="color:#999">(Veranos de la Villa)</small></td><td class="recinto-col">CondeDuque · Madrid</td><td>24€</td><td class="genero-col">Zarzuela / Clásica</td><td><a class="btn" href="https://www.veranosdelavilla.com/es/evento/orquesta-y-coro-de-la-comunidad-de-madrid" target="_blank">Ver</a></td></tr>
+<tr class="row-caro"><td>⭐</td><td class="fecha-col">Mié 8 jul</td><td class="hora-col">–</td><td class="artista-col">Mad Cool Festival <small style="color:#999">(inicio – 3 días)</small></td><td class="recinto-col">Iberdrola Music · Madrid</td><td>&gt;50€</td><td class="genero-col">Rock / Pop / Indie</td><td><a class="btn" href="https://www.laganzua.net/conciertos/mad-cool-festival-2026-madrid-1013806" target="_blank">Ver</a></td></tr>
+<!-- 9 JUL -->
+<tr class="row-normal"><td>⭐⭐⭐</td><td class="fecha-col">Jue 9 jul</td><td class="hora-col">20:30</td><td class="artista-col">Silvana Estrada + Mari Froes</td><td class="recinto-col">Noches del Botánico · Madrid</td><td>~35-45€</td><td class="genero-col">Folk / Jazz / Singer-songwriter</td><td><a class="btn" href="https://www.laganzua.net/conciertos/silvana-estrada-mari-froes-madrid-1014368" target="_blank">Ver</a></td></tr>
+<tr class="row-normal"><td>⭐⭐⭐</td><td class="fecha-col">Jue 9 jul</td><td class="hora-col">19:30</td><td class="artista-col">María Moreno: Magnificat <span class="badge-ig">📱 @villanosdelflamenco</span></td><td class="recinto-col">Teatro Albéniz · Madrid</td><td>Ver enlace</td><td class="genero-col">Flamenco</td><td><a class="btn" href="https://expoflamenco.com/agenda/eventos/festival-villanos-del-flamenco-2026/" target="_blank">Ver</a></td></tr>
+<tr class="row-normal"><td>⭐⭐⭐</td><td class="fecha-col">Jue 9 jul</td><td class="hora-col">20h/22h</td><td class="artista-col">Crazy Cabin Quintet <span class="badge-ig">📱 @cafecentralmadrid</span></td><td class="recinto-col">Café Central Ateneo · Madrid</td><td>Ver enlace</td><td class="genero-col">Jazz</td><td><a class="btn" href="https://cafecentralmadrid.com/programacion/" target="_blank">Ver</a></td></tr>
+<tr class="row-normal"><td>⭐⭐</td><td class="fecha-col">Jue 9 jul</td><td class="hora-col">22:00</td><td class="artista-col">EDE. Fieralinda <small style="color:#999">(Veranos de la Villa)</small></td><td class="recinto-col">CondeDuque · Madrid</td><td>20€</td><td class="genero-col">Indie / Pop Experimental</td><td><a class="btn" href="https://www.veranosdelavilla.com/es/evento/ede-fieralinda" target="_blank">Ver</a></td></tr>
+</tbody>
+</table>
+</div>
+<p style="margin-top:10px;font-size:0.78em;color:#666">* Veladas del Palacio: gratis con reserva en <a href="https://www.entradasboadilla.es" style="color:#f5c842">entradasboadilla.es</a> (empadronados primero, resto 48h antes si quedan). &nbsp;·&nbsp; "Ver enlace" = precio no verificado, confirmar en taquilla.</p>
+
+<div class="ig-section">
+  <h2>📱 Cuentas de Instagram revisadas</h2>
+  <div class="ig-grid">
+    <div class="ig-item"><div class="handle">@cafecentralmadrid</div><div class="result found">✅ Programación completa 29 jun–12 jul (doble sesión diaria)</div></div>
+    <div class="ig-item"><div class="handle">@cafeberlinmadrid</div><div class="result found">✅ Emel – 2 jul</div></div>
+    <div class="ig-item"><div class="handle">@clamoreslive</div><div class="result found">✅ Flavia Beaka (4 jul) · Kikimora (6 jul)</div></div>
+    <div class="ig-item"><div class="handle">@salagalileo</div><div class="result found">✅ Calle Vapor – 1 jul</div></div>
+    <div class="ig-item"><div class="handle">@salaelsol</div><div class="result found">✅ Fantastic Negrito – 6 jul</div></div>
+    <div class="ig-item"><div class="handle">@villanosdelflamenco</div><div class="result found">✅ 4 eventos detectados (2, 3, 4 y 9 jul)</div></div>
+    <div class="ig-item"><div class="handle">@tomatito6cuerdas</div><div class="result">⚠️ Concierto 25 jul Veranos de la Villa — fuera de ventana</div></div>
+    <div class="ig-item"><div class="handle">@sala_duende_es</div><div class="result">ℹ️ Sin actividad en ventana</div></div>
+    <div class="ig-item"><div class="handle">@mobydickclub</div><div class="result">ℹ️ Sin eventos detectados en ventana</div></div>
+    <div class="ig-item"><div class="handle">@gruta_77</div><div class="result">ℹ️ Sin actividad indexada</div></div>
+    <div class="ig-item"><div class="handle">@sirocosala</div><div class="result">ℹ️ Sin actividad indexada</div></div>
+    <div class="ig-item"><div class="handle">@bigmamaballroom</div><div class="result">ℹ️ Sin actividad indexada</div></div>
+    <div class="ig-item"><div class="handle">@elsotano_madrid</div><div class="result">ℹ️ Sin actividad indexada</div></div>
+    <div class="ig-item"><div class="handle">@wurlitzerballroom</div><div class="result">ℹ️ Sin actividad indexada</div></div>
+    <div class="ig-item"><div class="handle">@moeclubmadrid</div><div class="result">ℹ️ Sin actividad indexada</div></div>
+    <div class="ig-item"><div class="handle">@deflamenco / @guiaflama</div><div class="result">ℹ️ Sin conciertos adicionales en ventana</div></div>
+  </div>
+</div>
+
+<h3 class="section-title">🗺 Municipios de la Comunidad de Madrid</h3>
+<ul style="color:#ccc;font-size:0.87em;line-height:2;padding-left:18px">
+  <li><strong>Boadilla del Monte</strong> – Veladas del Palacio: Juan Peña (3 jul, 22h) · Siempre Luis Miguel tributo (4 jul, 22h). Gratis con reserva en <a href="https://www.entradasboadilla.es" style="color:#f5c842">entradasboadilla.es</a></li>
+  <li><strong>Rivas Vaciamadrid</strong> – Festival Río Babel (3–5 jul). Amaia, The Offspring, Katy Perry, Bomba Estéreo, La M.O.D.A. Aud. Miguel Ríos. <a href="https://festivalriobabel.com" style="color:#f5c842">festivalriobabel.com</a></li>
+  <li><strong>Majadahonda</strong> – Noches del Monte del Pilar (ciclo verano, Parque Felipe VI, acceso libre, 22h): <a href="https://cultura.majadahonda.org" style="color:#f5c842">cultura.majadahonda.org</a> ⚠️ Verificar fechas en ventana</li>
+  <li><strong>Pozuelo de Alarcón</strong> – Veranos de Pozuelo (jun–ago, gratuito, Teatro La Lira): <a href="https://infopozuelo.com/agenda/musica" style="color:#f5c842">infopozuelo.com</a> ⚠️ Verificar fechas en ventana</li>
+</ul>
+
+<div class="footer">
+  <strong style="color:#f5c842">Fuentes:</strong>
+  <a href="https://www.laganzua.net/conciertos/madrid/julio-2026">La Ganzúa</a> ·
+  <a href="https://cafecentralmadrid.com/programacion/">Café Central</a> ·
+  <a href="https://www.veranosdelavilla.com/es/programa">Veranos de la Villa</a> ·
+  <a href="https://en.nochesdelbotanico.com/">Noches del Botánico</a> ·
+  <a href="https://festivalriobabel.com/">Río Babel</a> ·
+  <a href="https://www.popelera.net/mado-madrid-orgullo-2026/">MADO Orgullo</a> ·
+  <a href="https://expoflamenco.com/agenda/eventos/festival-villanos-del-flamenco-2026/">Villanos del Flamenco</a> ·
+  <a href="https://infoboadilla.com/noticias/las-veladas-del-palacio-de-boadilla_79398/">Veladas del Palacio Boadilla</a>
+  <br><br>
+  ⚠️ Programa sujeto a cambios. Verificad en taquilla oficial antes de comprar. &nbsp;·&nbsp; Radar generado 29/06/2026 &nbsp;·&nbsp; <a href="https://ccorachan.github.io/radar-madrid">https://ccorachan.github.io/radar-madrid</a>
+</div>
 </body>
 </html>
