@@ -3,209 +3,818 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Radar Musical Madrid – 24/07/2026 a 03/08/2026</title>
+<title>🎵 Radar Musical Madrid — Próximos 10 días</title>
 <style>
-  body { background:#0d0d0d; color:#eee; font-family: 'Segoe UI', Arial, sans-serif; margin:0; padding:24px; line-height:1.5; }
-  h1 { color:#f5c842; font-size:2rem; margin-bottom:4px; }
-  h2 { color:#f5c842; border-bottom:1px solid #333; padding-bottom:6px; margin-top:40px; }
-  .subtitle { color:#aaa; margin-bottom:24px; }
-  .legend { display:flex; flex-wrap:wrap; gap:16px; margin-bottom:16px; font-size:0.9rem; }
-  .legend span { display:inline-flex; align-items:center; gap:6px; }
-  .swatch { width:16px; height:16px; border-radius:3px; display:inline-block; border:1px solid #444; }
-  table { border-collapse:collapse; width:100%; margin-bottom:32px; font-size:0.92rem; }
-  th, td { padding:8px 10px; text-align:left; border-bottom:1px solid #222; vertical-align:top; }
-  th { background:#1a1a1a; color:#f5c842; position:sticky; top:0; }
-  tr.gratis { background:#09180a; }
-  tr.medio { background:#111; }
-  tr.alto { background:#160808; }
-  tr:hover { filter:brightness(1.15); }
-  .badge-ig { color:#e1306c; font-size:0.85em; }
-  .warn { color:#ff8c42; font-weight:bold; }
-  a { color:#8ecbff; text-decoration:none; }
-  a:hover { text-decoration:underline; }
-  .gems { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:16px; margin-bottom:24px; }
-  .gem-card { background:#161616; border:1px solid #f5c842; border-radius:8px; padding:16px; }
-  .gem-card h3 { color:#f5c842; margin:0 0 8px 0; font-size:1.05rem; }
-  .gem-card p { margin:4px 0; color:#ccc; font-size:0.9rem; }
-  .ig-list { columns:2; column-gap:32px; }
-  .ig-list li { margin-bottom:6px; }
-  footer { color:#888; font-size:0.85rem; margin-top:40px; border-top:1px solid #333; padding-top:16px; }
-  .stars { white-space:nowrap; }
+  body {
+    background: #0d0d0d;
+    color: #e8e8e8;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 24px;
+    line-height: 1.5;
+  }
+  h1 {
+    color: #f5c842;
+    font-size: 28px;
+    margin-bottom: 4px;
+  }
+  .subtitle {
+    color: #aaa;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+  .legend {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin: 16px 0 20px 0;
+    font-size: 13px;
+  }
+  .legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .swatch {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    border-radius: 3px;
+    border: 1px solid #333;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    font-size: 13px;
+  }
+  th {
+    background: #1a1a1a;
+    color: #f5c842;
+    text-align: left;
+    padding: 10px 8px;
+    border-bottom: 2px solid #f5c842;
+    position: sticky;
+    top: 0;
+  }
+  td {
+    padding: 9px 8px;
+    border-bottom: 1px solid #222;
+    vertical-align: top;
+  }
+  td.star { white-space: nowrap; }
+  td.date { white-space: nowrap; color: #f5c842; font-weight: 600; }
+  td.time { white-space: nowrap; color: #ccc; }
+  td.artist { font-weight: 600; color: #fff; }
+  td.link a { color: #6fb3ff; text-decoration: none; white-space: nowrap; }
+  td.link a:hover { text-decoration: underline; }
+  h2 {
+    color: #f5c842;
+    font-size: 20px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 6px;
+    margin-top: 36px;
+  }
+  .joyas {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .joya {
+    background: #161616;
+    border: 1px solid #f5c84255;
+    border-radius: 8px;
+    padding: 14px;
+    flex: 1;
+    min-width: 220px;
+  }
+  .joya-title { color: #f5c842; font-weight: 700; margin-bottom: 6px; }
+  .joya-meta { color: #bbb; font-size: 13px; margin-bottom: 4px; }
+  .joya a { color: #6fb3ff; font-size: 13px; }
+  .ig-cols {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .ig-col { flex: 1; min-width: 260px; }
+  .ig-col h3 { color: #f5c842; font-size: 14px; margin-bottom: 8px; }
+  .ig-col ul { padding-left: 18px; font-size: 13px; color: #ccc; }
+  .ig-col li { margin-bottom: 6px; }
+  footer {
+    margin-top: 40px;
+    padding-top: 16px;
+    border-top: 1px solid #333;
+    color: #888;
+    font-size: 12px;
+  }
+  footer a { color: #f5c842; }
+  .note {
+    background: #1a1a1a;
+    border-left: 3px solid #f5c842;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: #ccc;
+    margin-bottom: 20px;
+  }
 </style>
 </head>
 <body>
 
 <h1>🎵 Radar Musical Madrid</h1>
-<p class="subtitle">Próximos 10 días · 24 de julio – 3 de agosto de 2026 · Comunidad de Madrid</p>
+<div class="subtitle">Próximos 10 días · 27 agosto – 6 septiembre 2026 · Comunidad de Madrid</div>
+
+<div class="note">
+  56 eventos encontrados · 15 fuera de Madrid capital (Alcorcón, Pozuelo de Alarcón, San Lorenzo de El Escorial, San Sebastián de los Reyes) ·
+  Algunas búsquedas de fetch directo a webs municipales y a Instagram fallaron por restricciones técnicas de la sesión;
+  los datos se reconstruyeron vía búsqueda web cruzando al menos una fuente cuando fue posible. Precios sin verificar: "Ver enlace".
+</div>
 
 <div class="legend">
-  <span><span class="swatch" style="background:#09180a"></span> Gratis</span>
-  <span><span class="swatch" style="background:#111"></span> Hasta 50€</span>
-  <span><span class="swatch" style="background:#160808"></span> Más de 50€</span>
-  <span>⭐⭐⭐ Flamenco / Jazz / Blues / Soul / Folk / Cantautor / Rock clásico</span>
-  <span>⭐⭐ Pop calidad / Indie / Tributos / World music</span>
-  <span>⭐ Electrónica / Trap / otros</span>
-  <span class="badge-ig">📱 = fuente Instagram del recinto</span>
+  <span><span class="swatch" style="background:#09180a;"></span> Gratis</span>
+  <span><span class="swatch" style="background:#111111;"></span> Hasta 50€</span>
+  <span><span class="swatch" style="background:#160808;"></span> Más de 50€</span>
+  <span>⭐⭐⭐ Flamenco / Jazz / Blues / Soul / Folk / Country / Cantautor / Rock clásico</span>
+  <span>⭐⭐ Pop calidad / Indie / Acústico / Tributos / World / Clásica</span>
+  <span>⭐ Electrónica / Reggaeton / Trap / otros</span>
 </div>
 
-<h2>Joyas de la semana</h2>
-<div class="gems">
-  <div class="gem-card">
-    <h3>Diana Krall + Pat Metheny (dos noches distintas)</h3>
-    <p><strong>Dom 26 y Lun 27 jul · 20:30h</strong></p>
-    <p>Real Jardín Botánico Alfonso XIII · Noches del Botánico · 35–90€</p>
-    <p>Dos de las mayores leyendas del jazz mundial, en noches consecutivas en el mismo escenario.</p>
-  </div>
-  <div class="gem-card">
-    <h3>Jesús Carmona · "Bailando al tiempo"</h3>
-    <p><strong>Dom 26 jul · 22:00h</strong></p>
-    <p>CondeDuque, Patio Central · 20€</p>
-    <p>Gala flamenca de danza con alegrías, soleá, tarantas y bulerías.</p>
-  </div>
-  <div class="gem-card">
-    <h3>"En Tránsito", homenaje a Serrat (jazz/blues)</h3>
-    <p><strong>Vie 24 jul · 22:30h</strong></p>
-    <p>Dehesa de Navalcarbón, Las Rozas · 10–20€</p>
-    <p>Alberto Alonso reinterpreta a Serrat desde el jazz y el blues, fuera de la capital.</p>
-  </div>
-</div>
-
-<h2>Tabla completa de eventos</h2>
 <table>
-<thead>
-<tr>
-<th>⭐</th><th>Fecha</th><th>Hora</th><th>Artista / Evento</th><th>Recinto · Municipio</th><th>Precio</th><th>Género</th><th>🔗 Comprar</th>
-</tr>
-</thead>
-<tbody>
+  <thead>
+    <tr>
+      <th>⭐</th>
+      <th>Fecha</th>
+      <th>Hora</th>
+      <th>Artista / Evento</th>
+      <th>Recinto · Municipio</th>
+      <th>Precio</th>
+      <th>Género</th>
+      <th>Enlace</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr style="background:#09180a;">
+      <td class="star">⭐⭐⭐</td>
+      <td class="date">Jue 27 agosto</td>
+      <td class="time">00:30 ⚠️</td>
+      <td class="artist">Celtas Cortos y Nueva Línea</td>
+      <td class="venue">Recinto ferial (fiestas patronales) · San Sebastián de los Reyes</td>
+      <td class="price">Gratuito</td>
+      <td class="genre">Folk/Rock</td>
+      <td class="link"><a href="https://www.timeout.es/madrid/es/noticias/malu-celtas-cortos-y-siloe-actuaran-gratis-en-las-fiestas-de-san-sebastian-de-los-reyes-2026-080126" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="gratis"><td class="stars">⭐⭐⭐</td><td>Vie 24 jul</td><td>15:00</td><td>Noelia Ruiz (baile flamenco)</td><td>Museo de Historia de Madrid · Madrid</td><td>Gratis</td><td>Flamenco</td><td><a href="https://www.veranosdelavilla.com/es/evento/refugiate-en-la-cultura/noelia-ruiz" target="_blank">Info</a></td></tr>
+    <tr style="background:#111111;">
+      <td class="star">⭐</td>
+      <td class="date">Jue 27 agosto</td>
+      <td class="time">Ver enlace</td>
+      <td class="artist">Lady Pepa</td>
+      <td class="venue">Espacio Alma · Madrid</td>
+      <td class="price">Ver enlace</td>
+      <td class="genre">⚠️ Verificar</td>
+      <td class="link"><a href="https://www.songkick.com/metro-areas/28755-spain-madrid/august-2026" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="gratis"><td class="stars">⭐⭐⭐</td><td>Vie 24 jul</td><td>22:30</td><td>St. Louis Jazz Band · "Noches de vino y jazz"</td><td>Av. Pdte. Carmona, 3 (Tetuán) · Madrid</td><td>Gratis</td><td>Jazz (Dixie / Nueva Orleans)</td><td><a href="https://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Tetuan/St-Louis-Jazz-Band/?vgnextfmt=default&vgnextoid=003463905231f910VgnVCM100000891ecb1aRCRD&vgnextchannel=0813ca5d5fb96010VgnVCM100000dc0ca8c0RCRD" target="_blank">Info</a></td></tr>
+    <tr style="background:#111111;">
+      <td class="star">⭐</td>
+      <td class="date">Jue 27 agosto</td>
+      <td class="time">20:30</td>
+      <td class="artist">UPCHUCK + Los Pólipos + Ikhorium</td>
+      <td class="venue">Gruta 77 · Madrid</td>
+      <td class="price">13–16€</td>
+      <td class="genre">Punk/Hardcore</td>
+      <td class="link"><a href="https://songkick.com/concerts/43242250-upchuck-at-gruta-77" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="alto"><td class="stars">⭐⭐⭐</td><td>Vie 24 jul</td><td>22:30</td><td>"En Tránsito" – Homenaje a Joan Manuel Serrat (jazz/blues)</td><td>Dehesa de Navalcarbón · Las Rozas de Madrid</td><td>10–20€</td><td>Cantautor / Jazz-blues</td><td><a href="https://www.lasrozas.es/node/12423" target="_blank">Info</a></td></tr>
+    <tr style="background:#160808;">
+      <td class="star">⭐⭐</td>
+      <td class="date">Vie 28 agosto</td>
+      <td class="time">Ver enlace</td>
+      <td class="artist">The Weeknd + Playboi Carti</td>
+      <td class="venue">Estadio Riyadh Air Metropolitano · Madrid</td>
+      <td class="price">Desde 51€</td>
+      <td class="genre">Pop/R&amp;B</td>
+      <td class="link"><a href="https://www.songkick.com/concerts/42775114-weeknd-at-estadio-riyadh-air-metropolitano" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="medio"><td class="stars">⭐⭐⭐</td><td>Vie 24 – Sáb 25 jul</td><td>20:00 / 22:00</td><td>Slim Slam Tribute</td><td>Café Central Ateneo · Madrid</td><td>Ver enlace</td><td>Jazz</td><td><a href="https://cafecentralmadrid.com/reservas/?event=slim-slam-tribute-992b1a65" target="_blank">Entradas</a></td></tr>
+    <tr style="background:#09180a;">
+      <td class="star">⭐⭐</td>
+      <td class="date">Vie 28 agosto</td>
+      <td class="time">23:00</td>
+      <td class="artist">Cali y El Dandee</td>
+      <td class="venue">Recinto ferial (fiestas patronales) · San Sebastián de los Reyes</td>
+      <td class="price">Gratuito</td>
+      <td class="genre">Pop latino</td>
+      <td class="link"><a href="https://okdiario.com/madrid/fiestas-san-sebastian-reyes-2026-cuando-son-fechas-cartel-conciertos-20141125" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="medio"><td class="stars">⭐⭐</td><td>Vie 24 jul</td><td>21:00</td><td>Noches para Bailar: Alicia Rey y Rubén Suárez</td><td>Sala Galileo Galilei · Madrid</td><td>20€</td><td>Pop / Baile en directo</td><td><a href="https://salagalileo.es/programacion/noches-para-bailar-en-galileo/" target="_blank">Entradas</a> <span class="badge-ig">📱 @salagalileo</span></td></tr>
+    <tr style="background:#111111;">
+      <td class="star">⭐⭐</td>
+      <td class="date">Vie 28 agosto</td>
+      <td class="time">20:00</td>
+      <td class="artist">JORCAM — &quot;Los colores de América&quot; (dir. Alondra de la Parra, con Thomas Enhco)</td>
+      <td class="venue">Teatro Auditorio San Lorenzo de El Escorial · San Lorenzo de El Escorial</td>
+      <td class="price">Ver enlace</td>
+      <td class="genre">Clásica/Sinfónica</td>
+      <td class="link"><a href="https://www.docenotas.com/186619/escena-escorial-comienza-con-un-recorrido-musical-por-america-y-europa/" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="gratis"><td class="stars">⭐⭐</td><td>Vie 24 jul</td><td>22:45</td><td>AFASIA (Fiestas de Villaverde Bajo)</td><td>Recinto ferial Gran Vía de Villaverde · Madrid</td><td>Gratis</td><td>Pop / Rock</td><td><a href="https://diario.madrid.es/blog/2026/07/22/que-hacer-en-madrid-este-fin-de-semana-22-26-julio-fiestas-flamenco-jazz-danza-y-cine/" target="_blank">Info</a></td></tr>
+    <tr style="background:#111111;">
+      <td class="star">⭐</td>
+      <td class="date">Vie 28 agosto</td>
+      <td class="time">Ver enlace</td>
+      <td class="artist">Jol</td>
+      <td class="venue">Sala Clamores · Madrid</td>
+      <td class="price">Ver enlace</td>
+      <td class="genre">⚠️ Verificar</td>
+      <td class="link"><a href="https://www.songkick.com/venues/46510-sala-clamores" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="gratis"><td class="stars">⭐⭐</td><td>Vie 24 jul</td><td>22:00</td><td>Tributo 80s/90s: David Velardo (Fiestas de Santiago, Carabanchel)</td><td>Plaza de Carabanchel · Madrid</td><td>Gratis</td><td>Tributo Pop</td><td><a href="https://diario.madrid.es/blog/2026/07/22/que-hacer-en-madrid-este-fin-de-semana-22-26-julio-fiestas-flamenco-jazz-danza-y-cine/" target="_blank">Info</a></td></tr>
+    <tr style="background:#111111;">
+      <td class="star">⭐</td>
+      <td class="date">Vie 28 agosto</td>
+      <td class="time">Ver enlace</td>
+      <td class="artist">Las Víctimas Civiles</td>
+      <td class="venue">Sala El Sol · Madrid</td>
+      <td class="price">Ver enlace</td>
+      <td class="genre">⚠️ Verificar</td>
+      <td class="link"><a href="https://salaelsol.com/agenda/" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="medio"><td class="stars">⭐⭐</td><td>Vie 24 jul</td><td>23:00</td><td>Puerto Candelaria · "Ventura Tour 2026" (Veranos en Vivo)</td><td>Café Berlín · Madrid</td><td>15€</td><td>World music / Cumbia</td><td><a href="https://cafeberlinentradas.com/events/puerto-candelarias-ventura-tour-2026" target="_blank">Entradas</a> <span class="badge-ig">📱 @cafeberlinmadrid</span></td></tr>
+    <tr style="background:#111111;">
+      <td class="star">⭐</td>
+      <td class="date">Vie 28 agosto</td>
+      <td class="time">Ver enlace</td>
+      <td class="artist">Sideral</td>
+      <td class="venue">Sala Galileo Galilei · Madrid</td>
+      <td class="price">Ver enlace</td>
+      <td class="genre">⚠️ Verificar</td>
+      <td class="link"><a href="https://compisdeviaje.com/madrid/carteleras/sala-galileo-galilei" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="medio"><td class="stars">⭐</td><td>Vie 24 jul</td><td>23:59</td><td>Meteora · Tributo a Linkin Park (Festival de Tributos)</td><td>Siroco · Madrid</td><td>Ver enlace</td><td>Tributo Metal</td><td><a href="https://siroco.es/agenda/" target="_blank">Info</a></td></tr>
+    <tr style="background:#111111;">
+      <td class="star">⭐⭐⭐</td>
+      <td class="date">Sáb 29 agosto</td>
+      <td class="time">21:00</td>
+      <td class="artist">Luis Ramiro — &quot;El Rayo Verde&quot;</td>
+      <td class="venue">Sala Galileo Galilei · Madrid</td>
+      <td class="price">Ver enlace</td>
+      <td class="genre">Cantautor / Singer-songwriter</td>
+      <td class="link"><a href="https://salagalileo.es/eventos/luis-ramiro-2/" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="gratis"><td class="stars">⭐⭐⭐</td><td>Sáb 25 jul</td><td>22:30</td><td>Coti (Fiestas de Villaverde Bajo)</td><td>Recinto ferial Gran Vía de Villaverde · Madrid</td><td>Gratis</td><td>Cantautor</td><td><a href="https://diario.madrid.es/blog/2026/07/22/que-hacer-en-madrid-este-fin-de-semana-22-26-julio-fiestas-flamenco-jazz-danza-y-cine/" target="_blank">Info</a></td></tr>
+    <tr style="background:#111111;">
+      <td class="star">⭐⭐⭐</td>
+      <td class="date">Sáb 29 agosto</td>
+      <td class="time">20:30</td>
+      <td class="artist">Hermanos Gutiérrez</td>
+      <td class="venue">Sala La Riviera · Madrid</td>
+      <td class="price">Desde 45€</td>
+      <td class="genre">Blues / Folk instrumental</td>
+      <td class="link"><a href="https://salariviera.com/event/hermanos-gutierrez/" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="medio"><td class="stars">⭐⭐⭐</td><td>Sáb 25 jul</td><td>22:00</td><td>Antonio Grande y Sol Escobar Quintet</td><td>Café Berlín · Madrid</td><td>15€</td><td>Jazz</td><td><a href="https://cafeberlinentradas.com/events/antonio-grande-y-sol-escobar-quintet" target="_blank">Entradas</a> <span class="badge-ig">📱 @cafeberlinmadrid</span></td></tr>
+    <tr style="background:#160808;">
+      <td class="star">⭐⭐</td>
+      <td class="date">Sáb 29 agosto</td>
+      <td class="time">Ver enlace</td>
+      <td class="artist">The Weeknd + Playboi Carti</td>
+      <td class="venue">Estadio Riyadh Air Metropolitano · Madrid</td>
+      <td class="price">Desde 51€</td>
+      <td class="genre">Pop/R&amp;B</td>
+      <td class="link"><a href="https://conciertospormadrid.com/conciertos/the-weeknd-madrid-29-agosto-2026/" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="medio"><td class="stars">⭐⭐⭐</td><td>Sáb 25 jul</td><td>21:30</td><td>Rosendadas Acústicas (tributo a Rosendo)</td><td>Gruta77 · Madrid</td><td>Ver enlace</td><td>Rock clásico acústico</td><td><a href="https://gruta77.com/programacion-eventos-gruta77-madrid/" target="_blank">Info</a> <span class="badge-ig">📱 @gruta_77</span></td></tr>
+    <tr style="background:#111111;">
+      <td class="star">⭐⭐</td>
+      <td class="date">Sáb 29 agosto</td>
+      <td class="time">Ver enlace</td>
+      <td class="artist">Rebel Rebel Band (tributo El Canto del Loco + Pereza)</td>
+      <td class="venue">Moby Dick Club · Madrid</td>
+      <td class="price">Ver enlace</td>
+      <td class="genre">Tributo Pop-Rock</td>
+      <td class="link"><a href="https://www.mobydickclub.com/programacion.php" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="alto"><td class="stars">⭐⭐</td><td>Sáb 25 jul</td><td>20:30</td><td>The Kooks</td><td>Real Jardín Botánico Alfonso XIII · Madrid (Noches del Botánico)</td><td>35–90€</td><td>Indie rock</td><td><a href="https://www.nochesdelbotanico.com" target="_blank">Entradas</a></td></tr>
+    <tr style="background:#09180a;">
+      <td class="star">⭐⭐</td>
+      <td class="date">Sáb 29 agosto</td>
+      <td class="time">23:00</td>
+      <td class="artist">Malú</td>
+      <td class="venue">Recinto ferial (fiestas patronales) · San Sebastián de los Reyes</td>
+      <td class="price">Gratuito</td>
+      <td class="genre">Pop</td>
+      <td class="link"><a href="https://www.madrid24horas.com/articulo/mas-alla-del-centro/malu-siloe-celtas-cortos-cali-dandee-encabezan-fiestas-san-sebastian-reyes-2026/20260813094123106952.html" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="medio"><td class="stars">⭐⭐</td><td>Sáb 25 jul</td><td>21:00</td><td>Fiesta Pop/Rock Español y clásicos de siempre – "Sideral"</td><td>Sala Galileo Galilei · Madrid</td><td>20€</td><td>Pop / Rock</td><td><a href="https://salagalileo.es/programacion/fiesta-pop-rock-espanol-y-clasicos-de-siempre/" target="_blank">Entradas</a> <span class="badge-ig">📱 @salagalileo</span></td></tr>
+    <tr style="background:#111111;">
+      <td class="star">⭐</td>
+      <td class="date">Sáb 29 agosto</td>
+      <td class="time">19:00</td>
+      <td class="artist">Las Fokin Biches</td>
+      <td class="venue">Wurlitzer Ballroom · Madrid</td>
+      <td class="price">Ver enlace</td>
+      <td class="genre">Rock/Punk</td>
+      <td class="link"><a href="https://www.songkick.com/artists/8591344-las-fokin-biches/calendar" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="medio"><td class="stars">⭐⭐⭐</td><td>Dom 26 jul</td><td>22:00</td><td>Jesús Carmona · "Bailando al tiempo" (Gala Flamenca)</td><td>CondeDuque, Patio Central · Madrid</td><td>20€</td><td>Flamenco</td><td><a href="https://www.veranosdelavilla.com/es/evento/jesus-carmona" target="_blank">Info</a></td></tr>
+    <tr style="background:#160808;">
+      <td class="star">⭐⭐</td>
+      <td class="date">Dom 30 agosto</td>
+      <td class="time">Ver enlace</td>
+      <td class="artist">The Weeknd + Playboi Carti</td>
+      <td class="venue">Estadio Riyadh Air Metropolitano · Madrid</td>
+      <td class="price">Desde 51€</td>
+      <td class="genre">Pop/R&amp;B</td>
+      <td class="link"><a href="https://www.esmadrid.com/agenda/weeknd-estadio-riyadh-air-metropolitano" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="alto"><td class="stars">⭐⭐⭐</td><td>Dom 26 jul</td><td>20:30</td><td>Pat Metheny</td><td>Real Jardín Botánico Alfonso XIII · Madrid (Noches del Botánico)</td><td>35–90€</td><td>Jazz</td><td><a href="https://www.nochesdelbotanico.com" target="_blank">Entradas</a></td></tr>
+    <tr style="background:#09180a;">
+      <td class="star">⭐⭐</td>
+      <td class="date">Dom 30 agosto</td>
+      <td class="time">23:00</td>
+      <td class="artist">Siloé</td>
+      <td class="venue">Recinto ferial (fiestas patronales) · San Sebastián de los Reyes</td>
+      <td class="price">Gratuito</td>
+      <td class="genre">Pop/Indie</td>
+      <td class="link"><a href="https://www.democrata.es/actualidad/fiestas-san-sebastian-reyes-2026-programa-conciertos-gratis-horarios/" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="gratis"><td class="stars">⭐⭐⭐</td><td>Dom 26 jul</td><td>21:00</td><td>Whatever Jazz Band (Dixieland)</td><td>Templete José Menese, Puerta del Ángel · Madrid</td><td>Gratis</td><td>Jazz</td><td><a href="https://www.veranosdelavilla.com/es/evento/whatever-jazz-band" target="_blank">Info</a></td></tr>
+    <tr style="background:#111111;">
+      <td class="star">⭐⭐</td>
+      <td class="date">Dom 30 agosto</td>
+      <td class="time">Ver enlace ⚠️</td>
+      <td class="artist">Nemanja Radulović y Double Sens — &quot;El violín en llamas&quot;</td>
+      <td class="venue">Teatro Auditorio San Lorenzo de El Escorial · San Lorenzo de El Escorial</td>
+      <td class="price">Ver enlace</td>
+      <td class="genre">Clásica / Música de cámara</td>
+      <td class="link"><a href="https://www.beckmesser.com/escena-escorial-2026-festival-de-la-parra/" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="medio"><td class="stars">⭐⭐⭐</td><td>Dom 26 jul</td><td>20:00 / 22:00</td><td>Víctor Correa · "Movimiento"</td><td>Café Central Ateneo · Madrid</td><td>Ver enlace</td><td>Jazz</td><td><a href="https://cafecentralmadrid.com/reservas/?event=victor-correa-movimiento-5738ce58" target="_blank">Entradas</a></td></tr>
+    <tr style="background:#111111;">
+      <td class="star">⭐</td>
+      <td class="date">Dom 30 agosto</td>
+      <td class="time">Ver enlace</td>
+      <td class="artist">Xandro Leima</td>
+      <td class="venue">Espacio Alma · Madrid</td>
+      <td class="price">Ver enlace</td>
+      <td class="genre">⚠️ Verificar</td>
+      <td class="link"><a href="https://www.songkick.com/metro-areas/28755-spain-madrid/august-2026" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="alto"><td class="stars">⭐⭐⭐</td><td>Lun 27 jul</td><td>20:30</td><td>Diana Krall</td><td>Real Jardín Botánico Alfonso XIII · Madrid (Noches del Botánico)</td><td>35–90€</td><td>Jazz</td><td><a href="https://www.nochesdelbotanico.com" target="_blank">Entradas</a></td></tr>
+    <tr style="background:#111111;">
+      <td class="star">⭐⭐</td>
+      <td class="date">Lun 31 agosto</td>
+      <td class="time">20:00 y 22:00</td>
+      <td class="artist">Ogun Afrobeat</td>
+      <td class="venue">Café Central (La Cátedra del Ateneo) · Madrid</td>
+      <td class="price">Ver enlace</td>
+      <td class="genre">Afrobeat / fusión Jazz</td>
+      <td class="link"><a href="https://cafecentralmadrid.com/programacion/" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="medio"><td class="stars">⭐⭐⭐</td><td>Lun 27 – Mar 28 jul</td><td>20:00 / 22:00</td><td>Abe Rábade Trio</td><td>Café Central Ateneo · Madrid</td><td>Ver enlace</td><td>Jazz</td><td><a href="https://cafecentralmadrid.com/reservas/?event=abe-rabade-trio-8587a12c" target="_blank">Entradas</a></td></tr>
+    <tr style="background:#111111;">
+      <td class="star">⭐⭐</td>
+      <td class="date">Mar 1 septiembre</td>
+      <td class="time">20:00 y 22:00</td>
+      <td class="artist">Ogun Afrobeat</td>
+      <td class="venue">Café Central (La Cátedra del Ateneo) · Madrid</td>
+      <td class="price">Ver enlace</td>
+      <td class="genre">Afrobeat / fusión Jazz</td>
+      <td class="link"><a href="https://cafecentralmadrid.com/programacion/" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="alto"><td class="stars">⭐⭐</td><td>Mar 28 jul</td><td>20:30</td><td>Rubén Blades con Roberto Delgado Big Band</td><td>Real Jardín Botánico Alfonso XIII · Madrid (Noches del Botánico)</td><td>35–90€</td><td>Salsa / World</td><td><a href="https://www.nochesdelbotanico.com" target="_blank">Entradas</a></td></tr>
+    <tr style="background:#09180a;">
+      <td class="star">⭐⭐⭐</td>
+      <td class="date">Mié 2 septiembre</td>
+      <td class="time">22:00</td>
+      <td class="artist">MOE Jazz Jam Session (banda de Alberto Guio)</td>
+      <td class="venue">Moe Club · Madrid</td>
+      <td class="price">Entrada libre</td>
+      <td class="genre">Jazz</td>
+      <td class="link"><a href="https://www.moeclub.com/" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="medio"><td class="stars">⭐⭐⭐</td><td>Mar 28 jul</td><td>22:00</td><td>Alma de Tablao (Asociación de Tablaos Flamencos de Madrid)</td><td>IES San Isidro, Claustro · Madrid</td><td>15€</td><td>Flamenco</td><td><a href="https://www.veranosdelavilla.com/es/evento/alma-de-tablao-cuna-y-memoria-del-flamenco" target="_blank">Info</a></td></tr>
+    <tr style="background:#09180a;">
+      <td class="star">⭐⭐⭐</td>
+      <td class="date">Jue 3 septiembre</td>
+      <td class="time">00:15</td>
+      <td class="artist">The Fucking Jam (jam session)</td>
+      <td class="venue">Honky Tonk Bar · Madrid</td>
+      <td class="price">Entrada libre</td>
+      <td class="genre">Funk / Soul / Blues / Rock</td>
+      <td class="link"><a href="https://clubhonky.com/programacion/the-fucking-jam-202502-4/" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="medio"><td class="stars">⭐⭐</td><td>Mar 28 jul</td><td>22:00</td><td>"El sitio de mi recreo" – Homenaje a Antonio Vega</td><td>CondeDuque, Patio Central · Madrid</td><td>20€</td><td>Tributo Rock/Pop</td><td><a href="https://www.veranosdelavilla.com/es/evento/el-sitio-de-mi-recreo" target="_blank">Info</a></td></tr>
+    <tr style="background:#111111;">
+      <td class="star">⭐⭐⭐</td>
+      <td class="date">Jue 3 septiembre</td>
+      <td class="time">21:00</td>
+      <td class="artist">Luca Fogale</td>
+      <td class="venue">Wurlitzer Ballroom · Madrid</td>
+      <td class="price">Desde 25€</td>
+      <td class="genre">Folk / Cantautor</td>
+      <td class="link"><a href="https://lasttour.org/es/agenda/luca-fogale/" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="medio"><td class="stars">⭐⭐⭐</td><td>Mar 28 jul</td><td>20:00</td><td>Barbi Recanati</td><td>Café Berlín · Madrid</td><td>20€</td><td>Cantautora / Indie</td><td><a href="https://berlincafe.es/programa/barbi-recanati/" target="_blank">Entradas</a> <span class="badge-ig">📱 @cafeberlinmadrid</span></td></tr>
+    <tr style="background:#09180a;">
+      <td class="star">⭐⭐</td>
+      <td class="date">Jue 3 septiembre</td>
+      <td class="time">22:00</td>
+      <td class="artist">Los 40 Urban</td>
+      <td class="venue">Auditorio Paco de Lucía (fiestas patronales) · Alcorcón</td>
+      <td class="price">Gratuito</td>
+      <td class="genre">Pop/Urbano</td>
+      <td class="link"><a href="https://www.ayto-alcorcon.es/es/fiestas-alcorcon-2026" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="alto"><td class="stars">⭐⭐</td><td>Mié 29 jul</td><td>20:30</td><td>LP</td><td>Real Jardín Botánico Alfonso XIII · Madrid (Noches del Botánico)</td><td>35–90€</td><td>Pop</td><td><a href="https://www.nochesdelbotanico.com" target="_blank">Entradas</a></td></tr>
+    <tr style="background:#09180a;">
+      <td class="star">⭐⭐</td>
+      <td class="date">Jue 3 septiembre</td>
+      <td class="time">Ver enlace</td>
+      <td class="artist">Placeres Culpables + Dollar Selmouni (Fiestas de La Melonera)</td>
+      <td class="venue">Recinto Ferial, Explanada Madrid Río · Madrid</td>
+      <td class="price">Gratuito</td>
+      <td class="genre">Pop/Rock español</td>
+      <td class="link"><a href="https://diario.madrid.es/blog/2026/08/21/programa-de-las-fiestas-de-la-melonera-2026-en-arganzuela-la-frontera-sole-gimenez-rafa-sanchez-y-mucho-mas/" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="medio"><td class="stars">⭐⭐</td><td>Mié 29 jul</td><td>22:00</td><td>Andrés Barrios · "Marea Viva"</td><td>IES San Isidro, Claustro · Madrid</td><td>15€</td><td>Música / Percusión corporal</td><td><a href="https://www.veranosdelavilla.com/es/evento/andres-barrios" target="_blank">Info</a></td></tr>
+    <tr style="background:#111111;">
+      <td class="star">⭐</td>
+      <td class="date">Jue 3 septiembre</td>
+      <td class="time">21:00</td>
+      <td class="artist">Acid Mammoth</td>
+      <td class="venue">Moby Dick Club · Madrid</td>
+      <td class="price">Ver enlace</td>
+      <td class="genre">Stoner/Doom Metal</td>
+      <td class="link"><a href="https://www.mobydickclub.com/programacion.php" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="alto"><td class="stars">⭐⭐</td><td>Mié 29 jul</td><td>22:00</td><td>Diana Navarro (con Fran Doblas)</td><td>CondeDuque, Patio Central · Madrid</td><td>24€</td><td>Copla / Pop</td><td><a href="https://www.veranosdelavilla.com/es/evento/diana-navarro" target="_blank">Info</a></td></tr>
+    <tr style="background:#09180a;">
+      <td class="star">⭐⭐⭐</td>
+      <td class="date">Vie 4 septiembre</td>
+      <td class="time">20:00 / 21:00 / 23:00</td>
+      <td class="artist">Jalea / Kiko Veneno / La Cabra Mecánica (fiestas patronales)</td>
+      <td class="venue">Auditorio Paco de Lucía · Alcorcón</td>
+      <td class="price">Gratuito</td>
+      <td class="genre">Rock / Rumba / Fusión flamenca</td>
+      <td class="link"><a href="https://mercadeopop.com/conciertos-de-las-fiestas-de-alcorcon-2026/" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="medio"><td class="stars">⭐⭐⭐</td><td>Mié 29 – Jue 30 jul</td><td>20:00 / 22:00</td><td>Soulmama</td><td>Café Central Ateneo · Madrid</td><td>Ver enlace</td><td>Soul / Jazz</td><td><a href="https://cafecentralmadrid.com/reservas/?event=soulmama-195a74c1" target="_blank">Entradas</a></td></tr>
+    <tr style="background:#111111;">
+      <td class="star">⭐⭐⭐</td>
+      <td class="date">Vie 4 septiembre</td>
+      <td class="time">20:30</td>
+      <td class="artist">Zoe Gotusso + Julián Kartun</td>
+      <td class="venue">Café Berlín · Madrid</td>
+      <td class="price">Ver enlace</td>
+      <td class="genre">Cantautora / Pop-folk</td>
+      <td class="link"><a href="https://berlincafe.es/programa/zoe-gotusso-julian-kartun/" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="alto"><td class="stars">⭐⭐⭐</td><td>Jue 30 jul</td><td>20:30</td><td>Tom Jones</td><td>Real Jardín Botánico Alfonso XIII · Madrid (Noches del Botánico)</td><td>35–90€</td><td>Rock clásico</td><td><a href="https://www.nochesdelbotanico.com" target="_blank">Entradas</a></td></tr>
+    <tr style="background:#111111;">
+      <td class="star">⭐⭐⭐</td>
+      <td class="date">Vie 4 septiembre</td>
+      <td class="time">21:30</td>
+      <td class="artist">Amón Ra and The Melofers + Las Madres</td>
+      <td class="venue">Gruta 77 · Madrid</td>
+      <td class="price">5–8€</td>
+      <td class="genre">Rock de autor / Cantautor rock</td>
+      <td class="link"><a href="https://movingtickets.com/Entradas-Amon-Ra-and-The-Melofers-Las-Madres-concierto-en-Gruta77-Madrid/" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="medio"><td class="stars">⭐⭐⭐</td><td>Jue 30 jul</td><td>22:00</td><td>The Phil Collins Experience</td><td>CondeDuque, Patio Central · Madrid</td><td>20€</td><td>Tributo Rock clásico</td><td><a href="https://www.veranosdelavilla.com/es/evento/the-phil-collins-experience" target="_blank">Info</a></td></tr>
+    <tr style="background:#09180a;">
+      <td class="star">⭐⭐⭐</td>
+      <td class="date">Vie 4 septiembre</td>
+      <td class="time">21:00</td>
+      <td class="artist">La Frontera (Fiestas de La Melonera)</td>
+      <td class="venue">Recinto Ferial, Explanada Madrid Río · Madrid</td>
+      <td class="price">Gratuito</td>
+      <td class="genre">Rock español</td>
+      <td class="link"><a href="https://diario.madrid.es/blog/2026/08/21/programa-de-las-fiestas-de-la-melonera-2026-en-arganzuela-la-frontera-sole-gimenez-rafa-sanchez-y-mucho-mas/" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="medio"><td class="stars">⭐⭐⭐</td><td>Jue 30 jul</td><td>21:00</td><td>Iberia Sumergida (Tributo a Héroes del Silencio)</td><td>Sala El Sol · Madrid</td><td>Ver enlace</td><td>Tributo Rock</td><td><a href="https://salaelsol.com/agenda/" target="_blank">Info</a></td></tr>
+    <tr style="background:#09180a;">
+      <td class="star">⭐⭐⭐</td>
+      <td class="date">Vie 4 septiembre</td>
+      <td class="time">22:30</td>
+      <td class="artist">Rafa Sánchez (voz de La Unión) (Fiestas de La Melonera)</td>
+      <td class="venue">Recinto Ferial, Explanada Madrid Río · Madrid</td>
+      <td class="price">Gratuito</td>
+      <td class="genre">Rock clásico español</td>
+      <td class="link"><a href="https://diario.madrid.es/blog/2026/08/21/programa-de-las-fiestas-de-la-melonera-2026-en-arganzuela-la-frontera-sole-gimenez-rafa-sanchez-y-mucho-mas/" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="medio"><td class="stars">⭐⭐⭐</td><td>Jue 30 jul</td><td>20:00</td><td>Flamenco Persa · "Diálogo de 2 tradiciones"</td><td>Café Berlín · Madrid</td><td>20€</td><td>Flamenco / Fusión</td><td><a href="https://berlincafe.es/programa/flamenco-persa-dialogo-de-2-tradiciones/" target="_blank">Entradas</a> <span class="badge-ig">📱 @cafeberlinmadrid</span></td></tr>
+    <tr style="background:#111111;">
+      <td class="star">⭐⭐</td>
+      <td class="date">Vie 4 septiembre</td>
+      <td class="time">00:30</td>
+      <td class="artist">Humbuckers (versiones rock 70s-80s)</td>
+      <td class="venue">Honky Tonk Bar · Madrid</td>
+      <td class="price">Ver enlace</td>
+      <td class="genre">Rock clásico (tributo)</td>
+      <td class="link"><a href="https://clubhonky.com/programacion/humbuckers/" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="medio"><td class="stars">⭐⭐</td><td>Jue 30 jul</td><td>22:00</td><td>Hernán Jacinto Trío · "Gardel"</td><td>Café Berlín · Madrid</td><td>15€</td><td>Tango</td><td><a href="https://berlincafe.es/programa/hernan-jacinto-trio-presenta-gardel/" target="_blank">Entradas</a> <span class="badge-ig">📱 @cafeberlinmadrid</span></td></tr>
+    <tr style="background:#111111;">
+      <td class="star">⭐⭐</td>
+      <td class="date">Vie 4 septiembre</td>
+      <td class="time">21:00</td>
+      <td class="artist">Sonido Gallo Negro</td>
+      <td class="venue">Sala Clamores · Madrid</td>
+      <td class="price">19,60€</td>
+      <td class="genre">Cumbia psicodélica / World</td>
+      <td class="link"><a href="https://www.salaclamores.es/" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="gratis"><td class="stars">⭐⭐</td><td>Jue 30 jul</td><td>21:00</td><td>Marveling y Las Delirio (Gira x Rivas)</td><td>Plaza de la Constitución · Rivas Vaciamadrid</td><td>Gratis</td><td>Indie / Pop / Rock</td><td><a href="https://www.rivasactual.com/la-gira-x-rivas-llevara-a-las-plazas-de-la-ciudad-12-conciertos-gratuitos-durante-el-mes-de-julio/" target="_blank">Info</a></td></tr>
+    <tr style="background:#111111;">
+      <td class="star">⭐⭐</td>
+      <td class="date">Vie 4 septiembre</td>
+      <td class="time">21:00</td>
+      <td class="artist">División Minúscula + Biela</td>
+      <td class="venue">Sala Nazca · Madrid</td>
+      <td class="price">27,60€</td>
+      <td class="genre">Rock alternativo</td>
+      <td class="link"><a href="https://www.ticketmaster.es/venue/sala-nazca-madrid-entradas/slnazcamad/114" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="alto"><td class="stars">⭐⭐</td><td>Vie 31 jul</td><td>20:30</td><td>Cultura Profética + Çantamarta</td><td>Real Jardín Botánico Alfonso XIII · Madrid (Noches del Botánico)</td><td>35–90€</td><td>Reggae</td><td><a href="https://www.nochesdelbotanico.com" target="_blank">Entradas</a></td></tr>
+    <tr style="background:#111111;">
+      <td class="star">⭐⭐</td>
+      <td class="date">Vie 4 septiembre</td>
+      <td class="time">Ver enlace</td>
+      <td class="artist">Estelares</td>
+      <td class="venue">Sala Uni · Madrid</td>
+      <td class="price">24,20€</td>
+      <td class="genre">Rock argentino</td>
+      <td class="link"><a href="https://conciertos.club/artistas/estelares" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="medio"><td class="stars">⭐⭐⭐</td><td>Vie 31 jul</td><td>22:00</td><td>Dani de Morón (guitarra flamenca)</td><td>IES San Isidro, Claustro · Madrid</td><td>15€</td><td>Flamenco</td><td><a href="https://www.veranosdelavilla.com/es/evento/dani-de-moron" target="_blank">Info</a></td></tr>
+    <tr style="background:#111111;">
+      <td class="star">⭐⭐</td>
+      <td class="date">Vie 4 septiembre</td>
+      <td class="time">20:00</td>
+      <td class="artist">Orquesta y Coro CM + Coro RTVE + Serena Sáenz + Gaëlle Arquez — Mahler, Sinfonía nº2 &quot;Resurrección&quot;</td>
+      <td class="venue">Teatro Auditorio San Lorenzo de El Escorial · San Lorenzo de El Escorial</td>
+      <td class="price">Ver enlace</td>
+      <td class="genre">Clásica / Sinfónico-coral</td>
+      <td class="link"><a href="https://aquienlasierra.es/san-lorenzo-de-el-escorial/escena-escorial-2026-alondra-de-la-parra-capitanea-un-festival-para-devolver-al-auditorio-de-san-lorenzo-el-brillo-de-sus-primeros-anos" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="medio"><td class="stars">⭐⭐</td><td>Vie 31 jul</td><td>21:00</td><td>Cosimo & The Hot Coals</td><td>Sala El Sol · Madrid</td><td>Ver enlace</td><td>Rock</td><td><a href="https://salaelsol.com/agenda/" target="_blank">Info</a></td></tr>
+    <tr style="background:#111111;">
+      <td class="star">⭐</td>
+      <td class="date">Vie 4 septiembre</td>
+      <td class="time">Ver enlace</td>
+      <td class="artist">Samuel Levi y Los Niños Perdidos</td>
+      <td class="venue">Fulanita de Tal · Madrid</td>
+      <td class="price">Ver enlace</td>
+      <td class="genre">⚠️ Verificar</td>
+      <td class="link"><a href="https://www.songkick.com/metro-areas/28755-spain-madrid/september-2026" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="medio"><td class="stars">⭐⭐</td><td>Vie 31 jul</td><td>20:00</td><td>Gigante Molino (Club 77)</td><td>Sala Galileo Galilei · Madrid</td><td>10€</td><td>Indie rock</td><td><a href="https://salagalileo.es/programacion/gigante-molino-club-77/" target="_blank">Entradas</a> <span class="badge-ig">📱 @salagalileo</span></td></tr>
+    <tr style="background:#111111;">
+      <td class="star">⭐</td>
+      <td class="date">Vie 4 septiembre</td>
+      <td class="time">22:30</td>
+      <td class="artist">The Living Tombstone</td>
+      <td class="venue">Sala Wagon · Madrid</td>
+      <td class="price">Ver enlace</td>
+      <td class="genre">Electropop</td>
+      <td class="link"><a href="https://www.wegow.com/es/conciertos/concierto-de-the-living-tombstone-en-madrid" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="medio"><td class="stars">⭐⭐</td><td>Vie 31 jul</td><td>23:00</td><td>Oscar Dudamel y su Orquesta</td><td>Café Berlín · Madrid</td><td>18€</td><td>Orquesta latina</td><td><a href="https://berlincafe.es/programa/oscar-dudamel-y-su-orquesta-3/" target="_blank">Entradas</a> <span class="badge-ig">📱 @cafeberlinmadrid</span></td></tr>
+    <tr style="background:#09180a;">
+      <td class="star">⭐⭐⭐</td>
+      <td class="date">Sáb 5 septiembre</td>
+      <td class="time">22:30</td>
+      <td class="artist">Sole Giménez (Fiestas de La Melonera)</td>
+      <td class="venue">Recinto Ferial, Explanada Madrid Río · Madrid</td>
+      <td class="price">Gratuito</td>
+      <td class="genre">Soul / Pop</td>
+      <td class="link"><a href="https://diario.madrid.es/blog/2026/08/21/programa-de-las-fiestas-de-la-melonera-2026-en-arganzuela-la-frontera-sole-gimenez-rafa-sanchez-y-mucho-mas/" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="medio"><td class="stars">⭐⭐⭐</td><td>Vie 31 jul – Sáb 1 ago</td><td>20:00 / 22:00</td><td>Leo Minax Quartet</td><td>Café Central Ateneo · Madrid</td><td>Ver enlace</td><td>Jazz</td><td><a href="https://cafecentralmadrid.com/reservas/?event=leo-minax-quartet-fa5a47a2" target="_blank">Entradas</a></td></tr>
+    <tr style="background:#09180a;">
+      <td class="star">⭐⭐</td>
+      <td class="date">Sáb 5 septiembre</td>
+      <td class="time">21:30 / 00:00</td>
+      <td class="artist">La Pegatina + Clásicos Electrónica (fiestas patronales)</td>
+      <td class="venue">Auditorio Paco de Lucía · Alcorcón</td>
+      <td class="price">Gratuito</td>
+      <td class="genre">Rumba-ska / Electrónica</td>
+      <td class="link"><a href="https://www.eldiariodemadrid.es/articulo/planes-por-madrid/fiestas-alcorcon-2026-conciertos-gratis/20260826095750140045.html" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="gratis"><td class="stars">⭐⭐</td><td>Vie 31 jul</td><td>22:00</td><td>NELE y Betx (Gira x Rivas)</td><td>Zoco Rivas · Rivas Vaciamadrid</td><td>Gratis</td><td>Pop / Indie</td><td><a href="https://www.rivasactual.com/la-gira-x-rivas-llevara-a-las-plazas-de-la-ciudad-12-conciertos-gratuitos-durante-el-mes-de-julio/" target="_blank">Info</a></td></tr>
+    <tr style="background:#09180a;">
+      <td class="star">⭐⭐</td>
+      <td class="date">Sáb 5 septiembre</td>
+      <td class="time">22:00</td>
+      <td class="artist">DePol (fiestas patronales)</td>
+      <td class="venue">Plaza del Padre Vallet · Pozuelo de Alarcón</td>
+      <td class="price">Gratuito</td>
+      <td class="genre">Pop</td>
+      <td class="link"><a href="https://www.eldiariodemadrid.es/articulo/planes-por-madrid/conciertos-fiestas-pozuelo-2026/20260811091142139226.html" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="medio"><td class="stars">⭐⭐⭐</td><td>Sáb 1 ago</td><td>22:00</td><td>Sandra Carrasco & David de Arahal · "Nunca me olvides"</td><td>IES San Isidro, Claustro · Madrid</td><td>15€</td><td>Flamenco</td><td><a href="https://www.veranosdelavilla.com/es/evento/sandra-carrasco-david-de-arahal" target="_blank">Info</a></td></tr>
+    <tr style="background:#111111;">
+      <td class="star">⭐⭐</td>
+      <td class="date">Sáb 5 septiembre</td>
+      <td class="time">22:00</td>
+      <td class="artist">Pignoise — Las Ganas de Veros Tour (fiestas patronales)</td>
+      <td class="venue">Recinto Ferial · Pozuelo de Alarcón</td>
+      <td class="price">2€</td>
+      <td class="genre">Pop-rock</td>
+      <td class="link"><a href="https://www.madrid24horas.com/articulo/mas-alla-del-centro/fiestas-pozuelo-alarcon-2026-programa-completo-conciertos-actividades-dias-horas/20260804194027106686.html" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="medio"><td class="stars">⭐⭐</td><td>Sáb 1 ago</td><td>20:00</td><td>Samba y Algo Más</td><td>Café Berlín · Madrid</td><td>15€</td><td>Samba</td><td><a href="https://berlincafe.es/programa/samba-y-algo-mas-7/" target="_blank">Entradas</a> <span class="badge-ig">📱 @cafeberlinmadrid</span></td></tr>
+    <tr style="background:#09180a;">
+      <td class="star">⭐⭐</td>
+      <td class="date">Sáb 5 septiembre</td>
+      <td class="time">21:00</td>
+      <td class="artist">Marazu (Fiestas de La Melonera)</td>
+      <td class="venue">Recinto Ferial, Explanada Madrid Río · Madrid</td>
+      <td class="price">Gratuito</td>
+      <td class="genre">Pop/Rock español</td>
+      <td class="link"><a href="https://diario.madrid.es/blog/2026/08/21/programa-de-las-fiestas-de-la-melonera-2026-en-arganzuela-la-frontera-sole-gimenez-rafa-sanchez-y-mucho-mas/" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="gratis warn"><td class="stars">⚠️</td><td>Sáb 1 – Lun 3 ago</td><td>Por confirmar</td><td>Fiestas patronales Manzanares El Real (incl. Tributo a ABBA, Kiss FM 80s/90s)</td><td>Manzanares El Real</td><td>Gratis</td><td>Tributo Pop / Verbena</td><td><a href="https://manzanareselreal.es/fiestas-2026/" target="_blank">Info</a></td></tr>
+    <tr style="background:#111111;">
+      <td class="star">⭐⭐</td>
+      <td class="date">Sáb 5 septiembre</td>
+      <td class="time">22:00</td>
+      <td class="artist">Salduie (formato acústico)</td>
+      <td class="venue">Sala Clamores · Madrid</td>
+      <td class="price">Desde 16,50€</td>
+      <td class="genre">Folk metal acústico</td>
+      <td class="link"><a href="https://www.laganzua.net/conciertos/salduie-madrid-1015818" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="medio"><td class="stars">⭐⭐</td><td>Dom 2 ago</td><td>21:00</td><td>Diles Que No Me Maten</td><td>Wurlitzer Ballroom · Madrid</td><td>Ver enlace</td><td>Rock / Indie</td><td><a href="https://www.wurlitzerballroom.com/" target="_blank">Info</a></td></tr>
+    <tr style="background:#111111;">
+      <td class="star">⭐</td>
+      <td class="date">Sáb 5 septiembre</td>
+      <td class="time">Ver enlace</td>
+      <td class="artist">The Martinez Brothers</td>
+      <td class="venue">Fabrik · Madrid</td>
+      <td class="price">Ver enlace</td>
+      <td class="genre">Electrónica / House</td>
+      <td class="link"><a href="https://www.songkick.com/metro-areas/28755-spain-madrid/september-2026" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="gratis"><td class="stars">⭐⭐⭐</td><td>Dom 2 ago</td><td>21:00</td><td>Whatever Jazz Band (Dixieland)</td><td>Templete de El Pardo, Parque de la Mar Océana · Madrid</td><td>Gratis</td><td>Jazz</td><td><a href="https://www.veranosdelavilla.com/es/evento/whatever-jazz-band" target="_blank">Info</a></td></tr>
+    <tr style="background:#111111;">
+      <td class="star">⭐</td>
+      <td class="date">Sáb 5 septiembre</td>
+      <td class="time">Ver enlace</td>
+      <td class="artist">HENS</td>
+      <td class="venue">Sala But · Madrid</td>
+      <td class="price">Ver enlace</td>
+      <td class="genre">⚠️ Verificar</td>
+      <td class="link"><a href="https://www.taquilla.com/madrid/sala-but-28004-madrid" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="medio"><td class="stars">⭐⭐⭐</td><td>Dom 2 ago</td><td>20:00 / 22:00</td><td>Lara Vizuete Quartet</td><td>Café Central Ateneo · Madrid</td><td>Ver enlace</td><td>Jazz</td><td><a href="https://cafecentralmadrid.com/reservas/?event=lara-vizuete-quartet-889c9f1e" target="_blank">Entradas</a></td></tr>
+    <tr style="background:#111111;">
+      <td class="star">⭐</td>
+      <td class="date">Sáb 5 septiembre</td>
+      <td class="time">21:00</td>
+      <td class="artist">Emanero</td>
+      <td class="venue">Sala La Riviera · Madrid</td>
+      <td class="price">Desde 35€</td>
+      <td class="genre">Rap/Trap argentino</td>
+      <td class="link"><a href="https://www.enterticket.es/eventos/emanero-tour-2026-en-madrid-la-riviera-369525" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="gratis warn"><td class="stars">⚠️ ⭐⭐</td><td>~Sáb 26 jul o 2 ago (verificar)</td><td>22:00</td><td>Noches en el Allende (ciclo, artista según fecha)</td><td>Parque Salvador Allende · Coslada</td><td>Gratis</td><td>Rock / Ska / Folk / Tributos</td><td><a href="https://cosladaweb.es/2026/07/noches-en-el-allende-coslada-conciertos-gratis-2026/" target="_blank">Info</a></td></tr>
+    <tr style="background:#09180a;">
+      <td class="star">⭐⭐⭐</td>
+      <td class="date">Dom 6 septiembre</td>
+      <td class="time">Ver enlace</td>
+      <td class="artist">José Mercé (nombrado Hijo Adoptivo, fiestas patronales)</td>
+      <td class="venue">Plaza del Padre Vallet · Pozuelo de Alarcón</td>
+      <td class="price">Gratuito</td>
+      <td class="genre">Flamenco</td>
+      <td class="link"><a href="https://www.madrid24horas.com/articulo/mas-alla-del-centro/fiestas-pozuelo-alarcon-2026-programa-completo-conciertos-actividades-dias-horas/20260804194027106686.html" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="medio"><td class="stars">⭐⭐⭐</td><td>Lun 3 – Mar 4 ago</td><td>20:00 / 22:00</td><td>Barba Dixie Band</td><td>Café Central Ateneo · Madrid</td><td>Ver enlace</td><td>Jazz (Dixieland)</td><td><a href="https://cafecentralmadrid.com/reservas/?event=barba-dixie-band-be77abb3" target="_blank">Entradas</a></td></tr>
+    <tr style="background:#09180a;">
+      <td class="star">⭐⭐⭐</td>
+      <td class="date">Dom 6 septiembre</td>
+      <td class="time">20:30</td>
+      <td class="artist">Radio Macandé (Fiestas de La Melonera)</td>
+      <td class="venue">Recinto Ferial, Explanada Madrid Río · Madrid</td>
+      <td class="price">Gratuito</td>
+      <td class="genre">Folk / World</td>
+      <td class="link"><a href="https://diario.madrid.es/blog/2026/08/21/programa-de-las-fiestas-de-la-melonera-2026-en-arganzuela-la-frontera-sole-gimenez-rafa-sanchez-y-mucho-mas/" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="alto"><td class="stars">⭐⭐⭐</td><td>Toda la semana (programa cambia semanalmente)</td><td>19:00 / 21:30</td><td>Corral de la Morería (tablao flamenco)</td><td>Corral de la Morería · Madrid</td><td>Ver enlace</td><td>Flamenco</td><td><a href="https://www.corraldelamoreria.com/en/flamenco-show/" target="_blank">Info</a></td></tr>
+    <tr style="background:#09180a;">
+      <td class="star">⭐⭐</td>
+      <td class="date">Dom 6 septiembre</td>
+      <td class="time">19:00</td>
+      <td class="artist">Soul Solid, Public Enemy (ES), Ana Curra, Rebrote, EUKZ (fiestas patronales)</td>
+      <td class="venue">Auditorio Paco de Lucía · Alcorcón</td>
+      <td class="price">Gratuito</td>
+      <td class="genre">Hip-hop / Rock / Punk (cartel variado)</td>
+      <td class="link"><a href="https://www.actualidad21.net/programacion-completa-de-las-fiestas-de-alcorcon-2026-con-fuegos-artificiales-drones-la-pegatina-kiko-veneno-natalia-lacunza-veintiuno-rebrote-zahara-rave-y-multiples-actividades-para-todos-los-6/" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-<tr class="medio"><td class="stars">⭐⭐⭐</td><td>Todos los días</td><td>19:00 / 21:30</td><td>Las Tablas Madrid (tablao flamenco)</td><td>Las Tablas · Madrid</td><td>Ver enlace</td><td>Flamenco</td><td><a href="https://lastablasmadrid.com/en/flamenco-shows-madrid-at-tablao-flamenco-las-tablas/" target="_blank">Info</a></td></tr>
+    <tr style="background:#111111;">
+      <td class="star">⭐⭐</td>
+      <td class="date">Dom 6 septiembre</td>
+      <td class="time">Ver enlace</td>
+      <td class="artist">Pagagnini (Yllana, con Ara Malikian)</td>
+      <td class="venue">Gran Teatro CaixaBank Príncipe Pío · Madrid</td>
+      <td class="price">Ver enlace</td>
+      <td class="genre">Clásica / Comedia musical</td>
+      <td class="link"><a href="https://www.esmadrid.com/en/whats-on/pagagnini-gran-teatro-caixabank-principe-pio" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
 
-</tbody>
+    <tr style="background:#111111;">
+      <td class="star">⭐⭐</td>
+      <td class="date">Dom 6 septiembre</td>
+      <td class="time">Ver enlace ⚠️</td>
+      <td class="artist">La Gran Noche del Indie (Hey Kid, Inazio, Banda Indievisión, DJ Markote)</td>
+      <td class="venue">Recinto Ferial ⚠️ · Pozuelo de Alarcón</td>
+      <td class="price">Ver enlace</td>
+      <td class="genre">Indie/Pop</td>
+      <td class="link"><a href="https://www.madrid24horas.com/articulo/mas-alla-del-centro/fiestas-pozuelo-alarcon-2026-programa-completo-conciertos-actividades-dias-horas/20260804194027106686.html" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
+
+    <tr style="background:#09180a;">
+      <td class="star">⭐⭐</td>
+      <td class="date">Dom 6 septiembre</td>
+      <td class="time">21:45</td>
+      <td class="artist">&quot;Voy a pasármelo G&quot; — tributo a Hombres G (Fiestas de La Melonera)</td>
+      <td class="venue">Recinto Ferial, Explanada Madrid Río · Madrid</td>
+      <td class="price">Gratuito</td>
+      <td class="genre">Pop-rock (tributo)</td>
+      <td class="link"><a href="https://diario.madrid.es/blog/2026/08/21/programa-de-las-fiestas-de-la-melonera-2026-en-arganzuela-la-frontera-sole-gimenez-rafa-sanchez-y-mucho-mas/" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
+
+    <tr style="background:#111111;">
+      <td class="star">⭐⭐</td>
+      <td class="date">Dom 6 septiembre</td>
+      <td class="time">Ver enlace ⚠️</td>
+      <td class="artist">Michael Fabiano</td>
+      <td class="venue">Umusic Hotel Madrid · Madrid</td>
+      <td class="price">Ver enlace</td>
+      <td class="genre">Ópera / Clásica</td>
+      <td class="link"><a href="https://www.songkick.com/metro-areas/28755-spain-madrid/september-2026" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
+
+    <tr style="background:#111111;">
+      <td class="star">⭐</td>
+      <td class="date">Dom 6 septiembre</td>
+      <td class="time">Ver enlace</td>
+      <td class="artist">Aria Vega</td>
+      <td class="venue">Ochoymedio · Madrid</td>
+      <td class="price">Ver enlace</td>
+      <td class="genre">⚠️ Verificar</td>
+      <td class="link"><a href="https://www.songkick.com/metro-areas/28755-spain-madrid/september-2026" target="_blank" rel="noopener">🔗 Comprar / Info</a></td>
+    </tr>
+  </tbody>
 </table>
 
-<h2>Instagram: cuentas revisadas</h2>
-<p style="color:#aaa; font-size:0.9rem; max-width:800px;">Esta ejecución no tuvo acceso a un navegador Chrome conectado, por lo que no se pudieron abrir directamente los perfiles de Instagram. En su lugar se verificaron las webs oficiales de los recintos (que enlazan a sus propias cuentas) y prensa local. Los eventos marcados con 📱 corresponden a recintos cuya cuenta prioritaria fue confirmada:</p>
-<ul class="ig-list">
-  <li>✅ <strong>@cafeberlinmadrid</strong> — programación confirmada vía berlincafe.es (7 eventos en la ventana)</li>
-  <li>✅ <strong>@salagalileo</strong> — programación confirmada vía salagalileo.es (3 eventos)</li>
-  <li>✅ <strong>@gruta_77</strong> — programación confirmada vía gruta77.com (1 evento)</li>
-  <li>⚪ <strong>@cafecentralmadrid</strong> — web oficial con calendario propio, sin necesidad de Instagram</li>
-  <li>⚪ <strong>@clamoreslive</strong> — revisada; sin conciertos en la ventana (próximo: 12 sept)</li>
-  <li>⚪ <strong>@mobydickclub</strong> — revisada; sin conciertos en la ventana (23 jul y 28 ago, fuera de rango)</li>
-  <li>⚪ <strong>@sirocosala</strong> — revisada vía siroco.es; solo tributos de menor prioridad</li>
-  <li>⚪ <strong>@salaelsol</strong> (Sala El Sol) — revisada vía salaelsol.com</li>
-  <li>⚪ <strong>@elsotano_madrid, @honkytonk_bar, @funhousemusicbar, @wurlitzerballroom, @bigmamaballroom, @moeclubmadrid, @tempoaudiophileclub, @cafelibertad8, @rincondelartenuevo, @lafidula, @vestabyfulanita, @salabarco, @barcosoundhouse, @madridenvivo_</strong> — sin programación verificable en la ventana mediante búsqueda web</li>
-  <li>⚪ <strong>@tomatito6cuerdas</strong> — sin fechas anunciadas en Madrid para 2026 (verificado en Tomaticket, Songkick, Taquilla.com)</li>
-  <li>⚪ <strong>@villanosdelflamenco</strong> — ciclo confirmado solo hasta julio (última fecha 12 jul), sin continuidad en la ventana</li>
-  <li>⚪ <strong>@sala_duende_es</strong> — sin programación verificable en la ventana mediante búsqueda web</li>
-  <li>✅ <strong>@deflamenco / @guiaflama</strong> — usadas como fuente para el bloque de Flamenco (Veranos de la Villa)</li>
-</ul>
+<h2>💎 Joyas de la semana</h2>
+<div class="joyas">
+  
+    <div class="joya">
+      <div class="joya-title">⭐⭐⭐ Hermanos Gutiérrez</div>
+      <div class="joya-meta">Sáb 29 agosto · 20:30 · Sala La Riviera · Madrid</div>
+      <div class="joya-meta">Blues / Folk instrumental · Desde 45€</div>
+      <a href="https://salariviera.com/event/hermanos-gutierrez/" target="_blank" rel="noopener">🔗 Más info</a>
+    </div>
+    <div class="joya">
+      <div class="joya-title">⭐⭐⭐ José Mercé (nombrado Hijo Adoptivo, fiestas patronales)</div>
+      <div class="joya-meta">Dom 6 septiembre · Ver enlace · Plaza del Padre Vallet · Pozuelo de Alarcón</div>
+      <div class="joya-meta">Flamenco · Gratuito</div>
+      <a href="https://www.madrid24horas.com/articulo/mas-alla-del-centro/fiestas-pozuelo-alarcon-2026-programa-completo-conciertos-actividades-dias-horas/20260804194027106686.html" target="_blank" rel="noopener">🔗 Más info</a>
+    </div>
+    <div class="joya">
+      <div class="joya-title">⭐⭐⭐ Luca Fogale</div>
+      <div class="joya-meta">Jue 3 septiembre · 21:00 · Wurlitzer Ballroom · Madrid</div>
+      <div class="joya-meta">Folk / Cantautor · Desde 25€</div>
+      <a href="https://lasttour.org/es/agenda/luca-fogale/" target="_blank" rel="noopener">🔗 Más info</a>
+    </div>
+</div>
+
+<h2>📱 Instagram — cuentas revisadas</h2>
+<div class="ig-cols">
+  <div class="ig-col">
+    <h3>Prioridad alta</h3>
+    <ul><li><strong>@cafeberlinmadrid</strong> — sin actividad indexada en la ventana de fechas</li><li><strong>@clamoreslive</strong> — sin actividad indexada en la ventana de fechas</li><li><strong>@cafecentralmadrid</strong> — cuenta confirmada, programación cruzada con web oficial (Ogun Afrobeat)</li><li><strong>@bigmamaballroom</strong> — sin actividad indexada en la ventana de fechas</li><li><strong>@moeclubmadrid</strong> — confirmó la jam session semanal de jazz (miércoles) vía fuentes cruzadas</li><li><strong>@tempoaudiophileclub</strong> — sin actividad indexada en la ventana de fechas</li><li><strong>@salagalileo</strong> — sin actividad indexada en la ventana de fechas</li><li><strong>@cafelibertad8</strong> — sin actividad indexada en la ventana de fechas</li><li><strong>@rincondelartenuevo</strong> — sin actividad indexada en la ventana de fechas</li><li><strong>@lafidula</strong> — sin actividad indexada en la ventana de fechas</li><li><strong>@mobydickclub</strong> — sin actividad indexada en la ventana de fechas</li><li><strong>@salaelsol</strong> — sin actividad indexada en la ventana de fechas</li><li><strong>@sirocosala</strong> — sin actividad indexada en la ventana de fechas</li><li><strong>@elsotano_madrid</strong> — sin actividad indexada en la ventana de fechas</li><li><strong>@wurlitzerballroom</strong> — sin actividad indexada en la ventana de fechas</li><li><strong>@gruta_77</strong> — cuenta localizada; evento del 4 sep confirmado vía prensa musical</li><li><strong>@honkytonk_bar</strong> — sin actividad indexada en la ventana de fechas</li><li><strong>@funhousemusicbar</strong> — sin actividad indexada en la ventana de fechas</li></ul>
+  </div>
+  <div class="ig-col">
+    <h3>Prioridad media</h3>
+    <ul><li><strong>@vestabyfulanita</strong> — sin actividad indexada en la ventana de fechas</li><li><strong>@salabarco</strong> — sin actividad indexada en la ventana de fechas</li><li><strong>@barcosoundhouse</strong> — sin actividad indexada en la ventana de fechas</li><li><strong>@madridenvivo_</strong> — sin actividad indexada en la ventana de fechas</li></ul>
+  </div>
+  <div class="ig-col">
+    <h3>Artistas / ciclos</h3>
+    <ul><li><strong>@tomatito6cuerdas</strong> — cuenta no indexada por el buscador; sin conciertos de Tomatito en Madrid en la ventana</li><li><strong>@villanosdelflamenco</strong> — ciclo 2026 se celebró en junio-julio, fuera de la ventana de búsqueda</li><li><strong>@sala_duende_es</strong> — no se encontró la sala ni la cuenta con programación verificable en Madrid</li><li><strong>@deflamenco</strong> — sin actividad indexada en la ventana de fechas</li><li><strong>@guiaflama</strong> — sin actividad indexada en la ventana de fechas</li></ul>
+  </div>
+</div>
 
 <footer>
-  <p><strong>Fuentes principales:</strong> veranosdelavilla.com (Ayuntamiento de Madrid) · nochesdelbotanico.com / crazyminds.es · cafecentralmadrid.com · berlincafe.es · salagalileo.es · gruta77.com · salaelsol.com · siroco.es · wurlitzerballroom.com · lasrozas.es · rivasactual.com · manzanareselreal.es · cosladaweb.es · diario.madrid.es · deflamenco.com · corraldelamoreria.com · lastablasmadrid.com</p>
-  <p>Generado automáticamente el 24/07/2026 · Radar Musical Madrid</p>
-  <p>Ver online: <a href="https://ccorachan.github.io/radar-madrid" target="_blank">https://ccorachan.github.io/radar-madrid</a></p>
+  Fuentes: Songkick, Ticketmaster, Wegow, esMadrid, diario.madrid.es, salas y municipios oficiales, prensa local (Timeout, OKDiario, madrid24horas, eldiariodemadrid, Doce Notas, Beckmesser, Actualidad21, MercadeoPop), entre otras citadas en cada enlace.<br>
+  Generado el 27/08/2026 13:48 (hora local) por el Radar Musical de Madrid, agente automatizado.<br>
+  Ver online: <a href="https://ccorachan.github.io/radar-madrid" target="_blank">https://ccorachan.github.io/radar-madrid</a>
 </footer>
 
 </body>
