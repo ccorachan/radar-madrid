@@ -2,180 +2,160 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Radar Musical Madrid — 27 ago al 6 sep 2026</title>
+<title>Radar Musical Madrid · 25 oct – 4 nov 2026</title>
 <style>
-  body { background:#0d0d0d; color:#e8e8e8; font-family: 'Segoe UI', Helvetica, Arial, sans-serif; margin:0; padding:24px; line-height:1.5; }
+  body { background:#0d0d0d; color:#eee; font-family: Georgia, 'Times New Roman', serif; margin:0; padding:24px; }
   .wrap { max-width:1100px; margin:0 auto; }
   h1 { color:#f5c842; font-size:28px; margin-bottom:4px; }
-  .subtitle { color:#bbb; margin-top:0; margin-bottom:24px; font-size:14px; }
-  h2 { color:#f5c842; font-size:20px; border-bottom:1px solid #333; padding-bottom:6px; margin-top:40px; }
-  .legend { display:flex; gap:18px; flex-wrap:wrap; margin:16px 0 20px 0; font-size:13px; }
-  .legend span { display:inline-flex; align-items:center; gap:6px; }
-  .swatch { width:14px; height:14px; display:inline-block; border-radius:3px; border:1px solid #444; }
-  table { border-collapse: collapse; width:100%; font-size:13px; margin-bottom:10px; }
-  th { background:#1a1a1a; color:#f5c842; text-align:left; padding:8px 10px; border-bottom:2px solid #f5c842; position:sticky; top:0; }
-  td { padding:7px 10px; border-bottom:1px solid #262626; vertical-align:top; }
-  tr.gratis { background:#09180a; }
-  tr.neutro { background:#111111; }
-  tr.caro { background:#160808; }
-  a { color:#f5c842; text-decoration:none; }
+  .subtitle { color:#bbb; font-size:14px; margin-bottom:20px; }
+  h2 { color:#f5c842; font-size:19px; border-bottom:1px solid #333; padding-bottom:6px; margin-top:34px; }
+  .legend { display:flex; gap:18px; flex-wrap:wrap; margin:14px 0 18px; font-size:13px; }
+  .legend span { padding:4px 10px; border-radius:4px; border:1px solid #333; }
+  .leg-free { background:#09180a; color:#8fdc9a; }
+  .leg-mid { background:#111; color:#ddd; }
+  .leg-high { background:#160808; color:#ff9b9b; }
+  table { width:100%; border-collapse:collapse; font-size:13.5px; margin-bottom:10px; }
+  th { background:#1a1a1a; color:#f5c842; text-align:left; padding:8px 7px; border-bottom:2px solid #333; white-space:nowrap; }
+  td { padding:7px 7px; border-bottom:1px solid #222; vertical-align:top; }
+  tr.free td { background:#09180a; }
+  tr.mid td { background:#111; }
+  tr.high td { background:#160808; }
+  .star { color:#f5c842; white-space:nowrap; }
+  .ig { display:inline-block; margin-top:3px; font-size:11.5px; color:#8ab4f8; }
+  a { color:#8ab4f8; text-decoration:none; }
   a:hover { text-decoration:underline; }
-  .badge-ig { display:inline-block; background:#2a1a3d; color:#e0b3ff; font-size:11px; padding:1px 6px; border-radius:10px; margin-left:4px; }
-  .stars { white-space:nowrap; }
-  .joyas { display:flex; gap:16px; flex-wrap:wrap; }
-  .joya-card { background:#161616; border:1px solid #333; border-left:4px solid #f5c842; border-radius:6px; padding:14px 16px; flex:1; min-width:220px; }
-  .joya-card h3 { margin:0 0 6px 0; color:#f5c842; font-size:16px; }
-  .joya-card p { margin:2px 0; font-size:13px; color:#ccc; }
-  .ig-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(230px,1fr)); gap:8px; font-size:13px; margin-top:10px; }
-  .ig-item { background:#141414; border:1px solid #2a2a2a; border-radius:6px; padding:8px 10px; }
-  .ig-item b { color:#f5c842; }
-  footer { margin-top:40px; padding-top:16px; border-top:1px solid #333; color:#888; font-size:12px; }
-  .warn { color:#ff9d6c; }
-  code { background:#1a1a1a; padding:1px 4px; border-radius:3px; }
+  .muni { color:#f5c842; font-weight:bold; }
+  .warn { color:#ff9b9b; font-size:11.5px; }
+  .gems { display:flex; gap:16px; flex-wrap:wrap; margin-top:12px; }
+  .gem { flex:1; min-width:220px; background:#151008; border:1px solid #3a2f12; border-radius:8px; padding:14px; }
+  .gem h3 { color:#f5c842; margin:0 0 6px; font-size:15px; }
+  .gem p { margin:3px 0; font-size:13px; color:#ddd; }
+  .ig-list { font-size:13px; line-height:1.7; }
+  .ig-list .checked { color:#8fdc9a; }
+  .ig-list .none { color:#888; }
+  footer { margin-top:40px; border-top:1px solid #333; padding-top:14px; font-size:12px; color:#888; }
+  footer a { color:#8ab4f8; }
+  .note { font-size:12.5px; color:#999; margin-top:6px; }
 </style>
 </head>
 <body>
 <div class="wrap">
 
 <h1>🎵 Radar Musical Madrid</h1>
-<p class="subtitle">Próximos 10 días · 27 de agosto – 6 de septiembre de 2026 · Comunidad de Madrid</p>
+<div class="subtitle">Próximos 10 días · 25 de octubre – 4 de noviembre de 2026 · Comunidad de Madrid</div>
 
 <div class="legend">
-  <span><span class="swatch" style="background:#09180a;"></span> Gratis</span>
-  <span><span class="swatch" style="background:#111111;border:1px solid #555;"></span> Hasta 50 €</span>
-  <span><span class="swatch" style="background:#160808;"></span> Más de 50 €</span>
-  <span>⭐⭐⭐ Flamenco / Jazz / Blues / Soul / Folk / Country / Cantautor / Rock clásico</span>
-  <span>⭐⭐ Pop calidad / Indie / Tributos / World</span>
-  <span>⭐ Electrónica / Mainstream</span>
+  <span class="leg-free">🟢 Gratis</span>
+  <span class="leg-mid">⚪ Hasta 50 €</span>
+  <span class="leg-high">🔴 Más de 50 €</span>
+  <span>⭐⭐⭐ Flamenco / Jazz / Blues / Soul / Folk / Cantautor / Rock clásico</span>
+  <span>⭐⭐ Pop calidad / Indie / Acústico / World</span>
 </div>
 
-<h2>Joyas de la semana</h2>
-<div class="joyas">
-  <div class="joya-card">
-    <h3>⭐⭐⭐ Kiko Veneno</h3>
-    <p>Viernes 4 sep · 21:00</p>
-    <p>Auditorio Paco de Lucía · Alcorcón</p>
-    <p>Gratis · Fiestas de Alcorcón 2026</p>
-  </div>
-  <div class="joya-card">
-    <h3>⭐⭐⭐ The Gories + Daddy Long Legs</h3>
-    <p>Sábado 5 sep · 20:00</p>
-    <p>Sala El Sol · Madrid</p>
-    <p>Leyendas del garage rock de Detroit (Mick Collins, Danny Kroha)</p>
-  </div>
-  <div class="joya-card">
-    <h3>⭐⭐⭐ Yamandu Costa: "Choros y Milongas"</h3>
-    <p>Sábado 29 ago</p>
-    <p>Teatro Antigua Mina de Zarzalejo · Escena Escorial</p>
-    <p>Con Alexis Cárdenas Cuarteto ("Ecos Latinos")</p>
-  </div>
-</div>
-
-<h2>Agenda completa (orden cronológico)</h2>
+<h2>📅 Agenda completa (orden cronológico)</h2>
 <table>
-<thead>
 <tr>
 <th>⭐</th><th>Fecha</th><th>Hora</th><th>Artista / Evento</th><th>Recinto · Municipio</th><th>Precio</th><th>Género</th><th>🔗</th>
 </tr>
-</thead>
-<tbody>
 
-<tr class="neutro"><td class="stars">⭐⭐</td><td>Jue 27 ago</td><td>21:00</td><td>Sr Lester</td><td>Honky Tonk Bar · Madrid</td><td>Ver enlace</td><td>Rock</td><td><a href="https://clubhonky.com/programacion/">Comprar</a></td></tr>
-<tr class="neutro"><td class="stars">⭐⭐</td><td>Jue 27 ago</td><td>21:00</td><td>Festival de Tributos: Last Zeppelin (tributo Led Zeppelin)</td><td>Siroco · Madrid</td><td>Ver enlace</td><td>Tributo rock clásico</td><td><a href="https://siroco.es/eventos/festival-de-tributos-last-zeppelin-tributo-a-led-zeppelin/">Comprar</a></td></tr>
-<tr class="neutro"><td class="stars">⭐</td><td>Jue 27 ago</td><td>20:30</td><td>Upchuck (EEUU) + Ikhorium + Los Pólipos</td><td>Gruta 77 · Madrid</td><td>Ver enlace</td><td>Punk</td><td><a href="https://gruta77.com/events/upchuck-eeuu-ikhorium-slow-trauma-kiss/">Comprar</a></td></tr>
+<tr class="mid"><td class="star">⭐⭐⭐</td><td>25 oct (dom)</td><td>20:00</td><td>Mercedes Ruiz &amp; Santiago Lara — <em>"Dual"</em> (estreno Madrid)</td><td>Teatros del Canal (Sala Negra) · Madrid</td><td>Ver enlace</td><td>Flamenco · Suma Flamenca</td><td><a href="https://www.madrid.org/sumaflamenca/2026/programacion.html">Entradas</a></td></tr>
 
-<tr class="neutro"><td class="stars">⭐⭐⭐</td><td>Vie 28 – Sáb 29 ago</td><td>20:00 / 22:00</td><td>Glenda Vega & The Alma Collective</td><td>Café Central Ateneo · Madrid</td><td>Ver enlace</td><td>Jazz</td><td><a href="https://cafecentralmadrid.com/reservas/?event=glenda-vega-the-alma-collective-185d42ee">Comprar</a></td></tr>
-<tr class="neutro"><td class="stars">⭐⭐⭐</td><td>Vie 28 ago</td><td>21:00</td><td>Fiesta Rock/Pop y Clásicos de Siempre (Sideral)</td><td>Sala Galileo · Madrid</td><td>20 €</td><td>Rock/pop español clásico</td><td><a href="https://salagalileo.es/programacion/fiesta-rock-pop-y-clasicos-de-siempre/">Comprar</a></td></tr>
-<tr class="neutro"><td class="stars">⭐⭐⭐</td><td>Vie 28 ago</td><td>—</td><td>"Los colores de América" (Alondra de la Parra, JORCAM + Thomas Enhco)</td><td>Teatro Auditorio San Lorenzo de El Escorial · El Escorial ⚠️ Verificar hora</td><td>Ver enlace</td><td>Sinfónico / World</td><td><a href="https://escenaescorial.org/">Info</a></td></tr>
-<tr class="neutro"><td class="stars">⭐⭐</td><td>Vie 28 ago</td><td>21:30</td><td>American Rock Stars Tribute Fest (Disorder/Bombtruck/Black Horsemen)</td><td>Gruta 77 · Madrid</td><td>Ver enlace</td><td>Tributo metal</td><td><a href="https://gruta77.com/events/american-rock-stars-tribute-fest-disorder-tributo-system-of-a-down-bombtruck-tributo-rage-against-the-machine-black-horsemen-tributo-metallica/">Comprar</a></td></tr>
-<tr class="neutro"><td class="stars">⭐⭐</td><td>Vie 28 ago</td><td>21:00</td><td>Festival de Tributos: Gansos Rosas (tributo Guns N' Roses)</td><td>Siroco · Madrid</td><td>Ver enlace</td><td>Tributo rock</td><td><a href="https://siroco.es/eventos/festival-de-tributos-gansos-rosas-tributo-a-guns-roses/">Comprar</a></td></tr>
-<tr class="neutro"><td class="stars">⭐⭐</td><td>Vie 28 ago</td><td>21:00</td><td>Metropop (tributo pop español)</td><td>Honky Tonk Bar · Madrid</td><td>Ver enlace</td><td>Tributo pop</td><td><a href="https://clubhonky.com/programacion/">Comprar</a></td></tr>
-<tr class="caro"><td class="stars">⭐</td><td>Vie 28 – Dom 30 ago</td><td>—</td><td>The Weeknd — After Hours Til Dawn Tour</td><td>Estadio Riyadh Air Metropolitano · Madrid</td><td>Más de 50 €</td><td>Pop / R&B</td><td><a href="https://blog.ticketmaster.es/post/proximos-conciertos-madrid-38740/">Info</a></td></tr>
+<tr class="mid"><td class="star">⭐⭐⭐</td><td>25 oct (dom)</td><td>—</td><td>Tarquim y Los Metales Preciosos</td><td>Sala Villanos · Madrid</td><td>Ver enlace</td><td>Jazz / Cubano · JazzMadrid</td><td><a href="https://salavillanos.es/agenda/">Entradas</a></td></tr>
 
-<tr class="neutro"><td class="stars">⭐⭐⭐</td><td>Sáb 29 ago</td><td>21:00</td><td>Luis Ramiro — Concierto Fin de Verano</td><td>Sala Galileo · Madrid</td><td>20 €</td><td>Cantautor</td><td><a href="https://salagalileo.es/programacion/luis-ramiro/">Comprar</a></td></tr>
-<tr class="neutro"><td class="stars">⭐⭐⭐</td><td>Sáb 29 ago</td><td>21:00</td><td>Ben Vaughn Quintet</td><td>Sala El Sol · Madrid</td><td>Ver enlace</td><td>Rock / Singer-songwriter</td><td><a href="https://salaelsol.com/eventos/ben-vaughn-quintet-2/">Comprar</a></td></tr>
-<tr class="neutro"><td class="stars">⭐⭐⭐</td><td>Sáb 29 ago</td><td>—</td><td>Yamandu Costa "Choros y Milongas" + Alexis Cárdenas Cuarteto "Ecos Latinos"</td><td>Teatro Antigua Mina de Zarzalejo · El Escorial ⚠️ Verificar hora</td><td>Ver enlace</td><td>World music / Folk</td><td><a href="https://escenaescorial.org/">Info</a></td></tr>
-<tr class="neutro"><td class="stars">⭐⭐</td><td>Sáb 29 ago</td><td>21:30</td><td>Metal Four (tributos Megadeth/Iron Maiden/Judas Priest/AC-DC)</td><td>Gruta 77 · Madrid</td><td>Ver enlace</td><td>Tributo metal</td><td><a href="https://gruta77.com/events/metal-four-tribute-of-destruction-tributo-megadeth-666-tributo-iron-maiden-thunderstruck-tributo-ac-dc-sentinels-tributo-a-judas-priest-tribute-of-destruction-tributo-a-megadeth/">Comprar</a></td></tr>
-<tr class="neutro"><td class="stars">⭐⭐</td><td>Sáb 29 ago</td><td>21:00</td><td>Festival de Tributos: Kings of the Stone Age (tributo Queens of the Stone Age)</td><td>Siroco · Madrid</td><td>Ver enlace</td><td>Tributo rock</td><td><a href="https://siroco.es/eventos/festival-de-tributos-kings-of-the-stone-age-tributo-a-queens-of-the-stone-age/">Comprar</a></td></tr>
-<tr class="neutro"><td class="stars">⭐⭐</td><td>Sáb 29 ago</td><td>21:00</td><td>Ricos y Famosos</td><td>Honky Tonk Bar · Madrid</td><td>Ver enlace</td><td>Rock</td><td><a href="https://clubhonky.com/programacion/">Comprar</a></td></tr>
+<tr class="mid"><td class="star">⭐⭐⭐</td><td>25 oct (dom)</td><td>—</td><td>"Intemperie" · The Ministers of Pastime</td><td>Ateneo de Madrid · Madrid</td><td>Ver enlace</td><td>Música antigua · Festival Silva de Sirenas</td><td><a href="https://www.silvadesirenas.com/">Entradas</a></td></tr>
 
-<tr class="neutro"><td class="stars">⭐⭐⭐</td><td>Dom 30 ago</td><td>20:00 / 22:00</td><td>Jeff Espinoza / Ramón Arroyo / The Roadrunners</td><td>Café Central Ateneo · Madrid</td><td>Ver enlace</td><td>Jazz</td><td><a href="https://cafecentralmadrid.com/reservas/?event=jeff-espinoza-ramon-arroyo-the-roadrunners-8118f611">Comprar</a></td></tr>
-<tr class="neutro"><td class="stars">⭐⭐</td><td>Dom 30 ago</td><td>20:00</td><td>Boleros y Romances / Clásicos de Siempre</td><td>Sala Galileo · Madrid</td><td>20 €</td><td>Boleros / Copla</td><td><a href="https://salagalileo.es/programacion/boleros-y-romances-clasicos-de-siempre/">Comprar</a></td></tr>
+<tr class="mid"><td class="star">⭐⭐⭐</td><td>25 oct (dom)</td><td>—</td><td>Folk-Celtic Festival</td><td>Sala Galileo · Madrid</td><td>Ver enlace</td><td>Folk / Celta</td><td><a href="https://salagalileo.es/programacion/">Entradas</a></td></tr>
 
-<tr class="neutro"><td class="stars">⭐⭐⭐</td><td>Lun 31 ago – Mar 1 sep</td><td>20:00 / 22:00</td><td>Ogun Afrobeat</td><td>Café Central Ateneo · Madrid</td><td>Ver enlace</td><td>Jazz / Afrobeat</td><td><a href="https://cafecentralmadrid.com/reservas/?event=ogun-afrobeat-8ed588a9">Comprar</a></td></tr>
-<tr class="neutro"><td class="stars">⭐⭐</td><td>Lun 31 ago</td><td>21:00</td><td>Romea</td><td>Sala El Sol · Madrid</td><td>Ver enlace</td><td>Pop latino</td><td><a href="https://salaelsol.com/eventos/romea/">Comprar</a></td></tr>
+<tr class="mid"><td class="star">⭐⭐</td><td>25 oct (dom)</td><td>—</td><td>Concierto Swing For Kids <span class="warn">⚠️ Verificar hora/sala</span></td><td class="muni">Las Rozas de Madrid</td><td>Ver enlace</td><td>Swing</td><td><a href="https://infomajadahonda.com/agenda">Agenda</a></td></tr>
 
-<tr class="gratis"><td class="stars">⭐</td><td>Mar 1 sep</td><td>—</td><td>After Church Open Mic</td><td>Honky Tonk Bar · Madrid</td><td>Gratis</td><td>Variado / Open mic</td><td><a href="https://clubhonky.com/programacion/">Info</a></td></tr>
+<tr class="mid"><td class="star">⭐⭐⭐</td><td>27 oct (mar)</td><td>—</td><td>Carmen Linares — 30º aniversario <em>"Antología de la mujer en el cante"</em></td><td>Teatros del Canal · Madrid</td><td>Ver enlace</td><td>Flamenco · Suma Flamenca</td><td><a href="https://www.madrid.org/sumaflamenca/2026/programacion.html">Entradas</a></td></tr>
 
-<tr class="neutro"><td class="stars">⭐⭐⭐</td><td>Mié 2 – Jue 3 sep</td><td>20:00 / 22:00</td><td>Bobby Martinez Quartet</td><td>Café Central Ateneo · Madrid</td><td>Ver enlace</td><td>Jazz</td><td><a href="https://cafecentralmadrid.com/reservas/?event=bobby-martinez-quartet-1c691df7">Comprar</a></td></tr>
-<tr class="neutro"><td class="stars">⭐⭐⭐</td><td>Mié 2 sep</td><td>21:00</td><td>Alber Solo & Fire Bird Blues</td><td>Honky Tonk Bar · Madrid</td><td>Ver enlace</td><td>Blues</td><td><a href="https://clubhonky.com/programacion/">Comprar</a></td></tr>
+<tr class="mid"><td class="star">⭐⭐⭐</td><td>28–30 oct (mié–vie)</td><td>20:00–21:00</td><td>Arcángel — <em>"Tablao"</em> (apertura IX Temporada Flamenco Real)</td><td>Teatro Real, Sala de Baile · Madrid</td><td>Ver enlace</td><td>Flamenco</td><td><a href="https://www.teatroreal.es/en/flamenco-real">Entradas</a></td></tr>
 
-<tr class="neutro"><td class="stars">⭐⭐⭐</td><td>Jue 3 sep</td><td>—</td><td>"Nascencia" — Ballet Español de la Comunidad de Madrid (estreno)</td><td>Escena Escorial · El Escorial ⚠️ Verificar hora</td><td>Ver enlace</td><td>Danza flamenca</td><td><a href="https://escenaescorial.org/">Info</a></td></tr>
-<tr class="neutro"><td class="stars">⭐⭐</td><td>Jue 3 sep</td><td>21:00</td><td>Festival de Tributos: Universo Tequilez (tributo Tequila y Los Rodríguez)</td><td>Siroco · Madrid</td><td>Ver enlace</td><td>Tributo rock español</td><td><a href="https://siroco.es/eventos/festival-de-tributos-universo-tequilez-tributo-a-tequila-y-los-rodriguez/">Comprar</a></td></tr>
-<tr class="neutro"><td class="stars">⭐⭐</td><td>Jue 3 sep</td><td>21:00</td><td>The Fucking Jam</td><td>Honky Tonk Bar · Madrid</td><td>Ver enlace</td><td>Rock</td><td><a href="https://clubhonky.com/programacion/">Comprar</a></td></tr>
+<tr class="mid"><td class="star">⭐⭐⭐</td><td>28 oct (mié)</td><td>—</td><td>Jesús Carmona — <em>"UnYdos"</em></td><td>Teatros del Canal · Madrid</td><td>Ver enlace</td><td>Flamenco · Suma Flamenca</td><td><a href="https://www.madrid.org/sumaflamenca/2026/programacion.html">Entradas</a></td></tr>
 
-<tr class="neutro"><td class="stars">⭐⭐⭐</td><td>Vie 4 – Sáb 5 sep</td><td>20:00 / 22:00</td><td>John O'Gallagher / Masa Kamaguchi / Rob Garcia</td><td>Café Central Ateneo · Madrid</td><td>Ver enlace</td><td>Jazz</td><td><a href="https://cafecentralmadrid.com/reservas/?event=john-o-gallagher-masa-kamaguchi-rob-garcia-ebbc88c9">Comprar</a></td></tr>
-<tr class="neutro"><td class="stars">⭐⭐⭐</td><td>Vie 4 sep</td><td>22:00</td><td>Mesalla</td><td>Sala Galileo · Madrid</td><td>20 €</td><td>Flamenco fusión</td><td><a href="https://salagalileo.es/programacion/mesalla/">Comprar</a></td></tr>
-<tr class="gratis"><td class="stars">⭐⭐⭐</td><td>Vie 4 sep</td><td>21:00</td><td>Kiko Veneno</td><td>Auditorio Paco de Lucía · Alcorcón</td><td>Gratis</td><td>Rock / Cantautor</td><td><a href="https://www.ayto-alcorcon.es/es/fiestas-alcorcon-2026">Info</a></td></tr>
-<tr class="neutro"><td class="stars">⭐⭐</td><td>Vie 4 sep</td><td>19:00</td><td>Lussy — Club 77</td><td>Sala Galileo · Madrid</td><td>10 €</td><td>Pop alternativo</td><td><a href="https://salagalileo.es/programacion/lussy-club-77/">Comprar</a></td></tr>
-<tr class="neutro"><td class="stars">⭐⭐</td><td>Vie 4 sep</td><td>21:30</td><td>Amón Ra and the Melofers + Las Madres</td><td>Gruta 77 · Madrid</td><td>Ver enlace</td><td>Rock</td><td><a href="https://gruta77.com/events/amon-ra-and-the-melofers-las-madres/">Comprar</a></td></tr>
-<tr class="neutro"><td class="stars">⭐⭐</td><td>Vie 4 sep</td><td>21:00</td><td>Festival de Tributos: AMA (tributo Extremoduro)</td><td>Siroco · Madrid</td><td>Ver enlace</td><td>Tributo rock</td><td><a href="https://siroco.es/eventos/festival-de-tributos-ama-tributo-a-extremoduro/">Comprar</a></td></tr>
-<tr class="neutro"><td class="stars">⭐⭐</td><td>Vie 4 sep</td><td>21:00</td><td>Humbuckers</td><td>Honky Tonk Bar · Madrid</td><td>Ver enlace</td><td>Rock</td><td><a href="https://clubhonky.com/programacion/">Comprar</a></td></tr>
+<tr class="mid"><td class="star">⭐⭐⭐</td><td>28 oct (mié)</td><td>20:00 / 22:00</td><td>Julia Perminova Quartet</td><td>Café Central · Madrid</td><td>Ver enlace</td><td>Jazz</td><td><a href="https://cafecentralmadrid.com/programacion/">Entradas</a></td></tr>
 
-<tr class="neutro"><td class="stars">⭐⭐⭐</td><td>Sáb 5 sep</td><td>20:00</td><td>The Gories + Daddy Long Legs</td><td>Sala El Sol · Madrid</td><td>Ver enlace</td><td>Garage rock</td><td><a href="https://salaelsol.com/eventos/the-gories-daddy-long-legs/">Comprar</a></td></tr>
-<tr class="neutro"><td class="stars">⭐⭐⭐</td><td>Sáb 5 sep</td><td>21:00</td><td>Mañu</td><td>Honky Tonk Bar · Madrid</td><td>Ver enlace</td><td>Cantautor</td><td><a href="https://clubhonky.com/programacion/">Comprar</a></td></tr>
-<tr class="gratis"><td class="stars">⭐⭐</td><td>Sáb 5 sep</td><td>21:30</td><td>La Pegatina</td><td>Auditorio Paco de Lucía · Alcorcón</td><td>Gratis</td><td>Ska / Rumba / Indie</td><td><a href="https://www.ayto-alcorcon.es/es/fiestas-alcorcon-2026">Info</a></td></tr>
-<tr class="neutro"><td class="stars">⭐⭐</td><td>Sáb 5 sep</td><td>19:00</td><td>Puro Rock en Galileo (Little Runaways/La Patera/So Payaso + 1)</td><td>Sala Galileo · Madrid</td><td>22 €</td><td>Festival tributos rock</td><td><a href="https://salagalileo.es/programacion/festival-de-rock/">Comprar</a></td></tr>
-<tr class="neutro"><td class="stars">⭐⭐</td><td>Sáb 5 sep</td><td>21:30</td><td>Eruktogatos + Cerraos</td><td>Gruta 77 · Madrid</td><td>Ver enlace</td><td>Rock</td><td><a href="https://gruta77.com/events/eruktogatos-cerraos/">Comprar</a></td></tr>
-<tr class="neutro"><td class="stars">⭐⭐</td><td>Sáb 5 sep</td><td>21:00</td><td>Astäroz (tributo Mägo de Oz)</td><td>Siroco · Madrid</td><td>Ver enlace</td><td>Tributo rock</td><td><a href="https://siroco.es/eventos/astaroz-tributo-a-mago-de-oz/">Comprar</a></td></tr>
+<tr class="free"><td class="star">⭐⭐</td><td>28 oct (mié)</td><td>—</td><td>Sharif Fernández</td><td class="muni">La Esfera · Alcobendas</td><td>Gratis</td><td>Pop / Flamenco</td><td><a href="https://www.alcobendas.org/es/noticia/alcobendas-en-otono-espectaculos-para-todos-en-plazas-parques-y-calles">Info</a></td></tr>
 
-<tr class="neutro"><td class="stars">⭐⭐⭐</td><td>Dom 6 sep</td><td>20:00 / 22:00</td><td>Lucía Gregorio Quartet</td><td>Café Central Ateneo · Madrid</td><td>Ver enlace</td><td>Jazz</td><td><a href="https://cafecentralmadrid.com/reservas/?event=lucia-gregorio-quartet-1e3e51a6">Comprar</a></td></tr>
-<tr class="neutro"><td class="stars">⭐⭐</td><td>Dom 6 sep</td><td>21:00</td><td>Kinky (Mazo Madriz)</td><td>Sala El Sol · Madrid</td><td>Ver enlace</td><td>Pop rock mexicano</td><td><a href="https://salaelsol.com/eventos/kinky-mazo-madriz/">Comprar</a></td></tr>
+<tr class="mid"><td class="star">⭐⭐⭐</td><td>29 oct (jue)</td><td>—</td><td>Farruquito — <em>"Sexteto Flamenco"</em></td><td>Teatros del Canal · Madrid</td><td>Ver enlace</td><td>Flamenco · Suma Flamenca</td><td><a href="https://www.madrid.org/sumaflamenca/2026/programacion.html">Entradas</a></td></tr>
 
-</tbody>
+<tr class="mid"><td class="star">⭐⭐⭐</td><td>29 oct (jue)</td><td>—</td><td>Ibrahim Maalouf — <em>The Trumpets of Michel-Ange Vol. 2</em></td><td>La Riviera · Madrid</td><td>Ver enlace</td><td>Jazz / Trompeta · Clausura JazzMadrid</td><td><a href="https://salariviera.com/conciertossalariviera/">Entradas</a></td></tr>
+
+<tr class="mid"><td class="star">⭐⭐⭐</td><td>29 oct (jue)</td><td>20:00 / 22:00</td><td>Jive Mother Mary</td><td>Café Central · Madrid</td><td>Ver enlace</td><td>Jazz</td><td><a href="https://cafecentralmadrid.com/programacion/">Entradas</a></td></tr>
+
+<tr class="mid"><td class="star">⭐⭐⭐</td><td>30 oct (vie)</td><td>—</td><td>Rocío Molina — <em>"Caída del cielo"</em></td><td>Teatros del Canal, Sala Roja · Madrid</td><td>Ver enlace</td><td>Flamenco · Suma Flamenca</td><td><a href="https://www.madrid.org/sumaflamenca/2026/programacion.html">Entradas</a></td></tr>
+
+<tr class="mid"><td class="star">⭐⭐⭐</td><td>30–31 oct (vie–sáb)</td><td>20:00 / 22:00</td><td>Ulf Wakenius Organ Trio</td><td>Café Central · Madrid</td><td>Ver enlace</td><td>Jazz · JazzMadrid</td><td><a href="https://cafecentralmadrid.com/programacion/">Entradas</a></td></tr>
+
+<tr class="mid"><td class="star">⭐⭐</td><td>30 oct (vie)</td><td>20:00–21:00</td><td>Concierto de Aranjuez — Orquesta UC3M <span class="warn">⚠️ Verificar aforo/invitación</span></td><td class="muni">Auditorio Univ. Carlos III · Leganés</td><td>Ver enlace</td><td>Clásica</td><td><a href="https://ocioenleganes.es/espectaculos/">Agenda</a></td></tr>
+
+<tr class="mid"><td class="star">⭐⭐</td><td>30 oct (vie)</td><td>—</td><td>Concierto especial Halloween — Banda Ateneo Noroeste <span class="warn">⚠️ Verificar hora</span></td><td class="muni">Las Rozas de Madrid</td><td>Ver enlace</td><td>Banda / Clásica</td><td><a href="https://infomajadahonda.com/agenda">Agenda</a></td></tr>
+
+<tr class="mid"><td class="star">⭐⭐⭐</td><td>31 oct (sáb)</td><td>19:00</td><td>La Piñona — <em>"Lucía en Vivo"</em></td><td class="muni">Teatro Real Coliseo Carlos III · San Lorenzo de El Escorial</td><td>Ver enlace</td><td>Flamenco · Suma Flamenca</td><td><a href="https://www.madrid.org/sumaflamenca/2026/programacion.html">Entradas</a></td></tr>
+
+<tr class="mid"><td class="star">⭐⭐⭐</td><td>31 oct (sáb)</td><td>20:30</td><td>Estévez &amp; Paños — <em>"Doncellas (Juerga permanente)"</em> <span class="warn">⚠️ Verificar sala exacta</span></td><td>Teatros del Canal · Madrid</td><td>Ver enlace</td><td>Flamenco · Suma Flamenca</td><td><a href="https://www.madrid.org/sumaflamenca/2026/programacion.html">Entradas</a></td></tr>
+
+<tr class="mid"><td class="star">⭐⭐⭐</td><td>31 oct (sáb)</td><td>—</td><td>"Tribute of Jazz – The Boss" <span class="warn">⚠️ Verificar sala</span></td><td class="muni">Majadahonda</td><td>Ver enlace</td><td>Jazz / Swing / Blues</td><td><a href="https://infomajadahonda.com/agenda">Agenda</a></td></tr>
+
+<tr class="high"><td class="star">⭐⭐</td><td>31 oct (sáb)</td><td>17:00 / 20:00</td><td>Morat</td><td>Movistar Arena · Madrid</td><td>Ver enlace</td><td>Pop</td><td><a href="https://www.ticketmaster.es/venue/movistar-arena-madrid-entradas/wizinkmad/112">Entradas</a></td></tr>
+
+<tr class="mid"><td class="star">⭐⭐⭐</td><td>1 nov (dom)</td><td>—</td><td>No Te Va Gustar</td><td>Live Las Ventas · Madrid</td><td>Ver enlace</td><td>Rock</td><td><a href="https://blog.ticketmaster.es/post/proximos-conciertos-madrid-38740/">Entradas</a></td></tr>
+
+<tr class="mid"><td class="star">⭐⭐⭐</td><td>1 nov (dom)</td><td>—</td><td>Déconcertant</td><td>Café Central · Madrid</td><td>Ver enlace</td><td>Jazz</td><td><a href="https://cafecentralmadrid.com/programacion/">Entradas</a></td></tr>
+
+<tr class="mid"><td class="star">⭐⭐</td><td>1 nov (dom)</td><td>—</td><td>Guillermo Willis — recital de bandoneón (tango/barroco)</td><td>CaixaForum Madrid (Microconciertos) · Madrid</td><td>Ver enlace</td><td>Tango / World</td><td><a href="https://caixaforum.org/es/madrid/p/microconciertos-madrid">Info</a></td></tr>
+
+<tr class="mid"><td class="star">⭐⭐</td><td>1 nov (dom)</td><td>—</td><td>Tango – Milonga · Orquesta típica La Argenta &amp; Carla Delgado</td><td>Café Berlín · Madrid</td><td>Ver enlace</td><td>Tango / World</td><td><a href="https://ra.co/clubs/203091">Entradas</a></td></tr>
+
+<tr class="mid"><td class="star">⭐⭐</td><td>1 nov (dom)</td><td>21:00</td><td>OURS</td><td>Café La Palma · Madrid</td><td>Ver enlace</td><td>Indie</td><td><a href="https://cafelapalma.com/en/">Entradas</a></td></tr>
+
+<tr class="mid"><td class="star">⭐⭐⭐</td><td>2 nov (lun)</td><td>—</td><td>Swing Machine Orchestra</td><td>Sala Galileo · Madrid</td><td>Ver enlace</td><td>Swing / Jazz</td><td><a href="https://salagalileo.es/programacion/">Entradas</a></td></tr>
+
+<tr class="mid"><td class="star">⭐⭐⭐</td><td>4 nov (mié)</td><td>21:00</td><td>El Riqué</td><td>Café Libertad 8 · Madrid</td><td>Ver enlace</td><td>Cantautor</td><td><a href="https://libertad8cafe.es/">Entradas</a></td></tr>
+
+<tr class="mid"><td class="star">⭐⭐⭐</td><td>4 nov (mié)</td><td>—</td><td>Julieta Rada — Jazz con sabor a club</td><td>Café Berlín · Madrid</td><td>Ver enlace</td><td>Jazz</td><td><a href="https://ra.co/clubs/203091">Entradas</a></td></tr>
+
+<tr class="mid"><td class="star">⭐⭐⭐</td><td>4 nov (mié)</td><td>—</td><td>Jessie Gordon — "Dirty Jazz Concert"</td><td>Big Mama Ballroom · Madrid</td><td>Ver enlace</td><td>Jazz / Blues</td><td><a href="https://bigmamaballroom.com/programacion/">Entradas</a></td></tr>
+
+<tr class="mid"><td class="star">⭐⭐⭐</td><td>4 nov (mié)</td><td>—</td><td>Rocío Luna — XXIII Festival Flamenco "Ciudad de Majadahonda" <span class="warn">⚠️ Verificar sala exacta</span></td><td class="muni">Majadahonda</td><td>Ver enlace</td><td>Flamenco</td><td><a href="https://infopozuelo.com/agenda/musica-rocio-luna-el-xxiii-festival-flamenco-ciudad-de-majadahonda-4-de-noviembre_59474/musica-y-danza-en-pozuelo">Info</a></td></tr>
+
+<tr class="mid"><td class="star">⭐⭐</td><td>4 nov (mié)</td><td>—</td><td>Menend</td><td>Sala El Sol · Madrid</td><td>Ver enlace</td><td>Indie</td><td><a href="https://salaelsol.com/agenda/">Entradas</a></td></tr>
+
 </table>
-<p style="font-size:12px;color:#888;">Total: 41 eventos · 5 fuera de Madrid capital (El Escorial x3, Alcorcón x2)</p>
+<div class="note">32 eventos · 7 fuera de Madrid capital (Las Rozas ×2, Alcobendas, Leganés, El Escorial, Majadahonda ×2) · Precios marcados "Ver enlace" no verificados directamente — confirmar en la fuente antes de comprar.</div>
 
-<h2>Instagram — cuentas revisadas</h2>
-<p style="font-size:13px;color:#ccc;">Se revisaron las siguientes cuentas de Instagram. Instagram bloquea la lectura de publicaciones y fechas sin sesión iniciada, por lo que no fue posible extraer eventos concretos con fecha verificable desde estas cuentas para esta edición; todos los eventos de la tabla proceden de webs oficiales de las salas/festivales, no de Instagram. Se deja constancia de la revisión conforme a las reglas de calidad del radar.</p>
-<div class="ig-grid">
-  <div class="ig-item"><b>@cafeberlinmadrid</b><br>Perfil accesible, sin publicaciones con fecha extraíble sin login.</div>
-  <div class="ig-item"><b>@clamoreslive</b><br>Sin actividad indexada con fecha extraíble.</div>
-  <div class="ig-item"><b>@cafecentralmadrid</b><br>Datos obtenidos vía web oficial, no vía Instagram.</div>
-  <div class="ig-item"><b>@mobydickclub</b><br>Sin acceso a programación (sitio con carga dinámica).</div>
-  <div class="ig-item"><b>@bigmamaballroom</b><br>Sin eventos indexados para la ventana.</div>
-  <div class="ig-item"><b>@moeclubmadrid</b><br>Sin actividad indexada.</div>
-  <div class="ig-item"><b>@tempoaudiophileclub</b><br>Sin actividad indexada.</div>
-  <div class="ig-item"><b>@salagalileo</b><br>Datos obtenidos vía web oficial (salagalileo.es).</div>
-  <div class="ig-item"><b>@cafelibertad8</b><br>Sin eventos publicados para la ventana (web oficial: "por el momento no hay eventos").</div>
-  <div class="ig-item"><b>@rincondelartenuevo</b><br>Sin actividad indexada.</div>
-  <div class="ig-item"><b>@lafidula</b><br>Sin actividad indexada.</div>
-  <div class="ig-item"><b>@sirocosala</b><br>Datos obtenidos vía web oficial (siroco.es).</div>
-  <div class="ig-item"><b>@elsotano_madrid</b><br>Sin actividad indexada.</div>
-  <div class="ig-item"><b>@wurlitzerballroom</b><br>Sin cartelera específica para la ventana.</div>
-  <div class="ig-item"><b>@gruta_77</b><br>Datos obtenidos vía web oficial (gruta77.com).</div>
-  <div class="ig-item"><b>@honkytonk_bar</b><br>Datos obtenidos vía web oficial (clubhonky.com).</div>
-  <div class="ig-item"><b>@funhousemusicbar</b><br>Sin actividad indexada.</div>
-  <div class="ig-item"><b>@vestabyfulanita</b><br>Sin actividad indexada.</div>
-  <div class="ig-item"><b>@salabarco / @barcosoundhouse</b><br>Sin actividad indexada.</div>
-  <div class="ig-item"><b>@madridenvivo_</b><br>Sin actividad indexada.</div>
-  <div class="ig-item"><b>@tomatito6cuerdas</b><br>No se localizó concierto de Tomatito en Madrid dentro de la ventana (27 ago–6 sep).</div>
-  <div class="ig-item"><b>@villanosdelflamenco</b><br>Perfil no accesible vía Instagram; ciclo confirmado solo jun–jul 2026 (Teatro Albéniz), sin fechas en la ventana actual.</div>
-  <div class="ig-item"><b>@sala_duende_es</b><br>Sin actividad indexada verificable para la ventana.</div>
-  <div class="ig-item"><b>@deflamenco / @guiaflama</b><br>Consultadas vía web; sin conciertos de flamenco puro confirmados en Madrid capital dentro de la ventana (el Círculo Flamenco no publicó fechas en este rango).</div>
+<h2>💎 Joyas de la semana</h2>
+<div class="gems">
+  <div class="gem">
+    <h3>Arcángel · "Tablao"</h3>
+    <p>Teatro Real · 28–30 oct</p>
+    <p>Apertura de la IX Temporada Flamenco Real, con uno de los cantaores más influyentes de la escena actual reivindicando el tablao como espacio de transmisión flamenca.</p>
+  </div>
+  <div class="gem">
+    <h3>Ibrahim Maalouf</h3>
+    <p>La Riviera · 29 oct</p>
+    <p>Clausura de JazzMadrid 2026 con el trompetista franco-libanés presentando su nuevo trabajo "The Trumpets of Michel-Ange Vol. 2".</p>
+  </div>
+  <div class="gem">
+    <h3>Farruquito · "Sexteto Flamenco"</h3>
+    <p>Teatros del Canal · 29 oct</p>
+    <p>Dentro de la XXI Suma Flamenca, uno de los bailaores más carismáticos del panorama actual en una de las galas más esperadas del festival.</p>
+  </div>
 </div>
 
-<h2 style="margin-top:32px;">Notas</h2>
-<p style="font-size:13px;color:#ccc;">
-⚠️ Fechas de Escena Escorial (El Escorial / Zarzalejo): horarios exactos no confirmados en las fuentes consultadas — verificar en <a href="https://escenaescorial.org/">escenaescorial.org</a> antes de comprar.<br>
-Villanos del Flamenco, Café Libertad 8, La Fídula, Wurlitzer Ballroom, Sala Duende y Tomatito: revisados sin resultados de eventos confirmados dentro de la ventana 27 ago–6 sep 2026.<br>
-Precios marcados "Ver enlace" no pudieron verificarse en la fuente y deben confirmarse antes de comprar.
-</p>
+<h2>📱 Revisión de Instagram</h2>
+<p class="note">Se intentó localizar programación vía búsqueda indexada de las cuentas prioritarias y de prioridad media listadas en el encargo. Google no indexa de forma fiable el contenido de publicaciones de Instagram, por lo que no fue posible confirmar carteles o fechas concretas citando directamente una cuenta como fuente, y por integridad no se han inventado eventos ni citas. Para una cobertura completa de Instagram se recomienda una revisión manual o con navegador, especialmente para las cuentas marcadas abajo.</p>
+<div class="ig-list">
+<strong>Cuentas revisadas (sin confirmación indexada de cartel en la ventana 25 oct–4 nov):</strong><br>
+<span class="none">@cafeberlinmadrid · @clamoreslive · @cafecentralmadrid · @bigmamaballroom · @moeclubmadrid · @tempoaudiophileclub · @salagalileo · @cafelibertad8 · @rincondelartenuevo · @lafidula · @mobydickclub · @salaelsol · @sirocosala · @elsotano_madrid · @wurlitzerballroom · @gruta_77 · @honkytonk_bar · @funhousemusicbar · @vestabyfulanita · @salabarco · @barcosoundhouse · @madridenvivo_ · @tomatito6cuerdas · @villanosdelflamenco · @sala_duende_es · @deflamenco · @guiaflama</span><br><br>
+<strong>Nota sobre artistas/ciclos prioritarios:</strong> Tomatito no tiene fechas confirmadas en Madrid dentro de esta ventana (su última actuación localizada fue el 27 de junio de 2026). "Villanos del Flamenco" es un ciclo de verano (20 jun–12 jul) y no está activo ahora; en su lugar, Sala Villanos programa "Villanos del Jazz" dentro de JazzMadrid, con Tarquim y Los Metales Preciosos el 25 de octubre (incluido en la tabla). No se localizó una sala llamada "Sala Duende" operativa en Madrid capital (la cuenta @sala_duende_estepona corresponde a Estepona, Málaga).
+</div>
 
 <footer>
-  <p><b>Fuentes:</b> cafecentralmadrid.com · salagalileo.es · gruta77.com · siroco.es · salaelsol.com · clubhonky.com · salaclamores.es · libertad8cafe.es · escenaescorial.org · ayto-alcorcon.es · infopozuelo.com · infolasrozas.com · ticketmaster.es · deflamenco.com · guiaflama.com</p>
-  <p>Generado automáticamente el 27 de agosto de 2026. Ver online: <a href="https://ccorachan.github.io/radar-madrid">https://ccorachan.github.io/radar-madrid</a></p>
+  <strong>Fuentes consultadas:</strong> madrid.org/sumaflamenca, teatroreal.es, cafecentralmadrid.com, salariviera.com, salavillanos.es, salagalileo.es, bigmamaballroom.com, libertad8cafe.es, salaelsol.com, cafelapalma.com, caixaforum.org, ra.co (Café Berlín), ticketmaster.es, blog.ticketmaster.es, alcobendas.org, infomajadahonda.com, infopozuelo.com, ocioenleganes.es, silvadesirenas.com, eldiariodemadrid.es, madridactual.es, gacetinmadrid.com, deflamenco.com, guiaflama.com.<br>
+  Generado automáticamente el 25/10/2026 · Agente de descubrimiento musical para la Comunidad de Madrid.<br>
+  Ver online: <a href="https://ccorachan.github.io/radar-madrid">https://ccorachan.github.io/radar-madrid</a>
 </footer>
 
 </div>
